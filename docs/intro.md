@@ -3,32 +3,14 @@ sidebar_position: 1
 slug: /
 ---
 
-# Tutorial Intro
+# Hi! This is my blog!
 
-Let's discover **Docusaurus in less than 5 minutes**.
+### Connect with me
 
-Get started by **creating a new site**.
+Github [Link](https://github.com/0529bill)
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+Linkedin [Link](https://www.linkedin.com/in/lin-tse-175b4a158/)
 
-## Generate a new site
+Email: 0529bill@gmail.com
 
-Generate a new Docusaurus site using the **classic template**:
-
-```shell
-npx @docusaurus/init@latest init my-website classic
-```
-
-## Start your site
-
-Run the development server:
-
-```shell
-cd my-website
-
-npx docusaurus start
-```
-
-Your site starts at `http://localhost:3000`.
-
-Open `docs/intro.md` and edit some lines: the site **reloads automatically** and display your changes.
+My Resume [Link](https://0529bill.github.io/portfolio/#/portfolio/Resume)
