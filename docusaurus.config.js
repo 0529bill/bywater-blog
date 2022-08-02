@@ -16,6 +16,7 @@ module.exports = {
   projectName: "bywater-blog",
   organizationName: "0529bill",
   trailingSlash: false,
+  onBrokenLinks: "ignore",
   // customFields: {
   //   ENVIRONMENT_VARIABLE_1: process.env.ENVIRONMENT_VARIABLE_1,
   //   ENVIRONMENT_VARIABLE_2: process.env.ENVIRONMENT_VARIABLE_2,
@@ -81,7 +82,7 @@ module.exports = {
             items: [
               {
                 label: "Tutorial",
-                to: "/docs/intro",
+                to: "/bywater-blog/",
               },
             ],
           },
