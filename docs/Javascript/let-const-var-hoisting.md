@@ -80,6 +80,29 @@ function printName() {
 }
 ```
 
+&nbsp;
+
+---
+
+&nbsp;
+
+### IIFE
+
+**有 let, const 之後，現在沒有必要使用 IIFE**
+
+&nbsp;
+解決問題：讓在以前只有 var 的時代，可以創建不被污染/成為全域變數的 var，在使用之後就被垃圾回收。
+
+```js
+(function () {
+  var message = "Hello";
+
+  alert(message); // Hello
+})();
+```
+
+&nbsp;
+
 References:
 
 https://shubo.io/javascript-hoisting/

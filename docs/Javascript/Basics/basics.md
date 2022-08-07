@@ -95,7 +95,98 @@ arrow function cons:
 
 &nbsp;
 
-# ES6
+## call, apply and bind
+
+:call, apply 會立即把 this 綁定在 call/apply 的第一個值，讓函式可以動態使用 this。
+:bind 會建立新的函式，在被呼叫之後才會綁定。
+
+&nbsp;
+
+**fun.call(thisArg[, arg1[, arg2[, ...]]])**  
+:設定 thisArg 值，並且把該 this 綁定在 thisArg 上，後面的參數為原先 function 的 argument.
+
+&nbsp;
+
+```js
+var person = {
+  fullName: function () {
+    return this.firstName + " " + this.lastName;
+  },
+};
+var person1 = {
+  firstName: "Bill",
+  lastName: "Gates",
+};
+var person2 = {
+  firstName: "Steve",
+  lastName: "Jobs",
+};
+person.fullName.call(person1); // 将返回 "Bill Gates"
+```
+
+```js
+var person = {
+  fullName: function (city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  },
+};
+var person1 = {
+  firstName: "Bill",
+  lastName: "Gates",
+};
+person.fullName.call(person1, "Seattle", "USA"); //Bill Gates,Seattle,USA
+```
+
+&nbsp;
+
+**fun.apply(thisArg, [argsArray])**  
+:用法和 call 類似，但是第二個 parameter 是 array
+
+&nbsp;
+
+```js
+var person = {
+  fullName: function (city, country) {
+    return this.firstName + " " + this.lastName + "," + city + "," + country;
+  },
+};
+var person1 = {
+  firstName: "Bill",
+  lastName: "Gates",
+};
+person.fullName.apply(person1, ["Oslo", "Norway"]); //'Bill Gates,Oslo,Norway'
+```
+
+&nbsp;
+
+**fun.bind(thisArg[, arg1[, arg2[, ...]]])**  
+:會建立新的函式，當函式被呼叫時，會將 this 關鍵字設為給定的參數。
+
+```js
+
+const person = {
+  firstName:"John",
+  lastName: "Doe",
+  display: function () {
+    let x = document.getElementById("demo");
+    x.innerHTML = this.firstName + " " + this.lastName;
+  }
+}
+
+//沒有bind Person的話，在setTimeout後，display的this遺失，輸出結果會是undefined
+let display = person.display.bind(person);
+setTimeout(display, 3000);
+//John Doe
+
+https://www.w3schools.com/js/js_function_bind.asp
+
+```
+
+&nbsp;
+
+---
+
+## ES6
 
 ---
 

@@ -37,7 +37,7 @@ keyword: `Global Execution Context`, `creation phase`, `execution phase`
 
 : `The call-stack` 是一種資料結構（stack）用來追蹤和管理`function execution`。
 
-實際情況：`The call-stack` 依照 Last In First Out 的規矩，當 engine call 到 function 時(creation phase)，會把該 function push 到 `call-stack` 裡，並且在執行該 function 時(execution phase)，會把該 function 從`call-stack` 中 pop 掉，
+實際情況：`The call-stack` 依照 Last In First Out 的規矩，當 engine call 到 function 時，會把該 function push 到 `call-stack` 裡，並且在執行該 function 時，會把該 function 從`call-stack` 中 pop 掉，
 
 &nbsp;
 
