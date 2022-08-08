@@ -186,6 +186,58 @@ https://www.w3schools.com/js/js_function_bind.asp
 
 ---
 
+&nbsp;
+
+## Event delegation 事件委派 & addEventListener
+
+往下傳遞的過程被稱為**捕捉（capturing）**，往上傳遞的過程被稱為**冒泡（bubbling）**
+
+&nbsp;
+
+![event delegation](../Img/event_delegation.png)
+
+&nbsp;
+
+### e.stopPropagation vs preventDefault
+
+&nbsp;
+
+**e.stopPropagation**: 停止接下來的 bubbling 或是 capturing  
+**preventDefault**: 停止 browser 的預定行為（default action）ex,用 preventDefault 來阻止\<a>跳轉頁面
+
+## &nbsp;
+
+### addEventListener:document.addEventListener(event, function, Capture)
+
+第三個 parameter，default 為 false，執行在冒泡階段，  
+設定為 true 時，執行在捕捉階段。
+
+## &nbsp;
+
+---
+
+## DOM 文件物件模型
+
+:DOM 是 HTML,XML, SVG 文件的程式介面，他把文件跟程式語言（ex, js)綁在一起。透過 DOM，我們可以用 JS 來操控 HTML.
+
+&nbsp;
+
+---
+
+&nbsp;
+
+## Strict Mode 嚴格模式
+
+用法：在檔案前面加上 ’use strict'  
+在嚴格模式下，以下幾種狀況是不被允許的：
+
+1. 直接定義未宣告變數
+2. 使用 delete 刪除變數或函式
+3. 重複變數
+4. 跟其他很多狀況。。
+
+## &nbsp;
+
 ## ES6
 
 ---
@@ -193,4 +245,7 @@ https://www.w3schools.com/js/js_function_bind.asp
 # Resources
 
 [resources](https://felixgerschau.com/javascript-memory-management/)  
-[resources-ch](https://juejin.cn/post/6940945178899251230)
+[resources-ch](https://juejin.cn/post/6940945178899251230)  
+https://www.w3schools.com/jsref/met_document_addeventlistener.asp  
+https://stackoverflow.com/questions/5963669/whats-the-difference-between-event-stoppropagation-and-event-preventdefault  
+https://medium.com/itsems-frontend/javascript-strict-mode-d0a3aa74458b
