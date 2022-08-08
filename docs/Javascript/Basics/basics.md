@@ -203,7 +203,7 @@ https://www.w3schools.com/js/js_function_bind.asp
 &nbsp;
 
 **e.stopPropagation**: 停止接下來的 bubbling 或是 capturing  
-**preventDefault**: 停止 browser 的預定行為（default action）ex,用 preventDefault 來阻止\<a>跳轉頁面
+**preventDefault**: 停止 browser 的預定行為（default action）ex,用 preventDefault 來阻止\<a></a>跳轉頁面
 
 ## &nbsp;
 
