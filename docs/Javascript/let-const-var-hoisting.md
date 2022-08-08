@@ -10,7 +10,7 @@ sidebar_position: 4
 
 1. let, const 的作用域是 block scope, var 是 function scope, **沒有在作用域之內** 的 variable 就會被宣告成 global 變數。
 2. var 可以重複宣告，let, const 不行 （但是可以重新復值）
-3. **var,function, let, const 都會被 hoisted** ，但是 var, function 會被賦予 undefined/function, 而 let, const 則會維持在 **uninitialised** 的狀態，直到 let,const 被執行到是才會夠使用，而在 let, const 語法被執行到之前的地方就叫做 TDZ(temporal dead zone).
+3. **var,function, let, const 都會被 hoisted** ，但是 var, function 會被賦予 undefined/function, 而 let, const 則會維持在 **uninitialized** 的狀態，直到 let,const 被執行到是才會夠使用，而在 let, const 語法被執行到之前的地方就叫做 TDZ(temporal dead zone).
 
 ```js
 // var 被賦予undefined, 直到被執行。
