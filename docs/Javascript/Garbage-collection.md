@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# [JS] Garbage collection
+# [JS] Garbage collection 垃圾回收
 
 # Resources
 
