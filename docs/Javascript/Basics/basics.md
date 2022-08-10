@@ -66,6 +66,18 @@ Heap(Dynamic memory allocation)
 
 &nbsp;
 
+## Type coercion 強制轉型
+
+### +:會轉成 string
+
+### -:會被轉為 number,如果不行轉成數字的話結果會是 NaN
+
+&nbsp;
+
+---
+
+&nbsp;
+
 ## null vs undefined
 
 `undefined` is used to describe variables that do not point to a reference.
@@ -252,4 +264,5 @@ https://www.w3schools.com/js/js_function_bind.asp
 [resources-ch](https://juejin.cn/post/6940945178899251230)  
 https://www.w3schools.com/jsref/met_document_addeventlistener.asp  
 https://stackoverflow.com/questions/5963669/whats-the-difference-between-event-stoppropagation-and-event-preventdefault  
-https://medium.com/itsems-frontend/javascript-strict-mode-d0a3aa74458b
+https://medium.com/itsems-frontend/javascript-strict-mode-d0a3aa74458b  
+https://medium.com/@sunnyhuang.sc/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98-javascript-%E4%BD%95%E8%AC%82%E5%BC%B7%E5%88%B6%E8%BD%89%E5%9E%8B-coercion-%E4%BB%A5%E5%8F%8A%E5%A6%82%E4%BD%95%E4%BD%9C%E5%88%B0%E8%BD%89%E6%8F%9B%E5%9E%8B%E5%88%A5-d7e39e30083

@@ -18,7 +18,8 @@ sidebar_position: 6
         typeof function: function
         typeof array: object
         typeof obj: object
-        typeof null: object
+        typeof null: object(a bug in Js)
+        typeof Symbol('symbol'): symbol
 ```
 
 ### 解決方法
