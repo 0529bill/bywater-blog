@@ -20,8 +20,6 @@ sidebar_position: 9
 
 - 物件型別（Object): object, array, function
 
-**function**: 根據所傳入 arguments 的不同，有可能是 pass by value,或是也有可能是 pass by reference.
-
 ```js
 //by reference
 //example1
@@ -38,7 +36,7 @@ let b = {}; // two independent objects
 alert(a == b); // false
 For;
 
-//example3
+//objectData example3
 function test(objectData) {
   objectData.number = 10;
   console.log(objectData); // { number: 10 }
@@ -53,7 +51,7 @@ console.log(a); // { number: 10 } => 跟著改變
 &nbsp;
 
 ```js
-//by value
+//primitiveData by value
 
 function test(primitiveData) {
   primitiveData = primitiveData + 5;
@@ -172,4 +170,6 @@ const clone = structuredClone(original);
 
 &nbsp;
 
+手寫深拷貝  
+https://juejin.cn/post/6844903929705136141#heading-6
 https://www.programfarmer.com/articles/javaScript/javascript-shallow-copy-deep-copy
