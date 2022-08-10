@@ -18,6 +18,8 @@ JavaScript 共有八种数据类型，分别是 Undefined、Null、Boolean、Num
 
 ---
 
+&nbsp;
+
 #### Primitives
 
 (string, number, bigint, boolean, symbol, null and undefined)
@@ -215,6 +217,8 @@ https://www.w3schools.com/js/js_function_bind.asp
 ## &nbsp;
 
 ---
+
+&nbsp;
 
 ## DOM 文件物件模型
 
