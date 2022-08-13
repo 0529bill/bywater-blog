@@ -14,9 +14,14 @@ callback
 
 `new Promise( /* executor */ function(resolve, reject) { ... } );`
 
+`Promise.all`  
+`Promise.race`
+
 &nbsp;
 
-1. 當執行到 promise 中的 resolve or reject 後，後面的語法就不會再執行了。
+1. Promise.all 多個 Promise 行為同時執行，全部完成後統一回傳。
+2. Promise.race 多個 Promise 同時執行，但僅回傳第一個完成的。
+3. 當執行到 promise 中的 resolve or reject 後，後面的語法就不會再執行了。
 
 &nbsp;
 
@@ -50,6 +55,8 @@ promise.then(
 ```
 
 &nbsp;
+
+finally: 用於處理額外的狀況
 
 ```js
 
@@ -115,7 +122,57 @@ let response = await fetch("/article/fetch/post/user", {
 
 &nbsp;
 
+---
+
+&nbsp;
+
+### 實踐 Promise.all
+
+&nbsp;
+
+```js
+function promiseAll(values) {
+  if (!Array.isArray(values)) return;
+  return new Promise((resolve, reject) => {
+    let results = [];
+    let completed = 0;
+
+    values.forEach((value, index) => {
+      Promise.resolve(value)
+        .then((result) => {
+          results[index] = result;
+          completed += 1;
+
+          if (completed == values.length) {
+            resolve(results);
+          }
+        })
+        .catch((err) => reject(err));
+    });
+  });
+}
+```
+
+&nbsp;
+
+### 實踐 Promise.race
+
+&nbsp;
+
+```js
+const PromiseRace = (iterable) => {
+  return new Promise((resolve, reject) => {
+    for (const item of iterable) {
+      Promise.resolve(item).then(resolve).catch(reject);
+    }
+  });
+};
+```
+
+&nbsp;
+
 https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Promise
 
 https://javascript.info/async-await
 https://javascript.info/fetch
+https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/140
