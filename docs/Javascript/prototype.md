@@ -55,3 +55,23 @@ console.log(nick instanceof Array); // false
 2. 把新創建的 object 的`__proto__`指向他的 instance
 3. 把新創建的 object 當作 context,呼叫其 instance
 4. 回傳新創建的 object
+
+```js
+function Person(name) {
+  this.name = name;
+}
+
+var person = Person("John");
+console.log(person); // undefined
+console.log(person.name); // Uncaught TypeError: Cannot read property 'name' of undefined
+
+var person = new Person("John");
+console.log(person); // Person { name: "John" }
+console.log(person.name); // "john"
+```
+
+can also use
+
+```js
+Object.create(Person.prototype);
+```

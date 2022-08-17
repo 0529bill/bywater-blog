@@ -55,4 +55,5 @@ alert(counter()); // 2
 &nbsp;
 
 Reference:  
-https://javascript.info/closure
+https://javascript.info/closure  
+https://dev.to/somedood/emulating-private-variables-in-javascript-with-closures-and-factory-functions-2314

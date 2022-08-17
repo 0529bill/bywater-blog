@@ -233,31 +233,19 @@ Event delegation 優缺點：
 
 ### 為什麼需要 Event delegation?
 
-&nbsp;
-
 ### e.stopPropagation vs preventDefault
-
-&nbsp;
 
 **e.stopPropagation**: 停止接下來的 bubbling 或是 capturing  
 **preventDefault**: 停止 browser 的預定行為（default action）ex,用 preventDefault 來阻止\<a></a>跳轉頁面
-
-## &nbsp;
 
 ### addEventListener:document.addEventListener(event, function, Capture)
 
 第三個 parameter，default 為 false，執行在冒泡階段，  
 設定為 true 時，執行在捕捉階段。
 
-## &nbsp;
-
 https://stackoverflow.com/questions/1687296/what-is-dom-event-delegation
 
-## &nbsp;
-
 ---
-
-&nbsp;
 
 ## Strict Mode 嚴格模式
 
@@ -269,11 +257,7 @@ https://stackoverflow.com/questions/1687296/what-is-dom-event-delegation
 3. 重複變數
 4. 跟其他很多狀況。。
 
-&nbsp;
-
 ---
-
-&nbsp;
 
 ## this
 
