@@ -8,7 +8,11 @@ sidebar_position: 9
 
 :module 只是一個文件，一個 script.
 
-## module 用途?
+## 歷史
+
+：過去有 commonjs 給 nodejs server 端使用，browser 端則有 AMD，但是在 ES6 module 出現之後，其他 module 慢慢消失。
+
+## ES6 module 用途?
 
 &nbsp;
 module 讓我們可以使用 `export` 和 `import`語法，來把 JS 切分成個自的 module，來解決遇到大型 codebase，有很多 function、變數而變得難以管理的狀況。

@@ -176,3 +176,6 @@ https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects
 https://javascript.info/async-await
 https://javascript.info/fetch
 https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/140
+
+ajax, xml  
+https://eyesofkids.gitbooks.io/javascript-start-from-es6/content/part4/ajax_fetch.html
