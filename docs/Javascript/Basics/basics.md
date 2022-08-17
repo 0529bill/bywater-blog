@@ -288,14 +288,15 @@ https://stackoverflow.com/questions/1687296/what-is-dom-event-delegation
 ## this
 
 &nbsp;
-
-this 的值是根據它被執行的地方(call site)所決定的，以下有四個 this 的規則：
+:this 指向（reference）object.而它的值不一定，會根據它被執行的地方(call site)所決定的，以下有四個 this 的規則：
 
 1. 如果執行 function 時，是用`new`來執行的，那 this 會指向一個空的 object.
 2. 如果執行 function 時，是用 call,apply,bind，那 this 會指向傳進來的 argument.
 3. 如果執行時，是 object 中的一個 method，那 this 會指向 dot 的左邊（該 object).
 4. 如果 function 執行時沒有以上條件，this 就會是全局對象. 瀏覽器環境下 this 的值指向 window 對象，但是在嚴格模式下('use strict')，this 的值為 undefined。
 5. 如果相同的規則都出現的話，排名前的會先執行。
+
+用途： ex. 實作 array map method
 
 &nbsp;
 
