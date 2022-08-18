@@ -6,6 +6,8 @@ sidebar_position: 5
 
 ### 定義：Closure 指的是一個 function 記得外在的變數並且可以取用其值，JS 中的所有 function 皆為 closure.
 
+用途： debounce, throttle
+
 &nbsp;
 
 ### Lexical Environment 語法環境
