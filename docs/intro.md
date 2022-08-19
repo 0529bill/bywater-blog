@@ -3,7 +3,7 @@ sidebar_position: 1
 slug: /
 ---
 
-# Hi! This is my blog!
+# Hi!我是 bywater,這是我的 tech blog!
 
 ### Connect with me
 

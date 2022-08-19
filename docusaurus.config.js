@@ -11,7 +11,7 @@ module.exports = {
   baseUrl: "/bywater-blog/",
   onBrokenLinks: "throw",
   onBrokenMarkdownLinks: "warn",
-  favicon: "img/favicon.ico",
+  favicon: "img/docusaurus.png",
   organizationName: "facebook", // Usually your GitHub org/user name.
   projectName: "bywater-blog",
   organizationName: "0529bill",
@@ -46,7 +46,7 @@ module.exports = {
         title: "Bywater-blog",
         logo: {
           alt: "Bywater-blog Logo",
-          src: "img/logo.svg",
+          src: "img/docusaurus.png",
         },
         items: [
           {

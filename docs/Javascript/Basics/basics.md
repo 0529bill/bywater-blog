@@ -109,6 +109,17 @@ arrow function cons:
 3. Can’t be called with new
 4. They also don’t have super.
 
+不該使用的時機：  
+需要使用 this 的時候，因為會指向上一層（很多時候是 window）
+
+```js
+ex.Array.prototype.forEach = () => {
+  this; // 指向window，而不是Array
+};
+```
+
+https://hsien-w-wei.medium.com/js-arrow-function-vs-function-ec601dead231
+
 ---
 
 &nbsp;
@@ -269,10 +280,30 @@ https://stackoverflow.com/questions/1687296/what-is-dom-event-delegation
 3. 如果執行時，是 object 中的一個 method，那 this 會指向 dot 的左邊（該 object).
 4. 如果 function 執行時沒有以上條件，this 就會是全局對象. 瀏覽器環境下 this 的值指向 window 對象，但是在嚴格模式下('use strict')，this 的值為 undefined。
 5. 如果相同的規則都出現的話，排名前的會先執行。
+6. 如果包住 this 的 function 是 arrow function 的話，不適用上面的規則，因為它本身沒有 this，所以 this 會等同於上一層的 this。
 
 用途： ex. 實作 array map method
 
 &nbsp;
+
+```js
+const personA = {
+  name: "AAA",
+  doing: function () {
+    console.log(this);
+  },
+};
+personA.doing();
+// {name: 'AAA', doing: f}
+
+//當是arrow function時
+const personB = {
+  name: "AAA",
+  doing: () => console.log(this),
+};
+personB.doing();
+// window
+```
 
 ```js
 function makeUser() {
