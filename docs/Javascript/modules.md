@@ -42,7 +42,8 @@ module 讓我們可以使用 `export` 和 `import`語法，來把 JS 切分成�
 
 ### Defer
 
-:執行到 script 時會繼續建立 DOM,在 DOM 建立完成後材會去執行該 Script 或是 handlers .
+:執行到 script 時會繼續建立 DOM,在 DOM 建立完成後材會去執行該 Script 或是 handlers.  
+:module 是用類似 defer 載入的方式，會等到 DOM 都建立完成後，才會去執行 script
 
 ```js
 
@@ -69,6 +70,8 @@ module 讓我們可以使用 `export` 和 `import`語法，來把 JS 切分成�
 ```
 
 &nbsp;
+
+https://gcdeng.com/blog/script-tag-async-defer-attributes
 
 https://javascript.info/modules-intro  
 https://javascript.info/script-async-defer

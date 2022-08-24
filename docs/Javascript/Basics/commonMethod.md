@@ -75,3 +75,31 @@ const throttle = (callback, time) => {
 ```
 
 https://ithelp.ithome.com.tw/articles/10222749
+
+---
+
+### flatten
+
+Input: [[[1, [1.1]], 2, 3], [4, 5]]  
+Output: [1, 1.1, 2, 3, 4, 5]
+
+```js
+function flatten(arr) {
+  return arr.reduce(function (flat, toFlatten) {
+    return flat.concat(
+      Array.isArray(toFlatten) ? flatten(toFlatten) : toFlatten
+    );
+  }, []);
+}
+```
+
+```js
+function flatten(arr) {
+  while (arr.some((item) => Array.isArray(item))) {
+    arr = [].concat(...arr);
+  }
+  return arr;
+}
+```
+
+https://stackoverflow.com/questions/10865025/merge-flatten-an-array-of-arrays

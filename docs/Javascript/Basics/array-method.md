@@ -38,7 +38,7 @@ Array.prototype.myFilter = function (callback) {
 
 ```js
 Array.prototype.myEach = function myEach(callback) {
-  for (let i = 0; i < this.length; i += 1) {
+  for (let i = 0; i < this.length; i++) {
     callback(this[i], i, this);
   }
 };
@@ -50,7 +50,7 @@ Array.prototype.myEach = function myEach(callback) {
 
 ```js
 Array.prototype.myEvery = function myEvery(predicate, thisArg) {
-  for (var i = 0; i < this.length; ++i) {
+  for (var i = 0; i < this.length; i++) {
     if (!predicate(this[i], i, this)) return false;
   }
 
