@@ -10,7 +10,7 @@ Virtual DOM 實際上就是用物件來描述 DOM 的結構並儲存在 memory �
 
 ### 什麼是 React reconciliation
 
-:reconciliation 指的是 react 更新 Virtual-DOM 和 DOM 的過程。
+:reconciliation 指的是 react 更新 Virtual-DOM 和 DOM 的過程，透過只更新有更動的部分，讓 React 可以比操作原生 DOM 更省效能跟快速。
 
 ### 為什麼需要 reconciliation?
 

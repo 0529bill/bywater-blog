@@ -37,7 +37,7 @@ webkit 是一個 open source 的 rendering engine,被應用在 chrome, safari �
 
 1. Reflow or Layout stage（排版）階段
    - 瀏覽器首先會為 render tree 中的各個節點建構排版，這包含了計算每個節點在螢幕上的像素尺存以及確切的位置(positions and the coordinates)，透過從 Node 的源頭（root node）開始往下計算每個 element 和其附近的 element 的位置跟關係（ex, 確切距離 exact pixels）。我們將這個過程為 layout（排版），這個過程又被稱作 reflow 或是 browser reflow。要注意的是當我們在捲動螢幕、調整視窗大小或是修改 DOM 元素時，都會觸發 layout 的程序。  
-     \*\* 這是一個很消耗性能的步驟，因為他要從頭到尾計算每個 node 之間的距離跟關係。
+      **這是一個很消耗性能的步驟，因為他要從頭到尾計算每個 node 之間的距離跟關係。**
 2. Painting/ repaint (繪圖）階段
 
    - 在這個階段，排版完的 render tree 有可能會有元素互相重疊（ex, z-index)，透過 painting 這個階段把各個元素的 painting 上下等等順序計算好（ex, background first, then text, then rectangle）。
