@@ -44,6 +44,29 @@ function sayGreeting(name) {
 
 &nbsp;
 
+#### Immutability 不可變性
+
+:對傳進來的數據不應該更改，如果要更改，必須複製數據再來更改。
+
+```js
+let student = {
+  firstName: "testing",
+  lastName: "testing",
+  marks: 500,
+};
+
+function changeName(student) {
+  // student.firstName = "testing11" //should not do it
+  let copiedStudent = Object.assign({}, student);
+  copiedStudent.firstName = "testing11";
+  return copiedStudent;
+}
+
+console.log(changeName(student));
+
+console.log(student);
+```
+
 #### Higher-order function(HOF)
 
 :_A function that takes a function as an argument, or returns a function as a result_
@@ -58,3 +81,5 @@ arr.map(function (value) {
   console.log(value);
 });
 ```
+
+https://juejin.cn/post/6844903857135304718

@@ -2,7 +2,7 @@
 sidebar_position: 2
 ---
 
-# [others] React reconciliation, Virtual DOM
+# [React] React reconciliation, Virtual DOM
 
 ### 什麼是 Virtual DOM
 
