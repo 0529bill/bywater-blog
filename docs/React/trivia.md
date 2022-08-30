@@ -181,7 +181,7 @@ handleClick();
 //count => 1
 ```
 
-FIX:
+Fix:
 
 ```js
 const [count, setCount] = useState(0);
