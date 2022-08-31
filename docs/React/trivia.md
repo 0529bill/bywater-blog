@@ -202,6 +202,17 @@ function handleClick() {
 
 &nbsp;
 
+## Share data between tabs when using react & redux ?
+
+Redux 只存在個別 tab 裡，所以如果要在各個 tab 中使用共同的資料的話，有以下幾個方法：
+
+1.  使用 redux-persist
+2.  使用 localStorage
+3.  使用 react-router 把資料放在 pathname 裡面
+
+https://stackoverflow.com/questions/49384212/how-can-we-use-the-same-state-across-multiple-tabs-pages
+&nbsp;
+
 Resources:
 
 https://overreacted.io/react-as-a-ui-runtime/#batching
