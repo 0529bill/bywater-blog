@@ -18,6 +18,7 @@ Virtual DOM 實際上就是用物件來描述 DOM 的結構並儲存在 memory �
 
 ### 什麼是 React fiber?
 
+https://www.freecodecamp.org/news/lets-fall-in-love-with-react-fiber-90f2e1f68ded/
 &nbsp;
 
 https://segmentfault.com/a/1190000039682751
