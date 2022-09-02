@@ -40,7 +40,7 @@ https://chrome.google.com/webstore/detail/cn2tw4programmer/emjpciklgncophlffcjip
 先從 HTML/CSS 和 Javascript 開始：
 
 - W3schools ( https://www.w3schools.com/)  
-  非常易懂的網站，裡面有各種語言的基礎語法教學，適合基礎的學習。
+  非常易懂的網站，裡面有各種語言的基礎語法教學，適合基礎語法的學習。
 - Js Info (https://javascript.info/)
   最推薦的 Js 學習網站，裡面有非常深入的前端各種資源，大推！
 
@@ -52,26 +52,48 @@ React 相關資源：
 
 前端相關資源
 
+網站
+
 - Web dev (https://web.dev/)
   瀏覽器各式各樣的教學，文章也很有深度，大推！
 - Patterns (https://www.patterns.dev/posts/rendering-patterns/)  
   有講解 design pattern 和 rendering pattern，清楚易懂，大推！！
 - 掘金（https://juejin.cn/）
   中國的資訊網站，裡面前端時常有非常不錯的文章，搜尋問題時我也會在這裡收尋。
-- Js mastery (https://www.youtube.com/c/JavaScriptMastery/videos)
-  非常推薦的前端 youtuber，清楚易懂的教學，跟著他做可以體驗到很多很不錯的技術跟寫程式方法
+- stackOverflow (https://stackoverflow.com/)
+
+個人部落格
+
 - medium eric elliot (https://medium.com/@_ericelliott)
   前端大神，很多文章都蠻深入但講解得非常好。
 - medium C.T.Lin (https://chentsulin.medium.com/)
   他好像是 dcard 裡面的工程師，很喜歡他的文章，很有深度。
 - medium Kyle Mo(https://oldmo860617.medium.com/)
   時常寫一些技術文章，並且分享當工程師的心路歷程，全程乾貨，直得追蹤！！
-- stackOverflow (https://stackoverflow.com/)
+
+臉書社團
+
 - 臉書社團 ReactJs.tw
 - 臉書社團 Front-End Developers Taiwan
 - 臉書粉專 Will 保哥的技術交流中心
 
-最後則是我自己的筆記跟 medium 技術文章哈哈，筆記會記錄一些我遇到的問題跟我覺得不錯的文章，medium 則是會紀錄我自己寫的文章。
+youtube
+
+- Js mastery (https://www.youtube.com/c/JavaScriptMastery/videos)  
+  非常推薦的前端 youtuber，清楚易懂的教學，跟著他做可以體驗到很多很不錯的技術跟寫程式方法
+- web dev simplified(https://www.youtube.com/c/WebDevSimplified)  
+  帥哥教學，看他的影片特別有學習動力。
+- techLead (https://www.youtube.com/c/TechLead)  
+  有趣的前 google, facebook 小哥，講話很有趣哈哈。
+- Clément Mihailescu (https://www.youtube.com/channel/UCaO6VoaYJv4kS-TQO_M-N_g)  
+   有很多 mock interview 的影片，前 front-end tech lead。
+
+面試分享
+
+- JingTech (https://jing-tech.me/blog/2021_frontend_interview)
+- 外國求職分享 （https://medium.com/@29isthebest/%E8%BD%89%E8%81%B7%E5%89%8D%E7%AB%AF%E5%B7%A5%E7%A8%8B%E5%B8%AB%E7%9A%84%E6%B5%B7%E5%A4%96%E6%B1%82%E8%81%B7-%E5%BE%B7%E8%8D%B7%E8%8B%B1%E6%97%A5%E6%96%B0-%E5%BF%83%E5%BE%97-ii-%E6%89%BE%E5%B7%A5%E4%BD%9C%E8%88%87%E9%9D%A2%E8%A9%A6%E7%AF%87-c9b3e2f8480c）
+
+以上都是免費的資源，另外有關六角學院等需要付費的資源，因為我是自學也沒有使用過所以就沒有推薦了。最後則是我自己的筆記跟 medium 技術文章哈哈，筆記會記錄一些我遇到的問題跟我覺得不錯的文章，medium 則是會紀錄我自己寫的文章。
 
 - bywater 筆記 (https://0529bill.github.io/bywater-blog/)
 - bywater 文章 （https://medium.com/@bywater529）
