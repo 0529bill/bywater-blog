@@ -4,15 +4,79 @@ sidebar_position: 3
 
 # [鐵人賽 2022-擊敗前端面試大作戰] let,const, var and hoisting
 
-## let, const vs var
+如果問前端工程師說最常在面試被問到的 Js 考題是什麼，十個裡面可能有五六個會說是 let, const, and var 吧！所以今天就用個非常常見的萬年考題來當作擊敗前端面試系列的正式第一篇正文吧！
 
-如果問前端工程師說最常在面試被問到的 Js 考題是什麼，十個裡面可能有五六個會說是 let, const, var and hoisting 吧！所以今天就用個萬年考題來當作擊敗前端面試系列的正式第一篇吧！
+## let, const vs var 的差別
 
-兩者的差別是：作用域
+簡易答案：兩者的差別在`作用域`，var 因為會有重新復值的問題， 因此現在大家都只使用 let 或是 const。
 
-1. let, const 的作用域是 block scope, var 是 function scope, **沒有在作用域之內** 的 variable 就會被宣告成 global 變數。
-2. var 可以重複宣告，let, const 不行 （但是可以重新復值）
-3. **var,function, let, const 都會被 hoisted** ，但是 var, function 會被賦予 undefined/function, 而 let, const 則會維持在 **uninitialized** 的狀態，直到 let,const 被執行到是才會夠使用，而在 let, const 語法被執行到之前的地方就叫做 TDZ(temporal dead zone).
+回答思路：這題主要是在問 `作用域` 的觀念，所以可以講這兩種作用域的不同，然後可以延伸到 `hoisting`跟`暫時性死區TDZ`。
+
+基本上，let, const vs var 的差別有以下三個：
+
+1. let, const 的作用域是 block scope, var 是 function scope, **沒有在作用域之內** 的 variable 就會被宣告成 global 變數，進而容易造成誤用等 bug，所以現在已經不建議使用 var 了。
+2. var 可以重複宣告，let, const 不行。
+3. var 被 hoisting 之後會被賦予 undefined，let,const 則不會。
+
+&nbsp;
+
+如果上面看不懂的話沒關係，下面會放程式碼來解釋。
+
+先來講解第一個差別，作用域跟 var 造成的問題。var 是 function scope,let,const 是 block scope。那你可能會問什麼是這兩個 scope?
+
+```js
+function a() {
+  ...function scope
+}
+
+
+if (true) {
+  ...block scope
+}
+
+```
+
+接續上面的句子，所以 var 只要不是在 function 中宣告就會成為 global 變數，容易造成誤用。
+
+```js
+// var 會變成global
+if (true) {
+  var abc = 10;
+}
+console.log(abc); // 10
+```
+
+當時為了解決 var 變成 global 而濫用的問題，所以出現了一個東西叫做 IIFE 來解決這樣的問題。IIFE 是一個會立即被執行的 function，透過 var 是 function scope 的特性，把 var 放到 function 內，並且在使用之後就被垃圾回收。在現代因為有 let, const 的出現，目前大部分的情境之下已經沒有需要用到 IIFE 了！
+
+```js
+//IIFE
+(function () {
+  var message = "Hello";
+
+  alert(message); // Hello
+})();
+```
+
+&nbsp;
+
+回歸剛剛的主題，因為 let,const 是 block scope 所以只要在 block 裡面宣告，就會只能在該 block 裡面使用。
+
+```js
+//let, const 會待在block裡面，外面無法取用該變數。
+if (true) {
+  let abc = 10;
+}
+console.log(abc); //Uncaught ReferenceError: abc is not defined
+```
+
+**注意：這裡的報錯是 ReferenceError: abc is not defined**
+
+&nbsp;
+
+再來說第三個差別，兩者 hoisting 的差別。那什麼是 hoisting 呢？  
+Hoisting 定義： Hoisting 是 Javascript 在執行階段中，把變數或是 function 提升的特性。
+
+而 var 會被 hoisted，然後被賦予 undefined。
 
 ```js
 // var 被賦予undefined, 直到被執行。
@@ -23,56 +87,26 @@ function printName() {
 }
 ```
 
-&nbsp;
-&nbsp;
+**注意：這裡 name 的值是 undefined**
+
+let, const 也會被 hoisted，但會維持在 **uninitialized** 的狀態。所以在它被宣告之前到它的 block scope 的起點的地方，該變數還是 **uninitialized** 而不能被使用，這個地方(A to B)也被稱作為暫時性死區（TDZ）。
 
 ```js
 //
 function printName() {
+  //A
   console.log(name); // ReferenceError: Cannot access 'name' before initialization
+  //B
   const name = "John";
   console.log(name);
 }
 ```
 
-&nbsp;
-
-## ReferenceError: "x" is not defined vs Cannot access 'x' before initialization
+**注意：這裡的報錯是 ReferenceError: Cannot access 'name' before initialization**
 
 &nbsp;
 
-"x" is not defined => x 不在 scope 內，找不到這個變數。
-
-```js
-//
-
-console.log(x);
-let x = 10; //Uncaught ReferenceError: x is not defined
-
-//
-```
-
-Cannot access 'x' before initialization => 在 scope 內，有被 hoisted，但是還沒執行到該語法
-
-```js
-//
-
-{
-  console.log(x);
-  let x = 10; //Uncaught ReferenceError: Cannot access 'x' before initialization
-}
-//
-```
-
----
-
-## Hoisting
-
-**什麼是 hoisting?**
-
-Hoisting 是 Javascript 在執行階段中，把變數或是 function 提升的特性。
-
-### function 也會被 hoisted
+題外話，function 會被 hoisted，但是可以被使用。
 
 ```js
 printName(); //John
@@ -82,26 +116,12 @@ function printName() {
 }
 ```
 
-&nbsp;
+想必看到這裡，讀者對 let,const and var 的差別應該有一定的了解了，下面我會列一些常見的面試問題，讀者就可
+以自己回答看看摟～
 
----
-
-&nbsp;
-
-### IIFE
-
-**有 let, const 之後，現在沒有必要使用 IIFE**
-
-&nbsp;
-解決問題：讓在以前只有 var 的時代，可以創建不被污染/成為全域變數的 var，在使用之後就被垃圾回收。
-
-```js
-(function () {
-  var message = "Hello";
-
-  alert(message); // Hello
-})();
-```
+面試題 1. let, const 和 var 的差別？
+面試題 2. hoisting 是什麼？
+面試題 3. ReferenceError: Cannot access x before initialization vs ReferenceError: x is not defined 的差別是什麼？
 
 &nbsp;
 
