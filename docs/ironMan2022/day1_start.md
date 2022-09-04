@@ -31,9 +31,9 @@ sidebar_position: 1
 ## 目錄
 
 - 開賽
-- 寫在前面-找資料的重要性
+- 寫在前面-免費前端學習資源看這篇就夠了！
 
-### Javascript
+### Javascript 8
 
 - let, const var hoisting
 - closure
@@ -48,24 +48,40 @@ sidebar_position: 1
 
 - 排版 flex/grid
 
-### React
+### React 4
 
 - React 介紹
 - Hooks
-- **Typescript 4**
+- React Reconciliation
+- React 18
 
-1. type
+### Typescript 3
 
-**優化/core web vitals/csr vs SSR \*6**
+- Basic Types
 
-- 實作 throttle, debouce
+### 優化６
 
-**HTTP/cookie/web.. \*1**
+- Core web vitals
+- CSR vs SSR
+- lighthouse
+- 實作 throttle, debounce
+- case studies
 
-**side project BLOG \*1**
+### HTTP/Cookie/Web 2
 
-**Behavior \*1**
+- trivia
+- what happened after you enter url in the search bar?
 
-**履歷 \*1**
+### Side project 1
+
+- 面試加分利器－－－side project
+
+### Behavior questions 1
+
+### Resume 1
 
 如果內容有錯誤的話，請跟我說，我會盡快做更改！
+
+## 寫在最後
+
+完賽！

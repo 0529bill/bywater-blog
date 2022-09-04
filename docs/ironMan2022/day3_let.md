@@ -4,13 +4,15 @@ sidebar_position: 3
 
 # [鐵人賽 2022-擊敗前端面試大作戰] let,const, var and hoisting
 
-如果問前端工程師說最常在面試被問到的 Js 考題是什麼，十個裡面可能有五六個會說是 let, const, and var 吧！所以今天就用個非常常見的萬年考題來當作擊敗前端面試系列的正式第一篇正文吧！
+如果問前端工程師說最常在面試被問到的 Js 考題是什麼，十個裡面可能有五六個會說是 let, const, and var 吧！所以今天就用個非非非非非常常見的萬年考題來當作擊敗前端面試系列的正式第一篇正文吧！
 
 ## let, const vs var 的差別
 
-簡易答案：兩者的差別在`作用域`，var 因為會有重新復值的問題， 因此現在大家都只使用 let 或是 const。
+簡易解釋：兩者的差別在`作用域`，var 因為會有重新復值的問題， 因此現在大家都只使用 let 或是 const。
 
-回答思路：這題主要是在問 `作用域` 的觀念，所以可以講這兩種作用域的不同，然後可以延伸到 `hoisting`跟`暫時性死區TDZ`。
+面試回答思路：這題主要是在問 `作用域` 的觀念，所以可以講這兩種作用域的不同，然後可以延伸到 `hoisting`跟`暫時性死區TDZ`。
+
+&nbsp;
 
 基本上，let, const vs var 的差別有以下三個：
 
@@ -22,13 +24,20 @@ sidebar_position: 3
 
 如果上面看不懂的話沒關係，下面會放程式碼來解釋。
 
-先來講解第一個差別，作用域跟 var 造成的問題。var 是 function scope,let,const 是 block scope。那你可能會問什麼是這兩個 scope?
+### 作用域跟 var 造成的問題
+
+先來講解第一個差別，作用域跟 var 造成的問題。var 是 function scope,let,const 是 block scope。那你可能會問什麼是 scope? 在 function 括號裡面的是 function scope，如果只有括號，那它就是 block scope。
 
 ```js
+
+//function scope
 function a() {
   ...function scope
 }
 
+
+
+//block scope
 
 if (true) {
   ...block scope
@@ -36,7 +45,7 @@ if (true) {
 
 ```
 
-接續上面的句子，所以 var 只要不是在 function 中宣告就會成為 global 變數，容易造成誤用。
+了解了 scope 的概念之後，回到主題。所以 var 只要不是在 function 中宣告就會成為 global 變數，容易造成誤用。
 
 ```js
 // var 會變成global
@@ -59,7 +68,7 @@ console.log(abc); // 10
 
 &nbsp;
 
-回歸剛剛的主題，因為 let,const 是 block scope 所以只要在 block 裡面宣告，就會只能在該 block 裡面使用。
+而因為 let,const 是 block scope 所以只要在 block 裡面宣告，就會只能在該 block 裡面使用。
 
 ```js
 //let, const 會待在block裡面，外面無法取用該變數。
@@ -72,6 +81,23 @@ console.log(abc); //Uncaught ReferenceError: abc is not defined
 **注意：這裡的報錯是 ReferenceError: abc is not defined**
 
 &nbsp;
+
+### var 可以重複宣告，let, const 不行。
+
+```js
+let a = 10;
+let a = 11;
+// Uncaught SyntaxError: Identifier 'a' has already been declared
+
+var a = 10;
+var a = 11;
+
+a; // 11
+```
+
+&nbsp;
+
+### var 被 hoisting 之後會被賦予 undefined，let,const 則不會
 
 再來說第三個差別，兩者 hoisting 的差別。那什麼是 hoisting 呢？  
 Hoisting 定義： Hoisting 是 Javascript 在執行階段中，把變數或是 function 提升的特性。
@@ -116,8 +142,7 @@ function printName() {
 }
 ```
 
-想必看到這裡，讀者對 let,const and var 的差別應該有一定的了解了，下面我會列一些常見的面試問題，讀者就可
-以自己回答看看摟～
+想必看到這裡，讀者對 let,const and var 的差別應該有一定的了解了，下面我會列一些常見的面試問題，讀者就可以自己回答看看摟～
 
 面試題 1. let, const 和 var 的差別？
 面試題 2. hoisting 是什麼？
