@@ -6,13 +6,13 @@ sidebar_position: 4
 
 今天是鐵人賽的第二篇正文，今天要來討論一個讓人又愛又恨的 JS 特性---閉包 closure。
 
-簡易解釋：閉包 指的是一個 function 記得外在的變數並且可以取用其值，JS 中的所有 function 皆為 closure.
-
-面試回答思路：可以回答閉包的定義，然後帶到`語法環境`。
-
 &nbsp;
 
 ### 什麼是閉包？
+
+簡易解釋：閉包 指的是一個 function 記得外在的變數並且可以取用其值，JS 中的所有 function 皆為 closure.
+
+面試回答思路：可以回答閉包的定義，然後帶到`語法環境`。
 
 我們先來看一下下面的程式碼，猜猜看`outerFunc`執行結果會是什麼？
 
@@ -122,3 +122,4 @@ log(); // What is logged?
 Reference:  
 https://javascript.info/closure  
 https://dev.to/somedood/emulating-private-variables-in-javascript-with-closures-and-factory-functions-2314
+https://nissentech.org/why-do-we-need-closure/
