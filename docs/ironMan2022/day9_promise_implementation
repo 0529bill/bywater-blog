@@ -1,0 +1,48 @@
+---
+sidebar_position: 9
+---
+
+# [鐵人賽 2022-擊敗前端面試大作戰] 實作 promise, promise.all, promise.race
+
+### Promise.all 實踐
+
+&nbsp;
+
+```js
+function promiseAll(values) {
+  if (!Array.isArray(values)) return;
+  return new Promise((resolve, reject) => {
+    let results = [];
+    let completed = 0;
+
+    values.forEach((value, index) => {
+      Promise.resolve(value)
+        .then((result) => {
+          results[index] = result;
+          completed += 1;
+
+          if (completed == values.length) {
+            resolve(results);
+          }
+        })
+        .catch((err) => reject(err));
+    });
+  });
+}
+```
+
+&nbsp;
+
+### Promise.race 實踐
+
+```js
+const PromiseRace = (iterable) => {
+  return new Promise((resolve, reject) => {
+    for (const item of iterable) {
+      Promise.resolve(item).then(resolve).catch(reject);
+    }
+  });
+};
+```
+
+&nbsp;
