@@ -115,7 +115,7 @@ function printName() {
 
 **注意：這裡 name 的值是 undefined**
 
-let, const 也會被 hoisted，但會維持在 **uninitialized** 的狀態。所以在它被宣告之前到它的 block scope 的起點的地方，該變數還是 **uninitialized** 而不能被使用，這個地方(A to B)也被稱作為暫時性死區（TDZ）。
+let, const 也會被 hoisted，但會維持在 **uninitialized** 的狀態。所以在它被宣告之前到它的 block scope 的起點的地方，該變數還是 **uninitialized** 而不能被使用，這個地方(A to B)也被稱作為暫時性死區（TDZ）。這部分關於程式碼被執行時所發生的事，我們在後面 EventLoop 的文章會提到喔～請大家再稍等一下！
 
 ```js
 //
