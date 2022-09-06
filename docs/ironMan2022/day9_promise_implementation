@@ -4,6 +4,8 @@ sidebar_position: 9
 
 # [鐵人賽 2022-擊敗前端面試大作戰] 實作 promise, promise.all, promise.race
 
+今天來到前端面試系列文章的第九篇，今天要來講的是 JS 實作題。這種題目在面試中，是非常常見的。以我自己遇到的面試來說，手寫題一般會分成兩種，一種是考 JS 原生語法的實踐，像是 promise, array method 等等。另外一種，則是會考 easy~medium 難度的 leetcode 題。我自己會覺得，練習的順序應該是先熟悉 JS 常見的實作題之後，再去刷 leetcode 題，因為 JS 常見的就那幾類，而反觀 leetcode 題可以說是包山包海，自己刷得題目在面試上遇到的機率就相對的低很多了！那廢話不多說，我們先來看今天要實作的 Promise 相關題吧！
+
 ### Promise.all 實踐
 
 &nbsp;
