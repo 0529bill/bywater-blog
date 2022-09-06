@@ -132,6 +132,8 @@ alert("global ex. context");
 https://dev.to/thebabscraig/the-javascript-execution-context-call-stack-event-loop-1if1
 https://pjchender.dev/javascript/note-event-loop-microtask/
 
+https://www.educative.io/answers/what-is-an-event-loop-in-javascript
+
 Example,
 
 ```js
