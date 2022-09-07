@@ -33,6 +33,10 @@ sidebar_position: 1
 - 開賽
 - 寫在前面-免費前端學習資源看這篇就夠了！
 
+### HTML5/CSS
+
+- 排版 flex/grid
+
 ### Javascript 8
 
 - let, const var hoisting
@@ -43,10 +47,6 @@ sidebar_position: 1
 - Polyfills and transpilers
 - 實作 promise, promise.all, promise.race
 - 實作 array method
-
-### HTML5/CSS
-
-- 排版 flex/grid
 
 ### React 4
 

@@ -10,7 +10,7 @@ sidebar_position: 8
 
 定義：polyfill 能夠產生舊瀏覽器所支援的程式版本，讓舊瀏覽器可以使用新的功能。
 
-舉個例子，如果今天你的瀏覽器不支援`Number.isNan`的語法，那透過下面的 polyfill 我們可以讓該瀏覽器也能夠執行`isNan`的語法！
+舉個例子，如果今天你的瀏覽器不支援`Number.isNan`的語法，那透過下面的 polyfill 我們可以讓該瀏覽器也能夠執行`isNan`的語法!
 
 ```js
 if (!Number.isNan) {
@@ -18,6 +18,35 @@ if (!Number.isNan) {
     return n !== n;
   };
 }
+```
+
+當然在實際情況下，polyfill 不會長得這麼簡單，下面是實際的 Array.filter 的 polyfill，大家可以大概看一下～
+
+```js
+if (!Array.prototype.filter)
+  Array.prototype.filter = function (func, thisArg) {
+    "use strict";
+    if (!(typeof func === "Function" && this)) throw new TypeError();
+
+    var len = this.length >>> 0,
+      res = new Array(len), // 預先配置陣列
+      c = 0,
+      i = -1;
+    if (thisArg === undefined)
+      while (++i !== len)
+        // 確認物件的鍵值i是否有被設置
+        if (i in this)
+          if (func(t[i], i, t)) res[c++] = t[i];
+          else
+            while (++i !== len)
+              // 確認物件的鍵值i是否有被設置
+              if (i in this)
+                if (func.call(thisArg, t[i], i, t)) res[c++] = t[i];
+
+    res.length = c; // 將陣列縮至適當大小
+    return res;
+  };
+//https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Array/filter
 ```
 
 常見的 polyfill 套件包含以下這兩個：

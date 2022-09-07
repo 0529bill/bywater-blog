@@ -144,6 +144,8 @@ function printName() {
 
 想必看到這裡，讀者對 let,const and var 的差別應該有一定的了解了，下面我會列一些常見的面試問題，讀者就可以自己回答看看摟～
 
+### 常見的面試題
+
 面試題 1. let, const 和 var 的差別？
 面試題 2. hoisting 是什麼？
 面試題 3. ReferenceError: Cannot access x before initialization vs ReferenceError: x is not defined 的差別是什麼？
