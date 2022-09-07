@@ -1,5 +1,5 @@
 ---
-sidebar_position: 10
+sidebar_position: 11
 ---
 
 # [鐵人賽 2022-擊敗前端面試大作戰] Array's method

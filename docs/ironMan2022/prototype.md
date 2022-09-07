@@ -1,5 +1,5 @@
 ---
-sidebar_position: 6
+sidebar_position: 7
 ---
 
 # [鐵人賽 2022-擊敗前端面試大作戰] prototype and prototype chain

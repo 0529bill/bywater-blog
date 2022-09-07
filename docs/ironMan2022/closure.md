@@ -1,5 +1,5 @@
 ---
-sidebar_position: 4
+sidebar_position: 5
 ---
 
 # [鐵人賽 2022-擊敗前端面試大作戰] Closure 閉包
