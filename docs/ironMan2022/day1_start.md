@@ -59,7 +59,7 @@ sidebar_position: 1
 
 - Basic Types
 
-### 優化６
+### 優化 5
 
 - Core web vitals
 - CSR vs SSR
