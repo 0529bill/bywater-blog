@@ -10,11 +10,20 @@ virtualDOM。接著第三天會延續第一天所說的 react 優點，繼續討
 
 什麼是 react?
 
-why do we need react
+React 是一個免費的 Open Source JavaScript 函式庫，用來建立應用程式的使用者介面。
 
-1. speed => render , keys, batching
-2. reconciliation, DOM virtual DOM, fiber
-3. easy to learn/write/debug => hooks, JSX, resusable, one way data flow, community
-4. what's new? react 18
+為什麼要用 react?
+
+1.  使用者多，教學跟市場上的需求也高，是目前最多人使用的框架之一
+
+react 的特點：
+
+1. React is declarative(宣告式)，**它關注的是你要做什麼，而不是如何做**。使用者只需要使用 React 提供的 api 做 state, data 的更改，畫面就會隨之的重新變動，而其他與 DOM 相關的操作 React 會在底層幫忙處理好。這樣的優點讓 DOM 為人詬病的 效能問題，可以被解決。
+2. React 讓我們可以建立**能被重複使用的組件**，來增加程式碼可度性、重複性，減少 debug 時間。
+3. React 是**one way data flow**，代表單一方向的資料流動，減少 debug 時間跟錯誤。
+4. 大量的 npm package/社群
+
+今天大略地講了什麼是 react，
+為什麼要用 react 跟其特點，希望能夠推坑還在考慮要學習哪個框架的朋友，至於已經學習過 React 的朋友也沒關係，明天我們會稍微深入一點來講 React 到底做了什麼來改變 DOM 的效能問題，那我們就明天見摟！
 
 https://zhuanlan.zhihu.com/p/21108312
