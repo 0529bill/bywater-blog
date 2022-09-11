@@ -14,7 +14,7 @@ React 是一個免費的 Open Source JavaScript 函式庫，用來建立應用�
 
 為什麼要用 react?
 
-1.  使用者多，教學跟市場上的需求也高，是目前最多人使用的框架之一
+1.  使用者多，教學跟市場上的需求也高。根據 stackoverflow 網站的調查，40%的前端工程師使用 React 框架，是目前是目前最多人使用的框架。
 
 react 的特點：
 
@@ -22,6 +22,10 @@ react 的特點：
 2. React 讓我們可以建立**能被重複使用的組件**，來增加程式碼可度性、重複性，減少 debug 時間。
 3. React 是**one way data flow**，代表單一方向的資料流動，減少 debug 時間跟錯誤。
 4. 大量的 npm package/社群
+
+react 的缺點：
+
+1. 周遭套件都為第三方套件，這可以讓使用者選擇變得更自由，但也可能讓使用者需要不斷去學習新知，並且可能還會產生套件版本不被支援等問題。
 
 回顧一下，今天大略地講了什麼是 react，為什麼要用 react 跟其特點，希望能夠推坑還在考慮要學習哪個框架的朋友，至於已經學習過 React 的朋友也沒關係，明天我們會稍微深入一點來講 React 到底做了什麼來改變 DOM 的效能問題，那我們就明天見摟！
 
@@ -32,3 +36,4 @@ react 的特點：
 面試題 3. react 的特點?
 
 https://zhuanlan.zhihu.com/p/21108312
+https://thecodest.co/blog/pros-and-cons-of-react

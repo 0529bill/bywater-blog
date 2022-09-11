@@ -1,5 +1,5 @@
 ---
-sidebar_position: 14
+sidebar_position: 13
 ---
 
 # [鐵人賽 2022-擊敗前端面試大作戰] React Reconciliation
@@ -72,14 +72,6 @@ https://www.geeksforgeeks.org/reactjs-reconciliation/
 面試題 1. 什麼是 diffing 演算法?
 
 https://segmentfault.com/a/1190000039682751
-
+https://tw.alphacamp.co/blog/dom-and-virtual-dom
 https://cloud.tencent.com/developer/article/1882296  
 https://tech-blog.cymetrics.io/posts/mingyou/deep-dive-into-react-fiber/
-
-&nbsp;
-
-https://reactjs.org/docs/reconciliation.html
-https://github.com/acdlite/react-fiber-architecture
-https://hackernoon.com/virtual-dom-reconciliation-and-diffing-algorithm-explained-simply-ycn34gr
-https://www.codecademy.com/article/react-virtual-dom
-https://zh-hant.reactjs.org/docs/reconciliation.html

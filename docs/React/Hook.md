@@ -28,4 +28,9 @@ function App() {
 }
 ```
 
+結果：https://codesandbox.io/s/boring-lena-9d2fnj
+
+child 執行兩次因為在 dev 的 strict mode
+[dev strict mode](https://stackoverflow.com/questions/61523632/why-when-i-put-my-component-into-react-strictmode-its-constructor-called-twice)
+
 https://juejin.cn/post/6867338827418042375
