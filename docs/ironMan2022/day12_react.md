@@ -4,7 +4,7 @@ sidebar_position: 12
 
 # [鐵人賽 2022-擊敗前端面試大作戰] React
 
-嗨大家好，我是 bywater，今天來到前端面大作戰的第十二篇文章，也是 React 系列的開始，這個系列我預計會有四篇文章，內容會從第一篇的 react 優缺點介紹跟為什麼要用 react 到第二篇會比較深入了解 reconciliation，
+嗨大家好，我是 bywater，今天來到前端面大作戰的第十二篇文章，也是 React 系列的開始，這個系列我預計會有四篇文章，內容會從第一篇的 react 介紹跟為什麼要用 react 到第二篇會比較深入了解 reconciliation，
 virtualDOM。接著第三天會延續第一天所說的 react 優點，繼續討論 react 的特性跟 react hooks。最後一天，會把重點聚焦在 react 的未來，包含 react18 跟其未來的走向等。
 希望完整四篇文章，能夠讓讀者對 react 有更深入的了解或是啟發，那廢話不多說，第一篇正文開始！！
 
@@ -23,7 +23,12 @@ react 的特點：
 3. React 是**one way data flow**，代表單一方向的資料流動，減少 debug 時間跟錯誤。
 4. 大量的 npm package/社群
 
-今天大略地講了什麼是 react，
-為什麼要用 react 跟其特點，希望能夠推坑還在考慮要學習哪個框架的朋友，至於已經學習過 React 的朋友也沒關係，明天我們會稍微深入一點來講 React 到底做了什麼來改變 DOM 的效能問題，那我們就明天見摟！
+回顧一下，今天大略地講了什麼是 react，為什麼要用 react 跟其特點，希望能夠推坑還在考慮要學習哪個框架的朋友，至於已經學習過 React 的朋友也沒關係，明天我們會稍微深入一點來講 React 到底做了什麼來改變 DOM 的效能問題，那我們就明天見摟！
+
+### 常見的面試題
+
+面試題 1. 什麼是 react?
+面試題 2. 為什麼要用 react?
+面試題 3. react 的特點?
 
 https://zhuanlan.zhihu.com/p/21108312
