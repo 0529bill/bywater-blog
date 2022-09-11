@@ -160,6 +160,8 @@ Processing state updates
 
 ```
 
+[程式範例](https://codesandbox.io/s/brave-ramanujan-3p1l27?file=/src/App.js)
+
 Ex.
 
 ```js
