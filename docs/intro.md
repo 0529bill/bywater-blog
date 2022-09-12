@@ -5,6 +5,9 @@ slug: /
 
 # Hi!我是 bywater,這是我的 tech blog!
 
+我在這裡記錄下學習心得，跟一些有的沒有的東西！！
+如果筆記中有錯誤，非常歡迎跟我回饋跟討論～～
+
 ### Connect with me
 
 Github [Link](https://github.com/0529bill)

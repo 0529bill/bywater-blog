@@ -4,7 +4,7 @@ sidebar_position: 15
 
 # [鐵人賽 2022-擊敗前端面試大作戰] React 18
 
-這篇是 React 系列的最後一篇，下一篇就會開始講最近很紅的 Typescript！那這篇會以 React 18 為主題，大概講過我覺得蠻有趣的新功能，然後提供幾個我很推的學習資源，那我們就開始吧！
+這篇是 React 系列的最後一篇，下一篇就會開始講最近很紅的 Typescript！那這篇會以 React 18 為主題，大概講幾個我覺得蠻有趣的新功能，然後提供幾個我很推的學習資源，那我們就開始吧！
 
 **以下為我的理解，歡迎大家在下方跟我討論～**
 
@@ -20,11 +20,12 @@ Wiki 的翻譯是這樣的： **_In computer science, concurrency is the ability
 
 整理一下 concurrent feature 能做到什麼
 
-1. 更改 render 順序的能力，同時保證 UI 會是一樣的。
+- 更改 render 順序的能力，來讓使用者體驗更好，同時保證 UI 會是一樣的。
 
 而在 react 18 中所提出的功能裡，有些功能是要用新語法才能實踐的，有些則是不用改變目前的語法也會實踐，我們今天會針對不用改變語法也會直接產生作用的 Automatic batching 來做討論～
 
-Automatic batching
+### Automatic batching
+
 有在寫 react 的使用者應該知道 react 在 18 之前就會做 batching，來避免不必要的 rerender，react 會等到全部的 event handler 都跑完，然後才會跑 rerender。像是下面的案例，
 
 ```js
@@ -48,7 +49,7 @@ function Child() {
 }
 ```
 
-_without batching_
+_without batching 的狀況_
 
 ```js
 
@@ -64,7 +65,7 @@ Parent (onClick)
 
 ```
 
-_with batching_
+_with batching 的狀況_
 
 ```js
 // Entering React's browser click event handler ***
@@ -104,8 +105,8 @@ function App() {
 }
 ```
 
-在 react 18 之後，這些場合都會有 batching！！  
-但如果你需不需要 batching 呢？react 也有提供一個 api 可以使用，`flushSync`可以讓被包住的程式碼不在 batching 的範圍內，像是下面得舉例：
+在 react 18 之後，我們不必擔心上面的事情會發生了！因為現在在這些場合都會有 batching！！  
+但假如如果你需不需要 batching 呢？react 也有提供一個 api 可以使用，`flushSync`可以讓被包住的程式碼不在 batching 的範圍內，像是下面得舉例：
 
 ```js
 import { flushSync } from "react-dom"; // Note: react-dom, not react
@@ -122,9 +123,9 @@ function handleClick() {
 }
 ```
 
-所以回顧一下，今天我們討論了 React18、什麼是 concurrent?、concurrent feature 能做到什麼、Automatic batching。那如過對 React18 還想瞭解更多的讀者，推薦可以到[這個官方 repo](https://github.com/reactwg/react-18)去研究～
+所以回顧一下，今天我們討論了 React18、什麼是 concurrent?、concurrent feature 能做到什麼、Automatic batching。那如果對 React18 還想瞭解更多的讀者，推薦可以到[這個官方 repo](https://github.com/reactwg/react-18)去研究，裡面有很多關於 React18 功能的介紹跟討論～
 
-這篇是擊敗前端面試大作戰的第 15 篇文章，也代表鐵人賽已經過了一半了，各位鐵人或是讀者還有繼續撐住嗎？！在加油一點，再十五篇就可以成為真的鐵人/完成此系列了，那我們就明天見摟，大家掰掰！
+那這篇是擊敗前端面試大作戰的第 15 篇文章，也代表鐵人賽已經過了一半了，各位鐵人或是讀者還有繼續撐下去嗎？！在加油一點，再十五篇就可以成為真的鐵人/完成此系列了，那我們就明天見摟，大家掰掰！
 
 https://zh-hant.reactjs.org/docs/faq-state.html#what-is-the-difference-between-state-and-props
 https://github.com/reactwg/react-18/discussions/21

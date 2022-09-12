@@ -31,8 +31,8 @@ react 的缺點：
 
 ### 常見的面試題
 
-面試題 1. 什麼是 react?
-面試題 2. 為什麼要用 react?
+面試題 1. 什麼是 react?  
+面試題 2. 為什麼要用 react?  
 面試題 3. react 的特點?
 
 https://zhuanlan.zhihu.com/p/21108312

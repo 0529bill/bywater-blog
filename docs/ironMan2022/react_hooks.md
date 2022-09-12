@@ -10,10 +10,11 @@ sidebar_position: 14
 
 回答：hooks 有兩個規則，第一個是 hooks 只能在最高層被呼叫，代表 hooks 不能在 if condition, function 等情況下呼叫。第二個是 hooks 只能在 React functional component 或是 custom hooks 中呼叫，不能在 Js function 中使用。
 
-follow up: 為什麼 hooks 只能在最高層被呼叫？
+follow up: 為什麼 hooks 只能在最高層被呼叫？  
 回答：因為 React 依靠 hooks 呼叫的順序。
 
 https://reactjs.org/docs/hooks-rules.html#explanation
+
 &nbsp;
 
 2. useEffect 執行順序，console.log 結果是什麼？
@@ -124,6 +125,7 @@ function Example() {
 ```
 
 &nbsp;
+
 希望這些題目，能夠讓讀者對 hooks 有一些更深的理解，hooks 的應用有非常多，在短短一篇的篇幅實在是講不完，這裡筆者只是列出幾個我覺得蠻有趣的例子，其他部分就等讀者自己去研究摟～～～
 
 https://juejin.cn/post/7094651577117442056

@@ -4,9 +4,7 @@ sidebar_position: 13
 
 # [鐵人賽 2022-擊敗前端面試大作戰] React Reconciliation
 
-今天我們要來延續昨天的提到的 DOM 為人詬病的效能問題，來討論 React 是如何透過 reconciliation 來解決這個問題的！DOM 在操作時會對效能造成很大的影響，關於相關的 reflow 和 repaint 我在我的[筆記](https://0529bill.github.io/bywater-blog/Javascript/DOM)裡面有提過，有興趣的可以去看看！
-
-要知道 React 解決 DOM 的效能問題，首先我們要先來了解什麼是**Virtual DOM**!!
+今天我們要來延續昨天的提到的 DOM 為人詬病的效能問題，來討論 React 是如何透過 reconciliation 來解決這個問題的！我們都知道 DOM 在操作時會對效能造成很大的影響，但更精確的說法，應該是 DOM 操作所引發的 reflow 和 repaint 是非常耗效能的。 實際的介紹我在我的[筆記](https://0529bill.github.io/bywater-blog/Javascript/DOM)裡面有提過，有興趣的可以去看看！這篇我們會 focus 在 React 的部分。那首先，我們要先來了解什麼是**Virtual DOM**！
 
 ### 什麼是 Virtual DOM?
 
@@ -15,7 +13,15 @@ Virtual DOM 是 React 所建立的一個虛擬的 DOM tree，透過物件的格�
 1. 減少 DOM 的變動，避免不必要的 reflow 或 repaint。
 2. Virtual DOM 的變動比 DOM 的變動還要有效率，因為它不用做顯示在螢幕上的動作。
 
-Virtual DOM 顯示的過程，從 JSX 被 render，接著 Virtual DOM 會被更新，然後 React 會去比較更新前的 Virtual DOM 跟更新後的 Virtual DOM，接著 React 會去做一個叫做'diffing’的動作，也就是去找出確切 Virtual DOM 哪裡被更新了。在知道哪裡被更新後，React 只會去 DOM 更新需要被更新的地方。
+所以完整的 Virtual DOM 顯示的過程會是這樣的，
+
+1.  JSX 被 render
+2.  接著 Virtual DOM 會被更新
+3.  然後 React 會去比較更新前的 Virtual DOM 跟更新後的 Virtual DOM
+4.  再來 React 會去做一個叫做'diffing’的動作，也就是去找出確切 Virtual DOM 哪裡被更新了
+5.  在知道哪裡被更新後，React 只會去 DOM 更新需要被更新的地方。
+
+你看到這裡，你可能會開始好奇了，什麼是 diffing 演算法呢？
 
 ### 什麼是 diffing 演算法？
 
@@ -55,15 +61,15 @@ diffing 演算法用於比對兩顆 Virtual DOM 之間的差別，來找出變�
 
 ```
 
-更多的細節可以在這裡看到～ [react docs](https://zh-hant.reactjs.org/docs/reconciliation.html)
+這裡簡單講了兩個 diffing 比較的重點，更多的細節可以在這裡看到～ [react docs](https://zh-hant.reactjs.org/docs/reconciliation.html)
+
+在了解 Virtual-DOM 和 diffing 演算法，我們來總結一下，react 透過 diffing 演算法 更新 Virtual-DOM 和 DOM 來解決 DOM 的變動很耗能的問題。而這個過程，就叫做 reconciliation。到這裡，我們終於知道 React 為什麼可以如此有效率跟快速了！下一篇我們會開始講實際應用到的層面，hooks。
 
 ### 什麼是 React reconciliation
 
 :reconciliation 指的是 react 更新 Virtual-DOM 和 DOM 的過程，透過只更新有更動的部分，讓 React 可以比操作原生 DOM 更省效能跟快速。
 
 https://www.geeksforgeeks.org/reactjs-reconciliation/
-
-在了解 Virtual-DOM 和 diffing 演算法，我們來總結一下，就是 React 透過 reconciliation 來解決 DOM 的變動很耗能的問題，而 reconciliation 就是 react 透過 diffing 演算法 更新 Virtual-DOM 和 DOM 的過程。到這裡，我們終於知道 React 為什麼可以如此有效率跟快速了！下一篇我們會開始講實際應用到的層面，hooks。
 
 ### 常見面試題
 
