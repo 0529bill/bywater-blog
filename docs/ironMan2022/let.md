@@ -8,7 +8,7 @@ sidebar_position: 4
 
 ## let, const vs var 的差別
 
-簡易解釋：兩者的差別在`作用域`，var 因為會有重新復值的問題， 因此現在大家都只使用 let 或是 const。
+簡易回答：兩者的差別在`作用域`，var 因為會有重新復值的問題， 因此現在大家都只使用 let 或是 const。
 
 面試回答思路：這題主要是在問 `作用域` 的觀念，所以可以講這兩種作用域的不同，然後可以延伸到 `hoisting`跟`暫時性死區TDZ`。
 
@@ -26,7 +26,7 @@ sidebar_position: 4
 
 ### 作用域跟 var 造成的問題
 
-先來講解第一個差別，作用域跟 var 造成的問題。var 是 function scope,let,const 是 block scope。那你可能會問什麼是 scope? 在 function 括號裡面的是 function scope，如果只有括號，那它就是 block scope。
+先來講解第一個差別，作用域跟 var 造成的問題。var 是 function scope,let,const 是 block scope。那你可能會問什麼是 scope? 你可以想像 scope 就像是一個家的牆，家外面的人看不到裡面。在外面的變數無法取的裡面的變數的資訊。而在 function 括號裡面的我們稱為 function scope，如果只有括號，那它就會被稱作 block scope。
 
 ```js
 
@@ -83,6 +83,8 @@ console.log(abc); //Uncaught ReferenceError: abc is not defined
 &nbsp;
 
 ### var 可以重複宣告，let, const 不行。
+
+了解作用域之後，我們再來看第二點的差別，**可否重複宣告**。這點就簡單很多，var 在宣告後，還是可以再度宣告來覆蓋前一個宣告，而 let 跟 const 不行。可以重複宣告的缺點是，我們可能在無意見重複宣告而造成很難追蹤的 bug！我們來看下面的範例：
 
 ```js
 let a = 10;
@@ -146,8 +148,8 @@ function printName() {
 
 ### 常見的面試題
 
-面試題 1. let, const 和 var 的差別？
-面試題 2. hoisting 是什麼？
+面試題 1. let, const 和 var 的差別？  
+面試題 2. hoisting 是什麼？  
 面試題 3. ReferenceError: Cannot access x before initialization vs ReferenceError: x is not defined 的差別是什麼？
 
 &nbsp;
