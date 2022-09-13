@@ -35,7 +35,7 @@ sidebar_position: 1
 
 ### HTML5/CSS
 
-- 排版 flex/grid
+- HTML/CSS
 
 ### Javascript 8
 
