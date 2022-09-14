@@ -55,9 +55,12 @@ sidebar_position: 1
 - React Reconciliation
 - React 18
 
-### Typescript 3
+### Typescript 4
 
-- Basic Types
+- 什麼是 Typescript?
+- Generic
+- typeGuard
+- Type Inference
 
 ### 優化 5
 
@@ -78,8 +81,12 @@ sidebar_position: 1
 
 ### Behavior questions 1
 
+- Behavior questions
+
 ### Resume 1
+
+- 怎麼寫出滿分履歷
 
 ## 寫在最後
 
-完賽！
+- 完賽！

@@ -8,7 +8,7 @@ sidebar_position: 6
 
 ### 什麼是 Promise？
 
-簡單解釋：Promise 是 ES6 裡所提出的，透過其提供的內建方法包含 all, race, resolve, reject 等來處理非同步。
+回答：Promise 是 ES6 裡所提出的，透過其提供的內建方法包含 all, race, resolve, reject 等來處理非同步。
 
 ### 為什麽需要 Promise?
 
@@ -39,7 +39,7 @@ promise.then(alert); // 1
 
 ### Async/await
 
-:讓我們可以用更直觀的方式來處理 Promise
+原生方法讓我們可以用更直觀的方式來處理 Promise
 
 ```js
 //使用async await
@@ -59,9 +59,9 @@ f();
 
 Promise 常用的地方包含在用 fetch 拿資料的時候，會回傳一個 Promise 物件，這時候就可以用其提供的各種語法，讓我們在處理非同步時更方便！
 
-### Fetch
+### 什麼是 Fetch？
 
-:用 Fetch 來處理 call api 需求，會回傳一個 Promise 物件。
+一個原生方法用來處理 call api 需求，會回傳一個 Promise 物件。
 
 &nbsp;
 
@@ -80,7 +80,11 @@ let response = await fetch("/article/fetch/post/user", {
 以上就為 Promise 的簡略介紹，更詳細的介紹我推薦這一篇由卡斯柏所寫的文章，我覺得他很詳細地把 Promise 的功能用容易理解的方式寫出來～下面我們會繼續介紹一些很常見的 Promise 面試題！  
 [卡斯柏's Promise 介紹](https://www.casper.tw/development/2020/02/16/all-new-promise/)
 
+&nbsp;
+
 ---
+
+&nbsp;
 
 ### 常見的 Promise 面試題
 

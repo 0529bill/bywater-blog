@@ -10,7 +10,7 @@ sidebar_position: 5
 
 ### 什麼是閉包？
 
-簡易解釋：閉包 指的是一個 function 記得外在的變數並且可以取用其值，JS 中的所有 function 皆為 closure.
+回答：閉包 指的是一個 function 記得外在的變數並且可以取用其值，JS 中的所有 function 皆為 closure.
 
 面試回答思路：可以回答閉包的定義，然後帶到`語法環境`。
 
@@ -42,18 +42,16 @@ outerFunc();
 1. Environment Record: 一個 object 裡面儲存了所有的 local 變數
 2. 一個 reference 來記得外在的詞法環境.
 
-用途： debounce, throttle
-
 &nbsp;
 
 ![closure2](./Img/closure2.png)
 
-接下來我們來看個實例，在這裏有橘底框框就是一個詞法環境的 Environment Record，而裡面的值就是該詞法環境中有的變數。圖中我們可以看到有兩個 Environment Record，一個是 function say 的詞法環境，另外一個則是 script 的全局詞法環境。
+在上面的圖中，在這裏的橘底框框就是詞法環境的 Environment Record，而裡面的值就是該 Environment Record 中的變數。圖中我們可以看到有兩個 Environment Record，一個是 function say 的詞法環境，另外一個則是 script 的全局詞法環境。
 
-當下面我們呼叫了 say 這個 function，並且給他`John`的值之後，可以看到他執行時，會先去找**內部的詞法環境**，找到 name 的值之後，再去透過 reference 去連接到**外在的詞法環境**，最後找到 phrase 的值，而這也是為什麼最後輸出結果會是 Hello, John 的原因。所以我們現在知道
+當我們呼叫了 say 這個 function，並且給他`John`的值之後，可以看到他執行時，會先去找**內部的詞法環境**，找到 name 的值之後，再去透過 reference 去連接到**外在的詞法環境**，最後找到 phrase 的值，而這也是為什麼最後輸出結果會是 Hello, John 的原因。因為
 _當程式碼要去找值的時候，會先去**內部的詞法環境**找，如果找不到，再去**外在的詞法環境**找！_
 
-我們來回顧一下今天的幾個重點：
+來統整一下：
 
 1. 閉包 指的是一個 function 記得外在的變數並且可以取用其值，JS 中的所有 function 皆為 closure.
 2. 閉包怎麼記得外在變數的？透過`詞法環境`中的`Environment Record`和`reference`
