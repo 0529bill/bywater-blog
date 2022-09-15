@@ -139,6 +139,8 @@ A.b(); // 2
 
 第一個`a.a()`會報錯的原因，是因為用 new 生成的 a 屬性，在往上找 a 方法的過程中，會先找到`A.prototype`然後再去找`Object.prototype`，所以中間就不會碰到`Function.prototype.a`這個方法，也因此會報錯。至於第 2,3,4 都會依序找到其方法因此都可以印出相關的值～
 
+總結一下，今天討論了 prototype 和 prototype chain 和[[Prototype]]，
+
 面試題：
 
 1. 輸出結果是什麼？
