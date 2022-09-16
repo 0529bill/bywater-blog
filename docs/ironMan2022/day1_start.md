@@ -44,9 +44,9 @@ sidebar_position: 1
 ### Typescript
 
 - 什麼是 Typescript?
+- Utility Types
 - Generic
 - typeGuard
-- Type Inference
 
 ### 優化
 
@@ -58,7 +58,7 @@ sidebar_position: 1
 
 ### HTTP/Cookie/Web
 
-- trivia
+- trivial
 - What happens when you type a URL into your browser?
 
 ### Side project
