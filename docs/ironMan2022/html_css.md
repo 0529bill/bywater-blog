@@ -11,7 +11,7 @@ sidebar_position: 2
 **適合閱讀者**
 
 1. 對 HTML/CSS 已經有一定的瞭解。
-2. 或是最少已經有看過 w3school 對 [html] (https://www.w3schools.com/html/)和 [css] (https://www.w3schools.com/css/)的文章。
+2. 或是最少已經有看過 w3school 對 [html](https://www.w3schools.com/html/)和 [css](https://www.w3schools.com/css/)的文章。
 
 ## 開頭
 
