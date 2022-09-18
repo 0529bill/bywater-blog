@@ -25,7 +25,7 @@ sidebar_position: 1
 
 ### Javascript
 
-- 萬年 JS 考題，是該來理解 let,const, var and hoisting 了
+- let,const, var and hoisting
 - closure
 - promise callback
 - prototype, this

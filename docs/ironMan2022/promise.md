@@ -4,7 +4,7 @@ sidebar_position: 6
 
 # [鐵人賽 2022-擊敗前端面試大作戰] Promise
 
-來到擊敗前端面試大作戰正文的第三篇，今天要來討論前端工程師百寶袋中必備的一項工具---Promise.
+來到擊敗前端面試大作戰系列的第三篇，今天要來討論前端工程師百寶袋中必備的一項工具---Promise.
 
 ### 什麼是 Promise？
 
@@ -90,6 +90,8 @@ let response = await fetch("/article/fetch/post/user", {
 
 #### Promise.all vs Promise.race？
 
+回答：
+
 1. Promise.all 多個 Promise 行為同時執行，全部完成後統一回傳。
 2. Promise.race 多個 Promise 同時執行，但僅回傳第一個完成的。
 
@@ -97,7 +99,8 @@ let response = await fetch("/article/fetch/post/user", {
 
 ### 什麼是 Promise 中的 finally?
 
-finally: 用於處理額外的狀況，他有兩個重點。
+回答：  
+promise 中的 finally 用於處理額外的狀況，他有兩個重點。
 
 1. finally 函式沒有辦法傳遞 promise 的值，代表你在 finally 中拿不到 Promise 的值。
 2. finally 會忽略裡面的 return 然後執行下一階段。
@@ -115,6 +118,8 @@ new Promise((resolve, reject) => {
 ```
 
 &nbsp;
+
+Resource:
 
 https://www.casper.tw/development/2020/02/16/all-new-promise/
 https://javascript.info/promise-basics
