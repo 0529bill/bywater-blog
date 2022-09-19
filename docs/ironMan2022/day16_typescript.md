@@ -10,7 +10,7 @@ sidebar_position: 16
 
 ![typescript](./Img/typescirpt.png)
 
-TypeScript 是 JavaScript 的一個超集(superset)，主要提供了型別系統和對 ES6 的支援。換句話說，TypeScript 就像是打了類固醇的健身選手，能夠讓程式碼更強壯、更少 bug 的出現。但相同的，打藥之後一定會有犧牲，Typescript 也是有的，它需要一定的學習成本，並且也要寫更多的程式碼，但只要使用得宜，他能夠很有效的幫助團隊在長期下來減少很多找 bug 的時間跟精力。
+TypeScript 是 JavaScript 的一個超集(superset)，主要提供了型別系統和對 ES6 的支援。換句話說，TypeScript 就像是打了類固醇的健身選手，能夠讓程式碼更強壯、更少 bug 的出現。但相同的，打藥之後一定會有犧牲(像是你的 XX 會變小，我說的是錢包)，Typescript 也是有的，它需要一定的學習成本，並且也要寫更多的程式碼，但只要使用得宜，他能夠很有效的幫助團隊在長期下來減少很多找 bug 的時間跟精力。
 
 ## 為什麼需要 Typescript
 
