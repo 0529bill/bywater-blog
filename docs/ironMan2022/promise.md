@@ -12,7 +12,7 @@ sidebar_position: 6
 
 ### 為什麽需要 Promise?
 
-![callbackHell](./Img/callback_hell.jpeg)
+![https://ithelp.ithome.com.tw/upload/images/20220920/20148825EJIN9jX9jG.jpg](https://ithelp.ithome.com.tw/upload/images/20220920/20148825EJIN9jX9jG.jpg)
 
 Promise 解決了回乎地獄（callback hell)的問題，過去在處理非同步時會使用回乎函式來處理，但是當程式碼一多就會造成可讀性跟 debug 上的困難。透過 Promise 的語法，我們可以用簡潔的語法來處理這些問題。
 
@@ -63,8 +63,6 @@ Promise 常用的地方包含在用 fetch 拿資料的時候，會回傳一個 P
 
 一個原生方法用來處理 call api 需求，會回傳一個 Promise 物件。
 
-&nbsp;
-
 ```js
 let response = await fetch("/article/fetch/post/user", {
   method: "POST",
@@ -77,8 +75,9 @@ let response = await fetch("/article/fetch/post/user", {
 
 &nbsp;
 
-以上就為 Promise 的簡略介紹，更詳細的介紹我推薦這一篇由卡斯柏所寫的文章，我覺得他很詳細地把 Promise 的功能用容易理解的方式寫出來～下面我們會繼續介紹一些很常見的 Promise 面試題！  
-[卡斯柏's Promise 介紹](https://www.casper.tw/development/2020/02/16/all-new-promise/)
+以上就為 Promise 的簡略介紹，更詳細的介紹我推薦這一篇由卡斯柏所寫的文章，我覺得他很詳細地把 Promise 的功能用容易理解的方式寫出來～ [卡斯柏's Promise 介紹](https://www.casper.tw/development/2020/02/16/all-new-promise/)
+
+下面我們會繼續介紹一些很常見的 Promise 面試題！
 
 &nbsp;
 
@@ -118,6 +117,10 @@ new Promise((resolve, reject) => {
 ```
 
 &nbsp;
+
+那關於 Promise 的介紹就到這裡拉～但是除了上面提到的東西外，Promise 在面試中還有另外一種很常見的考法，就是實做 Promise.race, Promise.all 的語法，這部分我們就會留到明天再跟大家分享了，我們明天見！
+
+---
 
 Resource:
 

@@ -13,7 +13,11 @@ _Javascript 是一個基於原型的語言（prototype-based)，他可以用在 
 
 ## 為甚麼需要 prototype 和 prototype chain?
 
-透過繼承原型上的屬性和方法，來重複使用程式碼，避免寫出重複的邏輯。常見的例子像是 array 的方法，就是透過繼承所以讓我們在宣告 array 之後可以使用 map, forEach 等。
+透過繼承原型上的屬性和方法，來**重複使用程式碼，避免寫出重複的邏輯**。常見的例子像是 array 的方法，就是透過 prototype 所以讓我們在宣告 array 之後可以使用 map, forEach 等。
+
+```js
+array.prototype.forEach(...省略);
+```
 
 ## 什麼是 [[Prototype]]?
 
@@ -53,7 +57,10 @@ console.log(nick.__proto__ === Person.prototype); // true
 2. `Object.getPrototypeOf()`也可以用來用來取得物件的 [[Prototype]] 屬性的值
 
 ```js
+let obj = { name: "hi" };
 Object.getPrototypeOf(obj);
+
+// {constructor.....}會回傳obj的[[prototype]]
 ```
 
 3. `Function.prototype`  
@@ -110,38 +117,7 @@ console.log(person); // Person { name: "John" }
 console.log(person.name); // "john"
 ```
 
-上面都理解之後，我們就可以來試試這題拉～
-
-輸出結果是什麼？
-
-```js
-Function.prototype.a = () => {
-  console.log(1);
-};
-Object.prototype.b = () => {
-  console.log(2);
-};
-function A() {}
-const a = new A();
-a.a();
-a.b();
-A.a();
-```
-
-最後的答案有答對嗎～
-
-```js
-a.a(); // Uncaught TypeError: a.a is not a function
-a.b(); // 2
-A.a(); // 1
-A.b(); // 2
-```
-
-第一個`a.a()`會報錯的原因，是因為用 new 生成的 a 屬性，在往上找 a 方法的過程中，會先找到`A.prototype`然後再去找`Object.prototype`，所以中間就不會碰到`Function.prototype.a`這個方法，也因此會報錯。至於第 2,3,4 都會依序找到其方法因此都可以印出相關的值～
-
-總結一下，今天討論了 prototype 和 prototype chain 和[[Prototype]]，
-
-面試題：
+上面都理解之後，我們就可以來試試下面幾題面試題拉～
 
 1. 輸出結果是什麼？
 
@@ -158,6 +134,17 @@ a.a();
 a.b();
 A.a();
 ```
+
+答案：
+
+```js
+a.a(); // Uncaught TypeError: a.a is not a function
+a.b(); // 2
+A.a(); // 1
+A.b(); // 2
+```
+
+第一個`a.a()`會報錯的原因，是因為用 new 生成的 a 屬性，在往上找 a 方法的過程中，會先找到`A.prototype`然後再去找`Object.prototype`，所以中間就不會碰到`Function.prototype.a`這個方法，也因此會報錯。至於第 2,3,4 都會依序找到其方法因此都可以印出相關的值～
 
 2. 輸出結果是什麼？
 
@@ -182,6 +169,10 @@ obj.a();
 Foo.a();
 ```
 
+&nbsp;
+
+總結一下，今天討論了 prototype 、 prototype chain 、[[Prototype]]和一些常見的內建語法～希望這篇文章有讓你對 prototype 有更深的了解，那我們就明天見拉！
+
 ---
 
 Resources:
@@ -195,3 +186,4 @@ https://medium.com/@ajmeyghani/interview-questions-1145e3763bce
 https://developer.aliyun.com/article/940572
 
 https://www.zhihu.com/question/34183746
+https://www.ruanyifeng.com/blog/2011/06/designing_ideas_of_inheritance_mechanism_in_javascript.html
