@@ -4,6 +4,8 @@ sidebar_position: 7
 
 # [鐵人賽 2022-擊敗前端面試大作戰] prototype and prototype chain
 
+![https://ithelp.ithome.com.tw/upload/images/20220921/20148825KfFZVp1tN7.jpg](https://ithelp.ithome.com.tw/upload/images/20220921/20148825KfFZVp1tN7.jpg)
+
 _Javascript 是一個基於原型的語言（prototype-based)，他可以用在 OOP(Object-oriented programming)也可以用在 FP(Functional programming)_
 
 ## 什麼是 prototype chain?
@@ -17,14 +19,19 @@ _Javascript 是一個基於原型的語言（prototype-based)，他可以用在 
 
 ```js
 array.prototype.forEach(...省略);
+
+let arr1 = [1, 2, 3];
+let arr2 = [4, 5, 6];
+
+arr1.forEach(...省略);
+arr2.forEach(...省略);
+//會往上層的prototype找forEach的方法，所以兩個array都可以使用forEach的方法
+
+arr1.ffff(...省略);
+//在上層找不到方法的時候，就會報錯
 ```
 
-## 什麼是 [[Prototype]]?
-
-回答:  
-[[Prototype]] 是一個內建在所有的 function 和 object 裡的 object 內建屬性。
-
-下面我們先來看一些常見的內建 [[Prototype]] 使用方法/語法，
+下面我們先來看一些常見的使用方法/語法，
 
 1. `__proto＿＿`  
    :用於找上層的 [[Prototype]]，可以設定或是取用上層的 [[Prototype]]。
@@ -52,7 +59,7 @@ var nick = new Person("nick", 18);
 console.log(nick.__proto__ === Person.prototype); // true
 ```
 
-**不建議私自用`__proto__`去更改 [[Prototype]]，因為會影響到瀏覽器的效能**
+**注意：不建議私自用`__proto__`去更改不屬於自己的 [[Prototype]]，ex, 瀏覽器中的 array.prototype，因為會影響到瀏覽器的效能**
 
 2. `Object.getPrototypeOf()`也可以用來用來取得物件的 [[Prototype]] 屬性的值
 
@@ -66,9 +73,11 @@ Object.getPrototypeOf(obj);
 3. `Function.prototype`  
    每一個函數在創建之後都會擁有一個名為 prototype 的屬性，這個屬性指向函數的原型對象。
 
-![prototype](./Img/prototype.jpeg)
+   下面這個表很清楚的解釋了，function 的上層 prototype 和透過 new 所產生的 function 的上層 prototype 的差別，可以看到這兩者的上層 prototype 其實是有差別的喔！！
 
-**注意: [[Prototype]] 和 prototype 不一樣，JS 中全部的對象都有[[prototype]]，但是只有函式有 prototype。**
+![https://ithelp.ithome.com.tw/upload/images/20220921/20148825kLpkqfbDkR.jpg](https://ithelp.ithome.com.tw/upload/images/20220921/20148825kLpkqfbDkR.jpg)
+
+**注意: [[Prototype]] 和 prototype 不一樣，JS 中全部的對象都有[[prototype]]，但是只有函式有 Ｆ Function.prototype。**
 
 [這篇文章](https://www.zhihu.com/question/34183746)有很好的解釋！
 
@@ -144,7 +153,7 @@ A.a(); // 1
 A.b(); // 2
 ```
 
-第一個`a.a()`會報錯的原因，是因為用 new 生成的 a 屬性，在往上找 a 方法的過程中，會先找到`A.prototype`然後再去找`Object.prototype`，所以中間就不會碰到`Function.prototype.a`這個方法，也因此會報錯。至於第 2,3,4 都會依序找到其方法因此都可以印出相關的值～
+第一個`a.a()`會報錯的原因，是因為用 new 生成的 a 屬性，在往上找 a 方法的過程中，會先找到`A.prototype`然後再去找`Object.prototype`，就如同上面的那張 Function.prototype 圖表一樣，所以中間就不會碰到`Function.prototype.a`這個方法，也因此會報錯。至於第 2,3,4 都會依序找到其方法因此都可以印出相關的值～
 
 2. 輸出結果是什麼？
 

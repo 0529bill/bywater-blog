@@ -34,6 +34,12 @@ const a: number[] = [1, 2, 3];
 const a: Array<number> = [1, 2, 3];
 ```
 
+Object 標記的方法則是如下:
+
+```js
+const a: { name: string } = { name: "water" };
+```
+
 **以上兩種都代表，array 裡面只有 number，所以如果你的 array 長這樣[1, 'haha']是會報錯的，因為這個 array 裡面有 string 也有 number。**
 
 ## any
@@ -103,6 +109,106 @@ function a(input: number | string) {
   }
 }
 ```
+
+這時候如果想要重複使用 object type 呢？ Type 就派上用場了！
+
+## Type
+
+用 Type 可以解決重複使用的問題。  
+像是下面的 Name type 就都可以使用在 function a 跟 b 上。
+
+```js
+
+
+type Name = {
+    letter: string,
+    length: number
+}
+
+function a(name: Name) {
+   ...省略
+}
+
+function b(name: Name) {
+   ...省略
+}
+
+```
+
+另外一種解決重複使用的方法就是用 Interface! Interface 的語法其實剛 Type 非常類似：
+
+## Interface
+
+```js
+
+
+interface Name {
+    letter: string,
+    length: number
+}
+
+function a(name: Name) {
+   ...省略
+}
+
+function b(name: Name) {
+   ...省略
+}
+
+```
+
+但其實他們還是有差別的！Ｉ
+
+1.  Interface 可以進行擴充，而 type 只能用 Union 或是 Intersection 來重新產生一個新的 Type。
+
+```js
+interface Name {
+  letter: string;
+  length: number;
+}
+
+interface newName extends Name {
+  age: number;
+}
+```
+
+Type 透過 Union 或是 Intersection 產生一個新的 Type
+
+```js
+type Bear = Animal & {
+  honey: boolean,
+};
+```
+
+2. Interface 可以重複宣告來增加新的 type，Types 不能重複宣告
+
+```js
+interface Name {
+  letter: string;
+  length: number;
+}
+
+interface Name {
+  age: number;
+}
+```
+
+```js
+type Bear = {
+  age: 10,
+};
+
+type Bear = {
+  gender: male,
+};
+
+//報錯
+```
+
+綜合這兩個差別我們就可以得知：
+
+Interface: 彈性較大，適合用在功能是可以被重複再利用的地方，或是功能可能會被多方程式碼或第三方套件依賴的地方。  
+Type: 比較沒有彈性，適合用在不希望被人擴充、單純想代表一種獨立的靜態資料時。
 
 ## type inference
 
