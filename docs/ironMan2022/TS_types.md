@@ -2,7 +2,7 @@
 sidebar_position: 16
 ---
 
-# [鐵人賽 2022-擊敗前端面試大作戰] Typescript Basics?
+# [鐵人賽 2022-擊敗前端面試大作戰] Typescript Basics
 
 嗨大家好，我是 bywater，今天會來講到 Typescript 的基礎型別。
 
@@ -159,7 +159,7 @@ function b(name: Name) {
 
 但其實他們還是有差別的！Ｉ
 
-1.  Interface 可以進行擴充，而 type 只能用 Union 或是 Intersection 來重新產生一個新的 Type。
+1.  Interface 可以透過`extends`進行擴充，而 type 只能用 Union 或是 Intersection 來重新產生一個新的 Type。
 
 ```js
 interface Name {
@@ -211,6 +211,10 @@ Interface: 彈性較大，適合用在功能是可以被重複再利用的地方
 Type: 比較沒有彈性，適合用在不希望被人擴充、單純想代表一種獨立的靜態資料時。
 
 ## type inference
+
+最後我想來講一下 type inference(型別推論)，因為在大部分時間其實我們不用主動做型別註記！！Typescript 很聰明的知道我們宣告的型別是什麼，只有在部份時候當 Typescript 使用 any type 或是報錯的時候，才會需要我們去手動註記！
+
+以上就是最基礎的 Typescript type 的介紹！實際在面試中，比較常被問到的會是 Interface 跟 type 的差別，至於其他基本型別就比較少被問到了，但在實際寫 Typescript 的過程中還是要把這些 type 給記熟的！！！那我們就明天見摟！大家掰掰！
 
 ```
 
