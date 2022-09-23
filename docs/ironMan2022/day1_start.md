@@ -44,7 +44,7 @@ sidebar_position: 1
 ### Typescript
 
 - 什麼是 Typescript?
-- Utility Types
+- Typescript basic types
 - Generic
 - typeGuard
 

@@ -219,3 +219,7 @@ Type: 比較沒有彈性，適合用在不希望被人擴充、單純想代表�
 ```
 
 ```
+
+Resources:
+
+https://arc.dev/developer-blog/typescript-interview-questions/

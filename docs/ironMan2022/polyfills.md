@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
 
-# [鐵人賽 2022-擊敗前端面試大作戰] Polyfills and Transpiler?
+# [鐵人賽 2022-擊敗前端面試大作戰] Polyfills and Transpiler
 
 在寫程式時，往往會遇到想要用新的 feature 但是網頁不支援，或是常見的語法但一放到別的瀏覽器上時，就會出錯的情境。今天就是要來介紹兩個可以幫助我們解決這些問題的工具， polyfill 和 Transpiler。
 
@@ -53,6 +53,15 @@ if (!Array.prototype.filter)
 [Core-js](https://github.com/zloirock/core-js)  
 [Polyfill.io](https://polyfill.io/v3/)
 
+小常識：你知道為什麼這個產生能夠被支援的程式版本的功能叫做 polyfill 嗎？
+原因是國外有一款牆面裂縫的補著劑叫做 polyfilla，而國外很有命名天賦的工程師就用 ployfill 來表達用程式碼修補有"裂縫"的程式的行為稱為 polyfill!很有創意吧！
+
+&nbsp;
+
+![polyfill](Img/polyfill.jpg)
+
+&nbsp;
+
 ## 什麼是 Transpiler ？
 
 定義：Transpiler 可以解析程式碼，然後重新寫成舊瀏覽器可以理解的程式碼。
@@ -65,6 +74,11 @@ if (!Array.prototype.filter)
    用來查詢 JS 在瀏覽器中的支援度。
 2. https://caniuse.com/  
    用來查詢跟瀏覽器相關的 API 支援度。
+
+## 面試題
+
+1. 什麼是 Polyfill? 為什麼需要 Polyfill？
+2. 什麼是 Transpiler？Transpiler 舉例？
 
 ### Resources
 
