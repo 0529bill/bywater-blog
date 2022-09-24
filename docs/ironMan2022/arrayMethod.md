@@ -4,7 +4,8 @@ sidebar_position: 11
 
 # [鐵人賽 2022-擊敗前端面試大作戰] Array's method
 
-昨天我們講了 JS 的 promise 實作，今天我們要來繼續討論另一類很常在面試中遇到的實作題---Array 方法實作。Array 的內建方法實在是很多，真的要每個都實作的話，可能要講個三天也講不完，所以這裡我們就只挑最常見的幾個來實作，其他的方法就留給大家自己查摟～～而這一篇文章會是 JS 系列的最後一篇文，接下來我們就會進入前端框架 React 的系列了!請大家拭目以待！下面就進入我們的正文吧！
+昨天我們講了 JS 的 promise 實作，今天我們要來繼續討論另一類很常在面試中遇到的實作題---Array 方法實作。  
+Array 的內建方法實在是很多，真的要每個都實作的話，可能要講個三天也講不完，所以這裡我們就只挑最常見的幾個來實作，其他的方法就留給大家自己查摟～～而這一篇文章會是 JS 系列的最後一篇文，接下來我們就會進入前端框架 React 的系列了!請大家拭目以待！下面就進入我們的正文吧！
 
 ### Array.prototype.map
 
@@ -32,9 +33,11 @@ console.log(newName); // ['我的名字是： 小明', '我的名字是： 小�
 
 **原陣列不會被修改，並且會產生新的陣列！**
 
-知道他的用法之後，我們就來實作他看看吧！實作思路：
+知道他的用法之後，我們就來實作他看看吧！
 
-1. 新增一個方法到 Array 裡，讓所有 Array 都可以使用，所以用 prototype，如果對 prototype 還不熟悉的朋友可以去前幾天的 prototype 那篇文章來服用喔!
+實作思路：
+
+1. 新增一個方法到 Array 裡，讓所有 Array 都可以使用，所以用 prototype，如果對 prototype 還不熟悉的朋友可以去前幾天的 prototype 那篇文章喔!
 2. Array.map(callback)接收的值是一個 callback，然後裡面應該是要長以下這樣
 
 ```js
@@ -81,7 +84,7 @@ var filtered = [12, 5, 8, 130, 44].filter(isBigEnough);
 // filtered is [12, 130, 44]
 ```
 
-**原陣列不會被修改，並且會產生新的陣列！**
+**注意：原陣列不會被修改，並且會產生新的陣列！**
 
 Array.filter 的實作思路：
 
@@ -167,7 +170,7 @@ Array.prototype.myReduce = function (callback, initialValue) {
 };
 ```
 
-看到這裡大家應該對 map,filter, reduce 三個陣列方法有更深的了解了，另外，第一次如果看不懂的話是正常的，我自己也是有固定複習這些語法才能慢慢記住他們的實現方式，鐵人賽擊敗面試大作戰到第十天大家都辛苦了，JS 系列已經在此告一段落，下一章我們就會開始來看 React 框架摟，那我們明天見！！！！
+看到這裡大家應該對 map,filter, reduce 三個陣列方法有更深的了解了，另外，第一次如果看不懂的話是正常的，我自己也是有固定複習這些語法才能慢慢記住他們的實現方式，鐵人賽擊敗面試大作戰到第十天大家都辛苦了，JS 系列已經在此告一段落，下一章我們就會開始來看 React 框架摟，我們明天見！！！！
 
 https://blog.bitsrc.io/lets-implement-our-own-array-map-sort-methods-e89c9d5e2dc8  
 https://www.digitalocean.com/community/tutorials/how-to-implement-javascript-array-methods-from-scratch

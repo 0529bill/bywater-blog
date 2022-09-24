@@ -4,7 +4,7 @@ sidebar_position: 10
 
 # [鐵人賽 2022-擊敗前端面試大作戰] 實作 promise, promise.all, promise.race
 
-今天來到前端面試系列文章的第九篇，今天要來講的是 JS 實作題。coding 題目在面試中，是非常常見的。以我自己遇到的面試來說，coding 題一般會分成兩種，一種是考 JS 原生語法的實踐，像是 promise, array method 等等。另外一種，則是會考 easy~medium 難度的 leetcode 題。我自己會覺得，練習的順序應該是先熟悉 JS 常見的實作題之後，再去刷 leetcode 題，因為 JS 常見的就那幾類，而反觀 leetcode 題可以說是包山包海，自己刷得題目在面試上遇到的機率就相對的低很多了！那廢話不多說，我們先來看今天要實作的 Promise 相關題吧！
+今天來到前端面試系列文章的第十天，今天要來講的是 JS 實作題。coding 題目在面試中，是非常常見的。以我自己遇到的面試來說，coding 題一般會分成兩種，一種是考 JS 原生語法的實踐，像是 promise, array method 等等。另外一種，則是會考 easy~medium 難度的 leetcode 題。我會覺得，練習的順序應該是先熟悉 JS 常見的實作題之後，再去刷 leetcode 題，因為 JS 常見的就那幾類，而反觀 leetcode 題可以說是包山包海，自己刷得題目在面試上遇到的機率就相對的低很多了！那廢話不多說，我們先來看今天要實作的 Promise 相關題吧！
 
 ### Promise.all 實踐
 
@@ -24,7 +24,7 @@ Promise.all([p1, p2, p3]).then((values) => {
 });
 ```
 
-要注意的是，如果遇到其中有一個事件被拒絕，那整個 Promise.all 都會被拒絕，！來看下面的被拒絕的例子！
+要注意的是，如果遇到其中有一個事件被拒絕，那整個 Promise.all 都會被拒絕。來看下面的被拒絕的例子！
 
 ```js
 var p1 = Promise.reject(3);
@@ -60,6 +60,7 @@ function promiseAll(values) {
           results[index] = result; // 確保回傳的Promise中，value的順序是對的！
           completed += 1;
 
+          //如果成功的話就會回傳resolve
           if (completed == values.length) {
             resolve(results);
           }
@@ -102,6 +103,7 @@ Promise.race([p1, p2]).then((result) => {
 const PromiseRace = (values) => {
   return new Promise((resolve, reject) => {
     for (const item of values) {
+      //第一個完成的會直接回傳
       Promise.resolve(item).then(resolve).catch(reject);
     }
   });
