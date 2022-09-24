@@ -164,3 +164,9 @@ const Arr: Readonly<number[]> = [1, 2, 3];
 [Readonly 範例](https://codesandbox.io/s/loving-merkle-w75mjs)
 
 那以上就是Generics跟Utility types的介紹，希望對大家有幫助，明天會繼續講Typescript的narrowing，那就明天見啦！
+
+
+Resources:
+
+
+https://www.typescriptlang.org/docs/handbook/utility-types.html
