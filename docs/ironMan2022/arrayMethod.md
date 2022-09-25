@@ -4,8 +4,10 @@ sidebar_position: 11
 
 # [鐵人賽 2022-擊敗前端面試大作戰] Array's method
 
+![https://ithelp.ithome.com.tw/upload/images/20220925/20148825nqDMDMmKHd.jpg](https://ithelp.ithome.com.tw/upload/images/20220925/20148825nqDMDMmKHd.jpg)
+
 昨天我們講了 JS 的 promise 實作，今天我們要來繼續討論另一類很常在面試中遇到的實作題---Array 方法實作。  
-Array 的內建方法實在是很多，真的要每個都實作的話，可能要講個三天也講不完，所以這裡我們就只挑最常見的幾個來實作，其他的方法就留給大家自己查摟～～而這一篇文章會是 JS 系列的最後一篇文，接下來我們就會進入前端框架 React 的系列了!請大家拭目以待！下面就進入我們的正文吧！
+這裡我們就只挑最常見的幾個來實作，其他的方法就留給大家自己查摟～～而這一篇文章會是 JS 系列的最後一篇文，接下來我們就會進入前端框架 React 的系列了!請大家拭目以待！下面就進入我們的正文吧！
 
 ### Array.prototype.map
 
@@ -31,7 +33,7 @@ console.log(name); // ['小明', '小王', '小林']
 console.log(newName); // ['我的名字是： 小明', '我的名字是： 小王', '我的名字是： 小林']
 ```
 
-**原陣列不會被修改，並且會產生新的陣列！**
+**注意：原陣列不會被修改，並且會產生新的陣列！**
 
 知道他的用法之後，我們就來實作他看看吧！
 
@@ -65,6 +67,8 @@ Array.prototype.myMap = function (callback) {
 
 我們下一個要介紹的 Array 方法是 Array.filter，這個方法可以幫我們從原本的陣列中篩選出想要的值，然後會回傳一個新的陣列！
 
+### Array.prototype.filter
+
 #### 語法:
 
 ```js
@@ -92,8 +96,6 @@ Array.filter 的實作思路：
 2. 他會用 callback 裡面的判斷，如果判斷為 true 就會被 push 進回傳陣列中，相反的，判斷為 false 的話就會被省略。
 
 了解 Array.filter 的使用方法之後，下面就來實作吧！！
-
-### Array.prototype.filter
 
 ```js
 Array.prototype.myFilter = function (callback) {

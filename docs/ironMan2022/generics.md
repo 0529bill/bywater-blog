@@ -1,5 +1,5 @@
 ---
-sidebar_position: 17
+sidebar_position: 18
 ---
 
 # [鐵人賽 2022-擊敗前端面試大作戰] Typescript Generics and Utility types
@@ -136,37 +136,33 @@ todo.title = "Hi!";
 //報錯！！！
 ```
 
-這時候讀者可能會有疑惑了，那 readonly 跟 const 有差別嗎？能不能用const就好?
-答案是這兩者其實是有差的！ 首先，const是在run-time做檢查，readonly是在compile time做檢查。第二點是，const有一個問題是雖然不能再賦值，但是object的改變還是可以的。
+這時候讀者可能會有疑惑了，那 readonly 跟 const 有差別嗎？能不能用 const 就好?
+答案是這兩者其實是有差的！ 首先，const 是在 run-time 做檢查，readonly 是在 compile time 做檢查。第二點是，const 有一個問題是雖然不能再賦值，但是 object 的改變還是可以的。
 
 ```js
- const Arr = [1, 2, 3];
+const Arr = [1, 2, 3];
 
-  Arr[0] = 10; //OK
-  Arr.push(12); // OK
-  Arr.pop(); //Ok
-
+Arr[0] = 10; //OK
+Arr.push(12); // OK
+Arr.pop(); //Ok
 ```
 
-這樣我們還是有可能會不小心改到const的值。相反的，使用readonly，這樣改變也會報錯，就可以確保我們不會不小心改到readonly的值。
+這樣我們還是有可能會不小心改到 const 的值。相反的，使用 readonly，這樣改變也會報錯，就可以確保我們不會不小心改到 readonly 的值。
 
 ```js
-
 const Arr: Readonly<number[]> = [1, 2, 3];
 
-  Arr[0] = 10; //error
-  Arr.push(12); // error
-  Arr.pop(); //error
+Arr[0] = 10; //error
+Arr.push(12); // error
+Arr.pop(); //error
 
-  Arr = [4, 5, 6]; //error
-
+Arr = [4, 5, 6]; //error
 ```
+
 [Readonly 範例](https://codesandbox.io/s/loving-merkle-w75mjs)
 
-那以上就是Generics跟Utility types的介紹，希望對大家有幫助，明天會繼續講Typescript的narrowing，那就明天見啦！
-
+那以上就是 Generics 跟 Utility types 的介紹，希望對大家有幫助，明天會繼續講 Typescript 的 narrowing，那就明天見啦！
 
 Resources:
-
 
 https://www.typescriptlang.org/docs/handbook/utility-types.html
