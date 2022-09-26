@@ -50,10 +50,10 @@ sidebar_position: 1
 
 ### 優化
 
-- Core web vitals
+- client optimization
+- Core web vital, lighthouse
 - CSR vs SSR
-- lighthouse
-- 實作 throttle, debounce
+- React 優化, throttle, debounce
 - case studies
 
 ### HTTP/Cookie/Web

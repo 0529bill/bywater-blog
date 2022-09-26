@@ -69,9 +69,19 @@ function example(input: string | boolean) {
   }
 ```
 
+今天大概的介紹了 narrowing 和 type guard！TS 系列只有短短的四篇的篇幅，完全無法去討論全部 TS 的功能，其他就等待讀者去自己閱讀了！
+
 面試題：
 
 1. 什麼是 type guard?
 2. 什麼是 narrowing?
 3. 什麼是 Control flow analysis？
 4. 什麼是 type predicates?
+
+---
+
+```js
+有打錯或是問題，非常歡迎在下面留言討論！
+```
+
+> 也可以追蹤我的[medium](https://medium.com/@bywater529)，裡面不定期會寫一些最近在研究的東西或是想法！
