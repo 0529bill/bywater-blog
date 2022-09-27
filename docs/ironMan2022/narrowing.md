@@ -69,7 +69,7 @@ function example(input: string | boolean) {
   }
 ```
 
-今天大概的介紹了 narrowing 和 type guard！TS 系列只有短短的四篇的篇幅，完全無法去討論全部 TS 的功能，其他就等待讀者去自己閱讀了！
+今天大概的介紹了 narrowing 和 type guard！TS 系列只有短短的四篇的篇幅，完全無法去討論全部 TS 的功能，其他就等待讀者去自己閱讀摟！
 
 面試題：
 
