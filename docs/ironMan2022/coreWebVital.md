@@ -127,6 +127,18 @@ distance fraction 計算的是網頁元素不正常移動的距離。我們看�
 - img, video, iframe 可以的話設定 aspect ration, 不然就是用 width, height 屬性，或是用 calc()來設定大小
 - call api 時設定 spinner 來避免等待 api 跟收到 api 之後造成畫面移動
 
+## Lighthouse
+
+![lighthouse](./Img/lighthouse.png)
+
+light house 是 google 所研發的一個 in the lab 的優化測量工具。我們可以透過 Lighthouse 來觀測上面所介紹的 core web vital，除此之外，lighthouse 還會直接給與開發者效能優化的建議，因此 lighthouse 可以說是所以開發者必備的工具啊！
+
+**注意: lighthouse 是一個 in the lab 的測試工具，它只會計算第一次 render 的性能表現，如果要觀測首次 render 之後的性能表現，就要使用[in the field](https://web.dev/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data)測量工具了！**
+
+-only page-first -load
+
+Field metrics, such as those found in the Chrome UX Report or RUM
+
 今天介紹到了網頁優化很重要的三個重要指標，Largest Contentful Paint(LCP), First Input Delay(FID)和 Cumulative Layout Shift(CLS)，那我們明天會注重在照片 image 的優化，我們明天見摟！
 
 ---
@@ -138,3 +150,4 @@ https://www.hububble.co/blog/core-web-vitals
 https://web.dev/cls/
 https://web.dev/optimize-cls/
 https://5xruby.tw/posts/seo-core-web-vitals
+https://blog.logrocket.com/lighthouse-meets-github-actions-use-lighthouse-ci/
