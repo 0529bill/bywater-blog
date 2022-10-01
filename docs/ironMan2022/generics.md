@@ -4,11 +4,11 @@ sidebar_position: 18
 
 # [鐵人賽 2022-擊敗前端面試大作戰] Typescript Generics and Utility types
 
-昨天講到了 Typescript 基本的幾個 type，在普通的場景中使用那幾個 type 就夠用了。但在實際應用上時，會遇到我們想要重複使用 type 或是讓程式碼更有彈性的情境，這時候我們就可以用到 Typescript 所提供的兩個工具--Generics 和 Utility types 了！
+昨天講到了 Typescript 基本的幾個 type，在普通的場景中使用那幾個 type 就夠用了。但在實際應用上時，有時候懷是會遇到昨天講的 type 無法解決的情況，這時候我們就可以用到 Typescript 所提供的兩個工具--Generics 和 Utility types 了！
 
 ## Generics
 
-想像一下，如果今天我們要寫一個共用元件，共用元件的傳入值跟傳出值會是同個型別，他會寫得像下面這樣，
+想像一下，如果今天我們要寫一個共用元件，共用元件的傳入值跟傳出值會是同個型別，但是不限單一型別，代表他可能輸入值是 string 輸出值也是 string，或是輸入值是 number 輸出值也是 number，像是下面的例子，
 
 ```js
  function doSomething(input) {
@@ -25,7 +25,8 @@ sidebar_position: 18
 
 ```
 
-這時我們要如何把 doSomething 改寫成 Typescript 呢？如果把每個 type 都寫出來那太累人了，這時候就可以用到 generics ！
+這時我們要如何把 doSomething 改寫成 Typescript 呢？
+如果把每個 type 都寫出來那太麻煩了，這時候就可以用到 generics ！
 
 generics 的語法長這樣，`<T>`，然後在中間慣例上會是一個英文大寫字母，代表任意值。
 
@@ -47,12 +48,12 @@ generics 的語法長這樣，`<T>`，然後在中間慣例上會是一個英文
 
 ```js
 //使用方法
-doSomething < number > 10;
+doSomething<number>(10);
 
 //input 值要是 number，並且回傳值也要是 number，不然就會報錯。
 ```
 
-但是還有一個更簡便的寫法，記得我們昨天提到的 type inference 嗎？Typescript 其實很聰明的，不用寫別寫出 type 他也可以依據傳入的值來判別出 T 應該要是什麼，所以這裡其實可以直接寫`doSomething(10)`就可以了！
+但是doSomething還有一個更簡便的寫法，記得我們昨天提到的 type inference 嗎？Typescript 其實很聰明的，不用寫別寫出 type 他也可以依據傳入的值來判別出 T 應該要是什麼，所以這裡其實可以直接寫`doSomething(10)`就可以了！
 
 那我們再來看另外一個例子，假如現在我們有一個 array 的共用 function，function 裡面有一個簡單的 array.length，然後你會發現 length 就報錯了。。。
 
@@ -65,7 +66,7 @@ function arrayMethod<T>(array: T): T {
 
 [範例](https://codesandbox.io/s/festive-nobel-m5joc1)
 
-仔細想一下應該會發現，因為 T 可能是任何型別，所以 Typescript 當然無法確定所有帶入的型別都有 length 這個 method，所以就報錯了！這時候就要用到 Typescript 的另外一個 keyword 叫做`extends`，透過**`extends`我們可以給予 generics 更嚴格的規範**，來解決上面的問題，下面看例子。
+仔細想一下應該會發現，因為 T 可能是任何型別，所以 Typescript 當然無法確定所有帶入的型別都有 length 這個 method，所以就報錯了！這時候就要用到 Typescript 的另外一個 keyword 叫做`extends`，**透過`extends`我們可以給予 generics 更嚴格的規範**，來解決上面的問題，下面看例子。
 
 [範例 1](https://codesandbox.io/s/delicate-thunder-9j81rt)
 
@@ -117,7 +118,7 @@ const person: Record<PersonName, PersonInfo> = {
 };
 ```
 
-正個程式碼是不是就簡潔很多了！
+這樣程式碼是不是就簡潔很多了！
 
 ### Readonly<Type>
 
@@ -162,6 +163,8 @@ Arr = [4, 5, 6]; //error
 [Readonly 範例](https://codesandbox.io/s/loving-merkle-w75mjs)
 
 那以上就是 Generics 跟 Utility types 的介紹，希望對大家有幫助，明天會繼續講 Typescript 的 narrowing，那就明天見啦！
+
+---
 
 Resources:
 
