@@ -43,7 +43,7 @@ web vitals 全部可以分成五大類：
 
 #### 什麼是 LCP?
 
-The Largest Contentful Paint (LCP) metric reports the render time of the largest image or text block visible within the viewport, relative to when the page first started loading.這項指標建議的時間是低於 2.5 秒，也是上面的圖高於 75%的綠色區間。
+The Largest Contentful Paint (LCP)計算最大的 image 或是文字 block 的 render 時間。這項指標建議的時間是低於 2.5 秒，也是上面的圖高於 75%的綠色區間。
 
 哪些元素會被算在 LCP 得範圍內？
 
