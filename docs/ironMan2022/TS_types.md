@@ -34,13 +34,13 @@ const a: number[] = [1, 2, 3];
 const a: Array<number> = [1, 2, 3];
 ```
 
+**以上兩種都代表，array 裡面只有 number，所以如果你的 array 長這樣[1, 'haha']是會報錯的，因為這個 array 裡面有 string 也有 number。**
+
 Object 標記的方法則是如下:
 
 ```js
 const a: { name: string } = { name: "water" };
 ```
-
-**以上兩種都代表，array 裡面只有 number，所以如果你的 array 長這樣[1, 'haha']是會報錯的，因為這個 array 裡面有 string 也有 number。**
 
 ## any
 
@@ -71,20 +71,22 @@ function a(input: { first: string, second?: string }): string {
 
 細心的朋友就會發現，為什麼第二個傳入值 second 後面有一個問號，那其實代表的是**非必填的值**，代表 second 這個值不一定會傳入！
 
-**注意：如果沒有加上問號符號，又沒有傳入 function 的話，typescript 可是會報錯的喔！**
+**注意：如果傳入值的標記沒有加上問號符號，結果又沒有傳入該值到 function 的話，typescript 可是會報錯的喔！**
 
-另外一個要注意的點是，如果傳入的值是**非必填的值**，那在使用時必須先 check 該值不是 undefined，不然也會因為其值有可能是 undefined 而報錯喔！
+另外一個要注意的點是，如果傳入的值是**非必填的值**，那在 function 內必須 check 該值不是 undefined，不然也會因為其值有可能是 undefined 而報錯喔！這個步驟叫做 narrowing，關於這部分的介紹我們會在後面介紹～
 
 ```js
 function a(input: { second?: string }): string {
-  console.log(input.second);
+  console.log(input.second); //報錯，因為input可能為空
   return "correct";
 }
 a();
 //Object is possibly 'undefined'.
 ```
 
-看完上面的 type 之後，很多的地方都可以使用了，但現在情況當然不會那麼剪簡單，我們會遇到 type 有多個可能性的狀況。像是下面的例子，input 傳入值有可能是 number 或是 string，這時候**Union type (|)**就派上用場了！**Union type**代表值可能是多種可能。：
+看完上面的 type 之後，大部分的情境上都可以給予變數 type 了。但現實情況當然不會那麼簡單，我們會遇到 type 有多個可能性的狀況。像是下面的例子，input 傳入值有可能是 number 或是 string，這樣的情況下要怎麼標記 input 的 type 呢？
+
+這時候**Union type (|)**就派上用場了！**Union type**代表值可能是多種可能。：
 
 ```js
 function a(input: number | string) {
@@ -96,11 +98,11 @@ function a(input: number | string) {
 
 ```js
 function a(input: number | string) {
-  console.log(id.toUpperCase());
+  console.log(id.toUpperCase()); //報錯，因為number沒有toUpperCase的method!
 }
 ```
 
-這時候就要用到另外一個技巧叫做`narrowing`，就是用把 type 的範圍縮小的方式，來確定使用情境下的 type 是正確的，就不會報錯了！！像是下面用 if statement 確定傳入的會是 string 才會去跑 toUpperCase，這樣就不會有值是 number 的時候，去跑 toUpperCase 的情況了！typescript 也終於滿意，不會再報錯摟！！
+這時候就要用到剛剛提到的`narrowing`技巧。換句話說就是用把 type 的範圍縮小的方式，來確定使用情境下的 type 是正確的，就不會報錯了！！像是下面用 if statement 確定傳入的會是 string 才會去跑 toUpperCase，這樣就不會有值是 number 的時候，去跑 toUpperCase 的情況了！typescript 也終於滿意，不會再報錯摟！！
 
 ```js
 function a(input: number | string) {
@@ -110,7 +112,7 @@ function a(input: number | string) {
 }
 ```
 
-這時候如果想要重複使用 object type 呢？ Type 就派上用場了！
+解決完這些問題後，你以為就完成了嗎？假如我們現在想要復用 type 呢？好險 Typescript 也幫我們想好了，Typescript 提供了幾個復用 type 的方式，來讓 type 可以更有彈性，下面我會介紹幾個常見的，
 
 ## Type
 
@@ -216,9 +218,12 @@ Type: 比較沒有彈性，適合用在不希望被人擴充、單純想代表�
 
 以上就是最基礎的 Typescript type 的介紹！實際在面試中，比較常被問到的會是 Interface 跟 type 的差別，至於其他基本型別就比較少被問到了，但在實際寫 Typescript 的過程中還是要把這些 type 給記熟的！！！那我們就明天見摟！大家掰掰！
 
-```
+面試題：
 
-```
+1. 什麼是 type inference？
+2. TS 的 type 和 interface 的差別？
+
+---
 
 Resources:
 
