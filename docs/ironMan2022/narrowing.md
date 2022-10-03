@@ -14,7 +14,7 @@ function example(input: string | boolean) {
 }
 ```
 
-我們先來看看上面的程式碼，在`input.length`的地方會報錯，原因是因為我們的 input 有可能會是 string 或是 boolean，但是`.length`的方法只有 string 有，boolean 沒有這個方法，所以就報錯了！如果讀者有看過我們前一篇的 generics 文章的話，應該記得我們也有遇到類似的問題，那時候我們的解決方法是用`extends`來給予 generics 更嚴格的 type，而在這裡我們可以用一個叫做 type guard 的程式碼來解決這個問題。我們看下面的程式碼：
+我們先來看看上面的程式碼，在`input.length`的地方會報錯，原因是因為我們的 input 有可能會是 string 或是 boolean，但是`length`的方法只有 string 有，boolean 沒有這個方法，所以就報錯了！如果讀者有看過我們前一篇的 generics 文章的話，應該記得我們也有遇到類似的問題，那時候我們的解決方法是用`extends`來給予 generics 更嚴格的 type，而在這裡我們可以用一個叫做 type guard 的程式碼來解決這個問題。我們看下面的程式碼：
 
 ```js
 function example(input: string | boolean) {
@@ -24,13 +24,13 @@ function example(input: string | boolean) {
 }
 ```
 
-[範例](https://codesandbox.io/s/determined-leftpad-yhn1in)
+[這裡看範例](https://codesandbox.io/s/determined-leftpad-yhn1in)
 
-我們用一個 if 條件句讓 if 條件句裡面的程式碼只有 input 是 string 的情況下才會被執行到。這段`typeof input === "string"`條件我們就稱它為 type guard，而整個透過 type guard 把 type 限制在更嚴苛 type 的行為我們就稱它為 narrowing。了解這兩個的意思之後，我們來看幾個 TS 的 narrowing 方法。
+我們用一個 if 條件句讓 if 條件句裡面的程式碼只有 input 是 string 的情況下才會被執行到。這段`typeof input === "string"`條件我們就稱它為 type guard，而**透過方法，像是 type guard，來把 type 限制成更小範圍的 type 的行為我們就稱它為 narrowing**。了解這兩個的意思之後，我們來看幾個 TS 的 narrowing 方法。
 
 ## `typeof` type guard
 
-對 JS 熟悉的朋友應該對 typeof 不會陌生，typeof 可以分別出以下幾種 type:
+對 JS 熟悉的朋友應該對 typeof 不會陌生，typeof 可以分辯出以下幾種 type:
 
 ```js
 "string";
@@ -61,7 +61,7 @@ function example(input: string | boolean) {
 
 ## type predicates
 
-另外一種更為"暴力"的 narrowing 方式，叫做 type predicates，就是主動的去給變數 type，我們一樣舉上面的例子，在這裡我們不用到 type guard，我們只要斷言 input 是什麼 type，它就會是什麼 type。
+另外一種更為"暴力"的 narrowing 方式，叫做 type predicates，就是主動的去給變數 type，我們一樣舉上面的例子，在這裡我們不用到 type guard，我們只要用 keyword`as`來斷言 input 是什麼 type，它就會是什麼 type。
 
 ```js
 function example(input: string | boolean) {

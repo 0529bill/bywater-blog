@@ -46,15 +46,15 @@ sidebar_position: 1
 - 什麼是 Typescript?
 - Typescript basic types
 - Generic
-- typeGuard
+- Typescript narrowing and Type guard
 
 ### 優化
 
 - client optimization
 - Core web vital, lighthouse
+- Image optimization
 - CSR vs SSR
 - React 優化, throttle, debounce
-- case studies
 
 ### HTTP/Cookie/Web
 
