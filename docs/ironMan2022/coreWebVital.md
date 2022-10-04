@@ -4,14 +4,17 @@ sidebar_position: 21
 
 # [鐵人賽 2022-擊敗前端面試大作戰] Core Web Vital and lighthouse
 
+今天是優化系列的第一篇，今天我們會講**如何去衡量網頁的效能**，每個網頁使用者的使用裝置、網路環境的等等都不同，那我們要怎麼去衡量網頁效能的好壞呢？下面我們會介紹橫列網頁效能的方法：
+
 ## 什麼是 core web vital?
 
 ![CWV](./Img/CWV.png)
-web vital 是 Google 在 2021 年所推出的衡量網站的指標，並且這個指標會直接影響到 SEO 跟網站順序 ranking!!而 core web vital 是 web vital 中最重要的三個指標，分別是 Largest Contentful Paint(LCP), First Input Delay(FID)和 Cumulative Layout Shift(CLS)。全部的 web vital 變化可以在[這裡看](https://web.dev/metrics/)
+web vital 是 Google 在 2021 年所推出的衡量網站的指標，並且這個指標會直接影響到 SEO 跟網站順序 ranking!!而 core web vital 是 web vital 中最重要的三個指標，分別是 Largest Contentful Paint(LCP), First Input Delay(FID)和 Cumulative Layout Shift(CLS)。全部的 web vital 可以在[這裡看](https://web.dev/metrics/)
 
 ## 怎麼計算 core web vital?
 
-core web vital 的測試方式依測試環境可以分為兩種，第一種是在非 production 環境中所做的測試來模擬使用者的使用情形，官網稱之為 in the lab。In the lab 測試適合用在測試新功能是否造成整體網頁的效能降低，但缺點則是無法完整的展現實際使用者在操作網頁時所產生的情況。 第二種測試方式則是實際使用者在操作頁面時，所產生的測試數據，官網稱之為 in the field，這種測量的方式可以準確的偵測到使用者在操作時所產生的數據！那要使用用哪些工具來測量這兩種環境呢？
+core web vital 的測試方式依測試環境可以分為兩種，第一種是在非 production 環境中所做的測試來模擬使用者的使用情形，官網稱之為 in the lab。In the lab 測試適合用在**測試新功能是否造成整體網頁的效能降低**，但缺點則是**無法完整的展現實際使用者在操作網頁時所產生的情況**。  
+第二種測試方式則是實際使用者在操作頁面時，所產生的測試數據，官網稱之為 in the field，這種測量的方式可以**準確的偵測到使用者在操作時所產生的數據！**那要使用用哪些工具來測量這兩種環境呢？
 
 用來做 in the field 測量的工具：  
 ![fieldTool](./Img/fieldTool.png)
@@ -21,19 +24,19 @@ core web vital 的測試方式依測試環境可以分為兩種，第一種是�
 用來做 in the lab 測量的工具:
 ![labTool](./Img/labTool.png)
 
-\*\*注意: 因為是模擬使用者的使用情形，所以不會有 FID，google chrome 在這裡用 TBT(Total blocking time)來代替。\*\*
+**注意:因為是模擬使用者的使用情形，所以不會有 FID，google chrome 在這裡用 TBT(Total blocking time)來代替**
 
 ## metrics 種類
 
 web vitals 全部可以分成五大類：
 
 1. Perceived load speed: 網站可以多快的 load 然後 render 出畫面
-2. Load responsiveness: 網站可以多快的接收使用者操作的指令 ex, click a button
-3. Runtime responsiveness: 在網站跑完之後，網站多快可以對使用者操作進行反應
+2. Load responsiveness: 網站可以多快的跑完 JS 來接收使用者操作的指令
+3. Runtime responsiveness: 在網站跑完之後，網站多快可以對使用者操作進行反應 ex, click a button
 4. Visual stability:網頁是不是穩定的，會不會有奇怪的 bug 出現，或是一點進去頁面就有一堆廣告或是圖片來影響使用體驗
-5. Smoothness: 網頁的動畫或是換頁是不是在穩定的 frame rate，並且是穩定的
+5. Smoothness: 網頁的動畫或是換頁是不是在穩定的 frame rate
 
-了解什麼是 Core Web Vital 跟其種類之後，下面我們就來正式介紹他吧！
+了解什麼是 Core Web Vital 跟 web vital 的種類之後，下面我們就來正式介紹他吧！
 
 ## Core Web Vital
 
@@ -55,14 +58,14 @@ The Largest Contentful Paint (LCP)計算最大的 image 或是文字 block 的 r
 
 `background-image: url()`
 
-`
 **注意: LCP 只會只計算在 viewport 裡面看得到的部分，元素上如果有 overflow 等等元素或是超出 viewport 則不會加入計算**
 怎麼計算？
 
 下面我們來看點實際的案例：
 
 ![LCP_example]('./../Img/LCP_example.png)
-透過上方的表可以看到，一開始畫面中最大的 element 是左上角的標題然後到第二張圖就變成大標題，直到最後一張圖，畫面中最大的 element 變成圖檔。由此可知，最大的 element 是會變動的，隨著最大的 element 離開畫面或是更大的 element 出現，都有可能影響到最後的 LCP。
+
+綠色的框框就是當時最大的元素，LCP 計算的就是整個網頁視窗內最大的元素完成 render 的時間，透過上方的表可以看到，一開始畫面中最大的元素是左上角的標題然後到第二張圖就變成大標題，直到最後一張圖，畫面中最大的元素變成圖檔。由此可知，最大的元素是會變動的，隨著最大的元素離開畫面或是更大的元素出現，都有可能影響到最後的 LCP。
 
 #### LCP 優化方法
 
@@ -73,8 +76,9 @@ The Largest Contentful Paint (LCP)計算最大的 image 或是文字 block 的 r
 
 https://web.dev/lcp/
 
-假如我們畫面中最大的 element，並不是最重要的 element 那怎麼辦？我們要怎麼去測量畫面中最重要的畫面的 render Time?  
-這時候我們就可以用 Google 所提供的 Element Timing API 來創建一個自己的 custom metrics 了！我們可以用用 `elementtiming` attribute 加在你想測量的 element 上，再加上 PerformanceObserver JS 去監測，這樣我們就可以知道監測的 element 所花費的 render time 了！
+假如我們畫面中最大的元素，並不是最重要的元素那怎麼辦？我們要怎麼去測量畫面中最重要的畫面的 render Time?
+
+這時候我們就可以用 Google 所提供的 Element Timing API 來創建一個自己的 custom metrics 了！我們可以用用 `elementtiming` attribute 加在你想測量的元素上，再加上 PerformanceObserver JS 去監測，這樣我們就可以知道監測的元素所花費的 render time 了！
 https://web.dev/custom-metrics/#element-timing-api
 
 ### First Input Delay (FID)
@@ -84,7 +88,7 @@ https://web.dev/custom-metrics/#element-timing-api
 ### 什麼是 First Input Delay (FID)
 
 FID 計算使用者與網頁**首次互動**的**延遲時間**，例如點擊連結、按鈕或按壓鍵盤（捲動、放大網頁不在計算範圍內）等事件後後，瀏覽氣延遲多久時間才去處理該事件。
-FID measures the time from when a user first interacts with a page (i.e. when they click a link, tap on a button, or use a custom, JavaScript-powered control) to the time when the browser is actually able to begin processing event handlers in response to that interaction.
+
 這項指標建議的時間是低於 100ms，也是上面的圖的綠色區間。
 \*\*注意: 這項指標是計算使用者的互動延遲時間，所以只會在 in the field 測量中出現，in the lab 測量(ex, chrome lighthouse)中用 TBT(Total blocking time)來取代。\*\*
 
@@ -104,17 +108,18 @@ FID measures the time from when a user first interacts with a page (i.e. when th
 ### 什麼是 Cumulative Layout Shift (CLS)
 
 CLS 指標指的是網頁上的元素，包含字體、圖像、影片、表單或是按鈕等或是排版的不正常移動，Google chrome 所給予的一個分數，分數約低越好，一般來說建議 CLS 分數在 0.1 以下。
-確切計算的方式是 Google chrome 透過 [Layout Instability API](https://github.com/WICG/layout-instability)，來偵測畫面中的元素變動，並且根據變動的範圍跟大小測量出一個叫做*layout shift score*的數字，最後在頁面活動時所產生最高的*layout shift score*就會是 CLS 的值。下面我們來繼續去看*layout shift score*的公式，
+
+那你會不會好奇，chrome 是怎麼計算出 CLS 的值的呢？Chrome 的方式是透過 [Layout Instability API](https://github.com/WICG/layout-instability)，來偵測畫面中的元素變動，並且根據變動的範圍跟大小測量出一個叫做*layout shift score*的數字，最後在頁面活動時所產生最高的*layout shift score*就會是 CLS 的值。下面我們來繼續去看*layout shift score*的公式，
 
 **layout shift score = impact fraction \* distance fraction**
 
-第一個值 impact fraction，計算的是整個網頁元素不正常移動的整體範圍，包含不正常移動前到移動後的整體範圍。我們看下面的圖，從左手的畫面到不正常移動後的右手畫面的完整範圍，也就是下面用紅色點點圈起來的範圍，就是我們的 impact fraction 範圍，他大概站了整個畫面的 75 趴，所以在這裡我們的 impact fraction 就會是 0.75。
+第一個值 impact fraction，**計算的是整個網頁元素不正常移動的整體範圍**，包含不正常移動前到移動後的整體範圍。我們看下面的圖，從左手的畫面到不正常移動後的右手畫面的完整範圍，也就是下面用紅色點點圈起來的範圍，就是我們的 impact fraction 範圍，他大概站了整個畫面的 75 趴，所以在這裡我們的 impact fraction 就會是 0.75。
 
 ![impact_fraction](./Img/ImpactFraction.png)
 
 下一個我們來看第二個值，distance fraction
 
-distance fraction 計算的是網頁元素不正常移動的距離。我們看下面的照片，裡面的文字從左邊跳到右邊，他們跳動的距離就是紫色箭頭的長度，而這個長度也就是 distance fraction 的值。下圖的紫色長度大概佔了畫面的四分之一，所以我們可以估計這裡的 distance fraction 是 0.25
+distance fraction **計算的是網頁元素不正常移動的距離**。我們看下面的照片，裡面的文字從左邊跳到右邊，他們跳動的距離就是紫色箭頭的長度，而這個長度也就是 distance fraction 的值。下圖的紫色長度大概佔了畫面的四分之一，所以我們可以估計這裡的 distance fraction 是 0.25
 
 ![distance_fraction](./Img/distanceFraction.png)
 
@@ -135,11 +140,7 @@ light house 是 google 所研發的一個 in the lab 的優化測量工具。我
 
 **注意: lighthouse 是一個 in the lab 的測試工具，它只會計算第一次 render 的性能表現，如果要觀測首次 render 之後的性能表現，就要使用[in the field](https://web.dev/vitals-measurement-getting-started/#measuring-web-vitals-using-rum-data)測量工具了！**
 
--only page-first -load
-
-Field metrics, such as those found in the Chrome UX Report or RUM
-
-今天介紹到了網頁優化很重要的三個重要指標，Largest Contentful Paint(LCP), First Input Delay(FID)和 Cumulative Layout Shift(CLS)，那我們明天會注重在照片 image 的優化，我們明天見摟！
+總結一下今天講了哪些東西，今天我們先介紹了網頁優化很重要的三個重要指標，Largest Contentful Paint(LCP), First Input Delay(FID)和 Cumulative Layout Shift(CLS)跟優化他們的方法，然後我們再提到前端優化必須去學習的超好用工具----lighthouse!那我們明天會注重在照片 image 的優化，我們明天見摟！
 
 ---
 
