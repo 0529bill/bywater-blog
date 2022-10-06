@@ -4,7 +4,7 @@ sidebar_position: 22
 
 # [鐵人賽 2022-擊敗前端面試大作戰] Image ant text optimization
 
-今天要來針對昨天討論到 core web vital 的優化方法做更深入的討論！記得昨天討論到 Largest Contentful Paint(LCP)，然後我們有講到要解決 LCP 的一個方法就是假如畫面中有大型照片的話可以使用畫面優化來減少 LCP 的數字！今天就會針對照片的優化來討論！
+今天要來針對昨天討論到 core web vital 的優化方法做更深入的討論！記得昨天討論到 Largest Contentful Paint(LCP)，然後我們有講到要解決 LCP 的一個方法就是假如畫面中有大型照片的話可以使用畫面優化來減少 LCP 的數字！今天就會針對照片的優化來討論，會講到以下四種優化圖片的方式：
 
 1. preload
 2. 使用合適的圖片格式
