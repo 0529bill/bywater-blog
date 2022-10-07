@@ -48,12 +48,12 @@ generics 的語法長這樣，`<T>`，然後在中間慣例上會是一個英文
 
 ```js
 //使用方法
-doSomething<number>(10);
+doSomething < number > 10;
 
 //input 值要是 number，並且回傳值也要是 number，不然就會報錯。
 ```
 
-但是doSomething還有一個更簡便的寫法，記得我們昨天提到的 type inference 嗎？Typescript 其實很聰明的，不用寫別寫出 type 他也可以依據傳入的值來判別出 T 應該要是什麼，所以這裡其實可以直接寫`doSomething(10)`就可以了！
+但是 doSomething 還有一個更簡便的寫法，記得我們昨天提到的 type inference 嗎？Typescript 其實很聰明的，不用寫別寫出 type 他也可以依據傳入的值來判別出 T 應該要是什麼，所以這裡其實可以直接寫`doSomething(10)`就可以了！
 
 那我們再來看另外一個例子，假如現在我們有一個 array 的共用 function，function 裡面有一個簡單的 array.length，然後你會發現 length 就報錯了。。。
 
@@ -91,7 +91,7 @@ function arrayMethod<T>(array: T): T {
 
 ### Record<Keys, Type>
 
-第一個要介紹的是 Record<>，它用在組建重複性的 object 上。什麼是重複性的 object 呢？我們下面看例子：
+第一個要介紹的是 Record，它用在組建重複性的 object 上。什麼是重複性的 object 呢？我們下面看例子：
 
 ```js
 const person = {
@@ -120,7 +120,7 @@ const person: Record<PersonName, PersonInfo> = {
 
 這樣程式碼是不是就簡潔很多了！
 
-### Readonly<Type>
+### `Readonly<Type>`
 
 Readonly 可以把值設定為已讀，並且任何改變的操作都會報錯！
 
