@@ -76,6 +76,7 @@ const addTodo = useCallback(() => {
 debounce 可以用在 input searchBox 來避免每次使用者打字都更改 state，造成 re-render。
 
 ```js
+//debounce實作
 function debounce(func, delay) {
   let timeout = null;
   return function (...args) {
@@ -103,6 +104,7 @@ https://blog.bitsrc.io/what-is-debounce-in-javascript-a2b8e6157a5a
 throttle 可以用在畫面 scrolling 時透過 throttle 來避免一次大量 scroll event
 
 ```js
+//throttle實作
 //用function寫
 function throttle(func, delay) {
   let inThrottle;
@@ -125,6 +127,8 @@ function throttle(func, delay) {
 
 1. react 優化方法
 2. 三者的差別 useMemo, React.memo 和 useCallback？
+3. debounce 實作？
+4. throttle 實作？
 
 ---
 

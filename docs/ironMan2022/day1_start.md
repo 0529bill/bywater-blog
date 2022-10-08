@@ -58,7 +58,7 @@ sidebar_position: 1
 
 ### HTTP/Cookie/Web
 
-- trivial
+- trivia
 - What happens when you type a URL into your browser?
 
 ### Side project
