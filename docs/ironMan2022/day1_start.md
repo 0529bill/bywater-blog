@@ -58,7 +58,7 @@ sidebar_position: 1
 
 ### HTTP/Cookie/Web
 
-- trivia
+- 前端面試必考的四題 HTTP 題
 - What happens when you type a URL into your browser?
 
 ### Side project
