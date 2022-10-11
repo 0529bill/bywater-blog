@@ -2,7 +2,7 @@
 sidebar_position: 9
 ---
 
-# [JS] Modules & Script
+# [JS] Modules, Script and module export, export default
 
 ## 什麼是 module?
 
@@ -75,3 +75,30 @@ https://gcdeng.com/blog/script-tag-async-defer-attributes
 
 https://javascript.info/modules-intro  
 https://javascript.info/script-async-defer
+
+---
+
+## Module Exports vs. Export Default?
+
+require: Node.js 和 ES6 都支援的引入
+export / import : 只有 ES6 支援的導出引入
+module.exports / exports: 只有 Node.js 支援的導出
+
+### How can I use an ES6 import in Node.js?
+
+#### Node.js >= v13
+
+It's very simple in Node.js 13 and above. You need to either:
+
+Save the file with .mjs extension, or
+Add { "type": "module" } in the nearest package.json.
+You only need to do one of the above to be able to use ECMAScript modules.
+
+#### Node.js <= v12
+
+If you are using Node.js version 9.6 - 12, save the file with ES6 modules with .mjs extension and run it like:
+
+node --experimental-modules my-app.mjs
+
+https://segmentfault.com/a/1190000010426778
+https://stackoverflow.com/questions/45854169/how-can-i-use-an-es6-import-in-node-js
