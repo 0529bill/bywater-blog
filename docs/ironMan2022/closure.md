@@ -35,6 +35,8 @@ outerFunc();
 
 ### 什麼是 詞法環境(Lexical environment)？
 
+Lexical environment - where something sits physically in the code you write and what surrounds it. In JavaScript where you write something is important.
+
 定義：JS 中所有的 function,block, script 都有一個隱藏的 object 叫做 **詞法環境 Lexical Environment**,用來記得其可以取得的變數，function 有 function 的詞法環境, script 也有全局詞法環境。
 
 而詞法環境則是由兩個東西所組成：
@@ -56,6 +58,26 @@ _當程式碼要去找值的時候，會先去**內部的詞法環境**找，如
 1. 閉包 指的是一個 function 記得外在的變數並且可以取用其值，JS 中的所有 function 皆為 closure.
 2. 閉包怎麼記得外在變數的？透過`詞法環境`中的`Environment Record`和`reference`
 3. 找值時會先去**內部的詞法環境**找，如果找不到，再去**外在的詞法環境**找
+
+```js
+
+function b() {
+  console.log(myVar)
+}
+
+function a() {
+  let myVar = 2
+  b()
+}
+
+let myVar = 1
+a()
+
+
+ANS: 1
+因為Lexical environment如果在內層中找不到變數的話就會往外面一層去找，並且會從該函式的位址開始往外找，像是在這裡，因為function b的外層就是global，所以function b會找到global裡面的myVar變數。
+
+```
 
 &nbsp;
 

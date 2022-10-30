@@ -20,13 +20,15 @@ sidebar_position: 8
 
 ## The Execution Context
 
+定義: Execution context - a wrapper to help manage the code that is running. There are lots of lexical environments, areas of the code that you look at physically, but which one is currently running is managed via execution contexts.
+
 你有沒有想過一個問題，當你在瀏覽器上面跑 Js 得時候，背地裡發生了什麼事情？瀏覽器是怎麼執行我們傳送給他的 Js 程式碼的？或是像上面這段程式碼在執行時，到底瀏覽器是怎麼去跑他的？
 
 要回答這些問題，我們必須先講到`The Execution Context`。
 
 當一段程式碼被執行時，會先產生 全局的 `Execution Context`。然後 瀏覽器引擎 進入 `creation phase` ，有四件事情會發生：
 
-1. 建立 全局 物件，它在 瀏覽器 中被稱作`window`，在 Node 中被稱作`global`
+1. 建立 全局 物件，它在 瀏覽器 中被稱作`window`，在 Node 中被稱作`global`。在 JS 中，沒有在 scope 內的變數就會成為 global object，ex, var 在 function 之外，let/const 在 block scope 之外。
 2. 建立 `this` 並且指向 全局 物件
 3. 建立一個 memory heap 來儲存 變數 和 函式的 references
 4. 把 函式宣告式 (ex, function s()...)儲存在 memory heap 中， 然後把 memory heap 裡面的 變數 賦予`undefined`。這一點蠻重要的，因為也就是這樣所以我們才能在宣告 function 之前就使用 function
@@ -84,11 +86,38 @@ function printName() {
 
 ## The Call-stack
 
-: `The call-stack` 是一種資料結構（stack）用來追蹤和管理`function execution`。
+: `The call-stack` 用資料結構（stack）來追蹤和管理`function execution`。
 
 實際情況：`The call-stack` 依照 Last In First Out 的規矩，當 瀏覽器引擎 執行 到 函式 時，會把該 函式 push 到 `call-stack` 裡，並且在執行該 函式 時，會把該 函式 從`call-stack` 中 pop 掉，
 
 ![call stack](./Img/call_stack.jpeg)
+
+下面舉個例子，
+
+```js
+function b() {
+  console.log("b");
+}
+
+function a() {
+  b();
+  console.log("a");
+}
+
+a();
+```
+
+這樣的執行結果會是怎麼樣呢？
+
+答案是會先 console.log 出 b 然後才會 log a
+
+```js
+b;
+a;
+```
+
+整個程式碼執行的過程會是這樣的，首先會建立一個 global execution context，然後進入 creation phase 和 execution phase，在 execution phase 時，a 會被呼叫。然後 a function 會建立自己的 function execution context，在這裡面也同樣會經歷 creation phase 跟 execution phase，然後在 execution phase 時，b 會被呼叫。然後記得 JS 是 single threaded 的嗎？代表 JS 一次只能執行一件事情，所以我們會先去執行 function b，等到 b 執行完成後，才會回到 function a 裡面來 console.log。  
+回到 function b 後，這裡也如同剛剛的 function a 一樣，會建立 execution context，跟經歷 creation phase 和 execution phase。在 function b console.log 完成後，我們會回到 function a，接著 console.log a 來完成 function a 的執行，以上就是完整的執行情況。
 
 &nbsp;
 
