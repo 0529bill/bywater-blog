@@ -130,3 +130,4 @@ function Example() {
 
 https://juejin.cn/post/7094651577117442056
 https://segmentfault.com/a/1190000040758640
+https://beta.reactjs.org/learn/state-as-a-snapshot

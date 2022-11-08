@@ -184,6 +184,10 @@ Foo.a();
 
 ---
 
+Inheritance 定義： One object gets access to the properties and methods of another object.
+
+---
+
 Resources:
 
 https://javascript.info/prototype-inheritance

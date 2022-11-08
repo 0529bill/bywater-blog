@@ -26,6 +26,20 @@ const calculation = useMemo(() => expensiveCalculation(count), [count]);
 
 他長得跟 useEffect 很像，用法也很類似。只有在第二個值(在這裡是`count`)被改變時，整個 function 才會執行。
 
+什麼時候該使用`useMemo`?
+
+官網的解釋是這樣：
+
+In general, unless you’re creating or looping over thousands of objects, it’s probably not expensive. If you want to get more confidence, you can add a console log to measure the time spent in a piece of code:
+
+```js
+console.time("filter array");
+const visibleTodos = getFilteredTodos(todos, filter);
+console.timeEnd("filter array");
+```
+
+Perform the interaction you’re measuring (for example, typing into the input). You will then see logs like filter array: 0.15ms in your console. If the overall logged time adds up to a significant amount (say, 1ms or more), it might make sense to memoize that calculation. As an experiment, you can then wrap the calculation in useMemo to verify whether the total logged time has decreased for that interaction or not:
+
 #### `React.Memo`
 
 第二個 React.Memo 他是用在 memoized**React component**，如果傳進該 component 的 props 沒有改變，那該 component 就不會 re-render。  
