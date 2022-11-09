@@ -118,7 +118,39 @@ ex.Array.prototype.forEach = () => {
 };
 ```
 
+### 為什麼 arrow function 不能使用`new`?
+
+因為 arrow function 不是 constructor 也沒有[[Construct]]這個方法，所以沒有辦法使用 new，也沒有 this。
+
+Follow up
+
+### 實現一個功能讓構造函數只能 new 操作，否則報錯
+
+```js
+function Person(firstName, lastName) {
+  // this instanceof Person
+  // 如果返回值為 false，說明為普通調用
+  // 返回類型錯誤信息——當前構造函數需要使用 new 調用
+  if (!(this instanceof Person)) {
+    throw new TypeError(
+      'Function function Object() { [native code] } A cannot be invoked without "new"'
+    );
+  }
+  this.firstName = firstName;
+  this.lastName = lastName;
+  this.fullName = this.firstName + this.lastName;
+}
+// 當作普通函數調用
+// Uncaught TypeError: Function function Object() { [native code] } A cannot be invoked without "new"
+console.log(Person("戰場", "小包"));
+```
+
+https://juejin.cn/post/7057674127926100005
+
+---
+
 https://hsien-w-wei.medium.com/js-arrow-function-vs-function-ec601dead231
+https://stackoverflow.com/questions/37587834/why-can-i-not-use-new-with-an-arrow-function-in-javascript-es6
 
 ---
 
@@ -338,3 +370,4 @@ https://www.w3schools.com/jsref/met_document_addeventlistener.asp
 https://stackoverflow.com/questions/5963669/whats-the-difference-between-event-stoppropagation-and-event-preventdefault  
 https://medium.com/itsems-frontend/javascript-strict-mode-d0a3aa74458b  
 https://medium.com/@sunnyhuang.sc/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98-javascript-%E4%BD%95%E8%AC%82%E5%BC%B7%E5%88%B6%E8%BD%89%E5%9E%8B-coercion-%E4%BB%A5%E5%8F%8A%E5%A6%82%E4%BD%95%E4%BD%9C%E5%88%B0%E8%BD%89%E6%8F%9B%E5%9E%8B%E5%88%A5-d7e39e30083
+https://stackoverflow.com/questions/37587834/why-can-i-not-use-new-with-an-arrow-function-in-javascript-es6

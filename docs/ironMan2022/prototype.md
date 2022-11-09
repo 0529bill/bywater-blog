@@ -188,6 +188,12 @@ Inheritance 定義： One object gets access to the properties and methods of an
 
 ---
 
+推薦學習資源：
+
+[JavaScript 深入之从原型到原型链](https://github.com/mqyqingfeng/Blog/issues/2)
+
+---
+
 Resources:
 
 https://javascript.info/prototype-inheritance
