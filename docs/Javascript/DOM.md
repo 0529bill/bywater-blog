@@ -57,6 +57,20 @@ _CSSOM tree_
 
 ## DOM traversal
 
+## 額外補充
+
+### CSS 到底會不會阻塞頁面渲染?
+
+1. DOM 解析和 CSS 解析是兩個並行的進程，所以這也解釋了為什麼 CSS 加載不會阻塞 DOM 的解析(parsing)。
+2. 然而，由於 Render Tree 是依賴於 DOM Tree 和 CSSOM Tree 的，所以他必須等待到 CSSOM Tree 構建完成，也就是 CSS 資源加載完成(或者 CSS 資源加載失敗)後，才能開始渲染。因此，CSS 加載是會阻塞 Dom 的渲染 (rendering)的。
+3. 由於 js 可能會操作之前的 Dom 節點和 css 樣式，因此瀏覽器會維持 html 中 css 和 js 的順序。因此，樣式表會在後面的 js 執行前先加載執行完畢。所以 css 會阻塞後面 js 的執行。
+
+資料來源：
+
+https://cloud.tencent.com/developer/article/1819747
+
+---
+
 https://zellwk.com/blog/dom-traversals/  
 https://medium.com/technogise/dom-manipulation-in-browser-59b793bee559
 https://medium.someone.tw/web-%E7%80%8F%E8%A6%BD%E5%99%A8%E5%A6%82%E4%BD%95%E7%B9%AA%E8%A3%BD%E7%B6%B2%E9%A0%81-%E6%8E%A2%E8%A8%8E-dom-cssom-%E8%88%87%E6%B8%B2%E6%9F%93-%E7%BF%BB%E8%AD%AF-e9ba8c2be451

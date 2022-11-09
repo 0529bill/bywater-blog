@@ -27,6 +27,7 @@ sidebar_position: 26
 
 額外推薦學習資源
 
+[完整解析](https://juejin.cn/post/6844903832435032072)
 [完整講解](https://www.cythilya.tw/2018/11/26/what-happens-when-you-type-an-url-in-the-browser-and-press-enter/)
 
 ---

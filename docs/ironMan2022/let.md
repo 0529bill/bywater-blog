@@ -168,6 +168,22 @@ function printName() {
 面試題 1. let, const 和 var 的差別？  
 面試題 2. hoisting 是什麼？  
 面試題 3. ReferenceError: Cannot access x before initialization vs ReferenceError: x is not defined 的差別是什麼？
+面試題 4. 結果會是什麼？
+
+```js
+var a = 2;
+// 問題1
+(function () {
+  console.log(a);
+  const a = 1;
+})()(
+  // 問題2
+  function () {
+    console.log(a);
+    var a = 1;
+  }
+)();
+```
 
 &nbsp;
 

@@ -32,6 +32,18 @@ preload 是`<link>`裡面的一個 type，它可以告訴瀏覽器該資源需�
 
 **注意:過度使用 preload 反而會造成冷效果**
 
+### 額外補充： preload vs prefetch vs preconnect
+
+https://shubo.io/preload-prefetch-preconnect/#caching-%E8%A1%8C%E7%82%BA
+
+async：立即下载（异步，不会阻碍文档解析），异步执行（执行的时候会阻碍文档解析）
+defer：立即下载（异步，不会阻碍文档解析），延迟执行，在整个页面都解析完毕后执行
+preload：提前下载，需要的时候立即执行，无需再下载
+prefetch：提前下载，在未来的某个页面可能会执行，节省下载时间
+
+Resources:
+https://juejin.cn/post/7117142442926686215#heading-10
+
 ## 使用合適的圖片格式
 
 第二個圖片優化的方法就是去看我們使用的我們使用的圖片格式是什麼，然後看能不能透過更改格式的方式來達到圖片的優化。首先我們先來介紹常見的圖片格式，圖片格式可以分成兩類，一種是 Vector graphics(向量圖檔)，另外一種則是 Raster graphics(點陣圖檔)。Raster graphics 的優點是他的色彩顯示畫質很精細，但是他在放大時畫面會變模糊，常見的 Vector graphics 包含 GIF、JPEG、PNG，而 Vector graphics 的優點是它在放大縮小時都會保持一樣的銳利度，而且他的檔案大小非常小，缺點是其不適合用在色彩鮮豔的圖片。常見的 Vector graphics 有 SVG。
