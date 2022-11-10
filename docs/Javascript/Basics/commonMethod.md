@@ -80,6 +80,8 @@ https://ithelp.ithome.com.tw/articles/10222749
 
 ### flatten
 
+推薦閱讀文章：[flatten](https://segmentfault.com/a/1190000021366004)
+
 Input: [[[1, [1.1]], 2, 3], [4, 5]]  
 Output: [1, 1.1, 2, 3, 4, 5]
 
@@ -103,3 +105,110 @@ function flatten(arr) {
 ```
 
 https://stackoverflow.com/questions/10865025/merge-flatten-an-array-of-arrays
+
+### 寫一個 memoize function
+
+```js
+function memoizeMap(fn) {
+  const map = new Map();
+  return function (arg) {
+    if (map.has(arg)) {
+      return map.get(arg);
+    }
+    const cachedArg = arg;
+    const cachedResult = fn(arg);
+    map.set(cachedArg, cachedResult);
+    return cachedResult;
+  };
+}
+
+let testFn = (foo) => foo + 999;
+
+let memoizeMapFn = memoizeMap(testFn);
+
+memoizeMapFn(1); // map對arg 1生成緩存
+memoizeMapFn(1); // 取緩存結果
+memoizeMapFn(1); // 取緩存結果
+
+memoizeMapFn(2); // map對arg 2生成緩存
+memoizeMapFn(2); // 取緩存結果
+memoizeMapFn(1); // 取緩存結果
+```
+
+Resources: https://github.com/FrankKai/FrankKai.github.io/issues/252
+
+### 數組去重 unique value in a array
+
+推薦資源： https://segmentfault.com/a/1190000016418021
+
+```js
+//using ES6 Set
+
+function unique(arr) {
+  return Array.from(new Set(arr));
+}
+var arr = [
+  1,
+  1,
+  "true",
+  "true",
+  true,
+  true,
+  15,
+  15,
+  false,
+  false,
+  undefined,
+  undefined,
+  null,
+  null,
+  NaN,
+  NaN,
+  "NaN",
+  0,
+  0,
+  "a",
+  "a",
+  {},
+  {},
+];
+console.log(unique(arr));
+//[1, "true", true, 15, false, undefined, null, NaN, "NaN", 0, "a", {}, {}]
+```
+
+```js
+//using Reduce
+function unique(arr) {
+  return arr.reduce(
+    (prev, cur) => (prev.includes(cur) ? prev : [...prev, cur]),
+    []
+  );
+}
+var arr = [
+  1,
+  1,
+  "true",
+  "true",
+  true,
+  true,
+  15,
+  15,
+  false,
+  false,
+  undefined,
+  undefined,
+  null,
+  null,
+  NaN,
+  NaN,
+  "NaN",
+  0,
+  0,
+  "a",
+  "a",
+  {},
+  {},
+];
+console.log(unique(arr));
+// [1, "true", true, 15, false, undefined, null, NaN, "NaN", 0, "a", {…}, {…}]
+```
