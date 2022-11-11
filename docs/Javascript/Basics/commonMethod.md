@@ -212,3 +212,9 @@ var arr = [
 console.log(unique(arr));
 // [1, "true", true, 15, false, undefined, null, NaN, "NaN", 0, "a", {…}, {…}]
 ```
+
+### deepCopy
+
+推薦資源： https://juejin.cn/post/6844903929705136141
+
+### shallow copy
