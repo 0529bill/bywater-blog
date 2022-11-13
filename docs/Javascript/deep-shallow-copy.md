@@ -34,7 +34,6 @@ let a = {};
 let b = {}; // two independent objects
 
 alert(a == b); // false
-For;
 
 //objectData example3
 function test(objectData) {
@@ -77,7 +76,6 @@ console.log(a); // 5 => 沒被改變
 **Shallow copy:**
 
 ```js
-1;
 let user = {
   name: "John",
   age: 30,
@@ -97,7 +95,7 @@ alert(user.name); // still John in the original object**
 ```
 
 ```js
-2:Object.assign(dest, [src1, src2, src3...])
+Object.assign(dest, [src1, src2, src3...])
 let user = { name: "John" };
 
 let permissions1 = { canView: true };
@@ -110,7 +108,7 @@ Object.assign(user, permissions1, permissions2);
 ```
 
 ```js
-3. spread operator
+spread operator
 let user = { name: "John" };
 
 let permissions1 = { canView: true };

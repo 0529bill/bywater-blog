@@ -217,4 +217,23 @@ console.log(unique(arr));
 
 推薦資源： https://juejin.cn/post/6844903929705136141
 
-### shallow copy
+### 實現 instanceof
+
+```js
+function _instanceof(L, R) {
+  if (typeof L !== "object") return false;
+
+  L = L.__proto__;
+  R = R.prototype;
+
+  while (true) {
+    if (L === null) return false;
+
+    if (L === R) return true;
+
+    L = L.__proto__;
+  }
+}
+```
+
+資源：https://www.jianshu.com/p/e07a8a7c0ce7
