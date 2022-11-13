@@ -77,6 +77,28 @@ a()
 ANS: 1
 因為Lexical environment如果在內層中找不到變數的話就會往外面一層去找，並且會從該函式的位址開始往外找，像是在這裡，因為function b的外層就是global，所以function b會找到global裡面的myVar變數。
 
+
+
+Follow up:
+
+
+function b() {
+  console.log(myVar)
+}
+
+function a() {
+  let myVar = 2
+  b()
+}
+
+
+a()
+let myVar = 1
+
+
+ANS: myVar is not defined.
+因為Lexical environment如果在內層中找不到變數的話就會往外面一層去找，並且會從該函式的位址開始往外找，像是在這裡，因為function b的外層就是global，所以function b會往外找myVar，但是因為在往外找的時候myVar還沒有執行/宣告到，因此這裡會是myVar is not defined。
+
 ```
 
 &nbsp;
@@ -86,7 +108,7 @@ ANS: 1
 ### 面試題
 
 1. 什麼是閉包？
-2. 值會是什麼？
+2. 執行後，值會是什麼？
 
 Ex.
 

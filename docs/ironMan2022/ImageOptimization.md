@@ -117,6 +117,12 @@ function responsiveImage(image1x, image2x, image3x) {
 
 [progressive image](https://blog.logrocket.com/progressive-image-loading-react-tutorial/)
 
+### 額外補充：
+
+lazy loading image 時使用 placeholder image 的方法：
+
+[推薦閱讀文章](https://ithelp.ithome.com.tw/articles/10252723)
+
 &nbsp;
 
 面試題:

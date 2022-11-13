@@ -103,6 +103,40 @@ function printName() {
 
 &nbsp;
 
+### 補充：
+
+```js
+console.log(x);
+let x = 10; //Uncaught ReferenceError: x is not defined
+
+console.log(x);
+var x = 10; //undefined
+```
+
+會出現這樣的情況是因為，let 只有在 scope 裡面的時候才會有提升，當 let 沒有在 scope 裡面得時候，雖然也可以宣告但是並不會加入 global object 中，因此也沒有提升，所以才會出現 not defined 的情況。如下圖的案例：
+
+```js
+<script>
+  'use strict';
+  let fromLet = 'from let';
+  var fromVar = 'from var';
+</script>
+
+<script>
+  console.log(fromLet);        // 'from let'
+  console.log(fromVar);        // 'from var'
+  console.log(window.fromLet); // undefined
+  console.log(window.fromVar); // 'from var'
+</script>
+```
+
+相反的，var 會被加入 global object 中，所以就算不是在 function scope 中宣告，在外頭宣告也會先被賦予 undefined
+
+資源：  
+https://stackoverflow.com/questions/31219420/are-variables-declared-with-let-or-const-hoisted
+
+---
+
 References:
 
 https://shubo.io/javascript-hoisting/
