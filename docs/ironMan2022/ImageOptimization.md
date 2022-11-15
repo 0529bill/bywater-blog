@@ -111,6 +111,9 @@ function responsiveImage(image1x, image2x, image3x) {
 }
 ```
 
+- backgroundImage 的話可以使用 img-set  
+  https://developer.mozilla.org/en-US/docs/Web/CSS/image/image-set
+
 2. 圖片很大跑不出來，或是間隔很久才跑出來？
 
 除了上面幾個讓圖片縮小的方法，也可以透過 progressive image 來增加使用者的體驗。progressive image 的想法是先載入一個檔案比較小的同一個 image，然後再載入大的 image，這樣使用者就不會有很長的沒有圖片的空檔，下面推薦一個不錯的學習資源。

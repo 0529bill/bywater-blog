@@ -122,5 +122,14 @@ function handleClick() {
 
 那這篇是擊敗前端面試大作戰的第 15 篇文章，也代表鐵人賽已經過了一半了，那我們就明天見摟，大家掰掰！
 
+---
+
+額外補充：
+
+推薦學習資源：  
+https://juejin.cn/post/7078511027091931167
+
+---
+
 https://zh-hant.reactjs.org/docs/faq-state.html#what-is-the-difference-between-state-and-props
 https://github.com/reactwg/react-18/discussions/21
