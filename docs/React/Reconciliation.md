@@ -18,7 +18,16 @@ Virtual DOM 實際上就是用物件來描述 DOM 的結構並儲存在 memory �
 
 ### 什麼是 React fiber?
 
+TLDR: React fiber 是內部的引擎機制，達到幾件事
+
+1. 可以將頁面渲染的任務切分成 chunks
+2. 不同的任務可以有優先等級
+3. 任務可以暫停，之後再繼續執行（這也是將任務分優先級的目的，當做到一半出現更高優先級的任務的時候，可以先暫停目前工作的執行，等處理完高優先任務後再回來繼續執行）
+
+來解決頁面卡頓等破壞使用者體驗的事件。
+
 https://www.freecodecamp.org/news/lets-fall-in-love-with-react-fiber-90f2e1f68ded/
+https://medium.com/starbugs/react-%E9%96%8B%E7%99%BC%E8%80%85%E4%B8%80%E5%AE%9A%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%BA%95%E5%B1%A4%E6%9E%B6%E6%A7%8B-react-fiber-c3ccd3b047a1
 &nbsp;
 
 https://segmentfault.com/a/1190000039682751

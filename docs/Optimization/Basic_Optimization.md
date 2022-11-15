@@ -4,6 +4,10 @@ sidebar_position: 1
 
 # [Optimization] Basics
 
+優化好文：
+
+1.[騰訊優化分享](https://juejin.cn/post/6994383328182796295)
+
 ## 前端 CoreWebVital 優化
 
 https://gcdeng.com/blog/a-guidebook-to-optimize-web-vitals
