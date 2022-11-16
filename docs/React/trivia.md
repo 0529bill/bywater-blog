@@ -215,6 +215,8 @@ Redux 只存在個別 tab 裡，所以如果要在各個 tab 中使用共同的�
 https://stackoverflow.com/questions/49384212/how-can-we-use-the-same-state-across-multiple-tabs-pages
 &nbsp;
 
+---
+
 Resources:
 
 https://overreacted.io/react-as-a-ui-runtime/#batching

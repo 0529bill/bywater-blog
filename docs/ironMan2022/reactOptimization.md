@@ -108,6 +108,25 @@ function debounce(func, delay) {
 
 [範例看這裡](https://codesandbox.io/s/vibrant-https-h3c51i?file=/src/index.js:293-405)
 
+```js
+//useDebounce
+function useDebounce(value, delay) {
+  const [debouncedValue, setDebouncedValue] = useState(value);
+
+  useEffect(() => {
+    const timer = setTimeout(() => setDebouncedValue(value), delay || 500);
+
+    return () => {
+      clearTimeout(timer);
+    };
+  }, [value, delay]);
+
+  return debouncedValue;
+}
+```
+
+[範例](https://codesandbox.io/s/ecstatic-varahamihira-0u4q8f?file=/src/useDebounce.jsx)
+
 https://webdesign.tutsplus.com/tutorials/javascript-debounce-and-throttle--cms-36783
 https://blog.bitsrc.io/what-is-debounce-in-javascript-a2b8e6157a5a
 
