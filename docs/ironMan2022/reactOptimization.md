@@ -156,6 +156,25 @@ function throttle(func, delay) {
 }
 ```
 
+```js
+//useThrottle
+function useThrottle(cb, time = 500) {
+  const isEnableRef = useRef(true);
+
+  return (...args) => {
+    if (!isEnableRef.current) {
+      return;
+    }
+    isEnableRef.current = false;
+
+    cb(...args);
+    setTimeout(() => {
+      isEnableRef.current = true;
+    }, time);
+  };
+}
+```
+
 面試題：
 
 1. react 優化方法
