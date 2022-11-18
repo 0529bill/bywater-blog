@@ -89,11 +89,27 @@ https://tinypng.com/
 
 1. 如何作出響應式 image
 
+推薦閱讀文章：  
+https://elad.medium.com/a-complete-guide-for-responsive-images-b13db359c6c7
+
+- 怎麼選擇常見 image 總類( img tag vs background-image )
+
+TL;DR
+如果圖片是屬於網站內容的一部分，使用 image 加上 alt tag，舉例像是網站的名稱頭像。
+反之，用 background-image。
+
+推薦閱讀文章：  
+https://stackoverflow.com/questions/492809/when-to-use-img-vs-css-background-image/492834#492834
+
+### img 響應式
+
 - 用`srcset`來做響應式 image
 
 這裡推薦一個很棒的`srcset`[教學](https://shubo.io/responsive-image/#%E7%82%BA%E5%9C%96%E7%89%87%E6%8C%87%E5%AE%9A%E5%A4%A7%E5%B0%8Fsizes-%E5%B1%AC%E6%80%A7)
 
 - 手寫 function，在不同視窗大小載入不同大小的 image
+
+缺點：要 re-render 才能在轉化畫面大小的時候更換圖片
 
 ```js
 function responsiveImage(image1x, image2x, image3x) {
@@ -111,8 +127,12 @@ function responsiveImage(image1x, image2x, image3x) {
 }
 ```
 
-- backgroundImage 的話可以使用 img-set  
+- backgroundImage 的話可以使用 image-set  
+  缺點： 目前只能用 device pixel ratio 的方式來轉換圖片，目前不支援 width。代表會根據 device 的 device pixel ratio 來決定
   https://developer.mozilla.org/en-US/docs/Web/CSS/image/image-set
+
+device pixel ratio 介紹：  
+https://web.dev/codelab-density-descriptors/
 
 2. 圖片很大跑不出來，或是間隔很久才跑出來？
 
