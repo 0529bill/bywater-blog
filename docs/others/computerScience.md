@@ -37,8 +37,6 @@ https://www.hellotech.com/blog/whats-the-difference-between-32-bit-and-64-bit
 
 ### Unicode & ASCII
 
-####
-
 The American Standard Code for Information Interchange (ASCII) was an early standardized encoding system for text. Encoding is the process of converting characters in human languages into binary sequences that computers can process.
 
 cons: it only includes English and some common symbols(like /, !, and ?).

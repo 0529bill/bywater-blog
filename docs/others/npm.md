@@ -26,3 +26,15 @@ pnpm config set auto-install-peers true
 2. 加上 `auto-install-peers = true`
 
 ```
+
+#### Install libraries with NPM or import from CDN?
+
+TL;DL
+
+npm advantage:
+
+1. Webpack, babel, rollup ...allows you to bundle all your files (can tree shape/code split/ import specific file from a library...etc)
+2. npm, yarn lock file (solve dependency problem)
+
+Resources:  
+https://stackoverflow.com/questions/69791670/install-libraries-with-npm-or-import-from-cdn
