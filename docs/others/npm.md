@@ -38,3 +38,7 @@ npm advantage:
 
 Resources:  
 https://stackoverflow.com/questions/69791670/install-libraries-with-npm-or-import-from-cdn
+
+#### --legacy-peer-deps
+
+https://blog.poychang.net/npm-install-with-legacy-peer-deps/

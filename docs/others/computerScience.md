@@ -48,3 +48,38 @@ UTF-8 encoding is preferable to UTF-16 on the majority of websites, because it u
 UTF-16 is only more efficient than UTF-8 on some non-English websites. If a website uses a language with characters farther back in the Unicode library, UTF-8 will encode all characters as four bytes, whereas UTF-16 might encode many of the same characters as only two bytes. Still, if your pages are filled with ABCs and 123s, stick with UTF-8.
 
 https://blog.hubspot.com/website/what-is-utf-8
+
+#### REST 架構
+
+Representational State Transfer，簡稱 REST，它是一種網路架構風格，近幾年來 REST 的概念已經被實作在大型網路系統中，而在 Web Service 中使用 REST 概念被實作出來的 API 就簡稱為 RESTful API 。
+
+一個 REST request 是由以下幾個東西所組成：
+
+- `endpoint`
+- `HTTP method`
+- `Header`
+- `Body`
+
+##### 常見的`HTTP method`
+
+`POST 新增新資料 (create)`
+
+`PUT 更改資料 (update)`
+
+`PATCH 指更改小筆資料(ex, 一個欄位)`
+
+`PATCH`
+
+`DELETE`
+
+When working with data, a RESTful API uses HTTP methods to perform CRUD (Create, Read, Update and Delete) operations.
+
+##### HTTP status code
+
+`2xx success`
+
+`3xx redirection`
+
+`4xx client error`
+
+`5xx server error`

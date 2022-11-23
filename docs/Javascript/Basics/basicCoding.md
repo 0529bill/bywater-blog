@@ -63,7 +63,7 @@ for (let i = 0; i < 10; i++) {
 // let => block scope
 ```
 
-Problem:
+solution1:
 
 ```js
 for (var i = 1; i < 6; i++) {
@@ -75,6 +75,19 @@ for (var i = 1; i < 6; i++) {
     }, 1000);
   }
   timer();
+}
+```
+
+solution2:
+
+```js
+let a = (i) =>
+  setTimeout(function () {
+    console.log(i);
+  }, 100);
+
+for (var i = 1; i < 10; ++i) {
+  a(i);
 }
 ```
 
