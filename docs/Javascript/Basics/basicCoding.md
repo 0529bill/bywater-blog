@@ -91,4 +91,37 @@ for (var i = 1; i < 10; ++i) {
 }
 ```
 
+### Fibonacci Number
+
+```js
+function fib(n) {
+  if (n === 0) {
+    return 0;
+  } else if (n === 1) {
+    return 1;
+  }
+  return fib(n - 1) + fib(n - 2);
+}
+```
+
+```js
+//cached version
+let cached = new Map();
+
+function fib(n) {
+  if (n === 0) {
+    return 0;
+  } else if (n === 1) {
+    return 1;
+  }
+  if (cached.has(n)) {
+    return cached.get(n);
+  }
+  cached.set(n, fib(n - 1) + fib(n - 2));
+  return fib(n - 1) + fib(n - 2);
+}
+```
+
+Resources:
+
 https://discuss.codecademy.com/t/var-and-let-in-a-loop-working-differently/550468

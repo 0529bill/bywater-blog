@@ -90,7 +90,15 @@ CSS Module
 
 styled-components 則是 CSS-in-JS 其中一種
 
+Pros:
+
 - 可讀性佳，好維護因為相關的 css 會在同一個區塊
+- 解决了 class name 冲突
+- 简单的动态样式: 可以在 style 中加入 props
+- 自动提供前缀(如同 postCSS，來解決跨瀏覽器問題)
+
+cons:
+
 - 樣式是和 JS 文件打包在一起，所以會拖慢 JS 文件加載時間
 - 沒有單獨 CSS 文件所以無法緩存
 

@@ -204,6 +204,23 @@ function handleClick() {
 
 &nbsp;
 
+## React one-way data flow/ one-way data binding
+
+1. 資料是從 parent 透過 props 往下傳到 child
+1. child 有兩種選擇 1. 使用該 props 2. 繼續往下傳到子 component
+
+### one-way data flow 缺點
+
+1. props drilling
+
+解決方法：
+
+1. Redux => 把資料都放到一個統一的 store
+
+資源： https://tkssharma.gitbook.io/react-training/day-01/react-js-3-principles/one-way-data-flow
+
+&nbsp;
+
 ## Share data between tabs when using react & redux ?
 
 Redux 只存在個別 tab 裡，所以如果要在各個 tab 中使用共同的資料的話，有以下幾個方法：
