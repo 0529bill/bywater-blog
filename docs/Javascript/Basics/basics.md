@@ -104,7 +104,7 @@ arrow function pros:
 
 arrow function cons:
 
-1. Do not have this
+1. this 指向上一層
 2. Do not have arguments
 3. Can’t be called with new
 4. They also don’t have super.
@@ -309,7 +309,7 @@ https://stackoverflow.com/questions/1687296/what-is-dom-event-delegation
 1. 直接定義未宣告變數
 2. 使用 delete 刪除變數或函式
 3. 重複變數
-4. 跟其他很多狀況。。
+4. 跟其他很多狀況
 
 ---
 

@@ -75,6 +75,9 @@ console.log(a); // 5 => 沒被改變
 
 **Shallow copy:**
 
+- spread operator
+- Object.assign
+
 ```js
 let user = {
   name: "John",
@@ -127,6 +130,8 @@ console.log(newObject)
 **Deep copy**
 
 &nbsp;
+
+- JSON stringify + JSON parse
 
 ```js
 let user = { name: "John" };

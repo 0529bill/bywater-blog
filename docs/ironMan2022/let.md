@@ -193,8 +193,6 @@ https://stackoverflow.com/questions/31219420/are-variables-declared-with-let-or-
 
 ---
 
----
-
 以上就是 let,const 和 var 的三點差別和介紹了 hoisting！想必看到這裡，讀者應該對這個重要的 JS 觀念有一定的了解了，下面我會列一些常見的面試問題，讀者就可以自己回答看看摟～
 
 ### 常見的面試題
