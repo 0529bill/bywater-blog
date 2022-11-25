@@ -4,6 +4,10 @@ sidebar_position: 6
 
 # [others] CSS trivia
 
+### 至中
+
+https://juejin.cn/post/6844903982960214029
+
 ### Specificity 權重
 
 Every CSS selector has its place in the specificity hierarchy.
