@@ -103,7 +103,50 @@ alert("global ex. context");
 
 &nbsp;
 
+補充：常見 eventLoop 順序判斷
+
+注意：
+
+1. Promise 的 executor((resolve, reject) =>) 裡面的執行是同步
+2. then 會傳回一個 Promise 物件
+3. Promise 中的 executor 沒有 resolve 的話，結果會是 pending，且不會進行到下一個 then 中
+
+```js
+setTimeout(function () {
+  console.log("1");
+}, 0);
+async function async1() {
+  console.log("2");
+  const data = await async2();
+  console.log("3");
+  return data;
+}
+async function async2() {
+  return new Promise((resolve) => {
+    console.log("4");
+    resolve("async2的结果");
+  }).then((data) => {
+    console.log("5");
+    return data;
+  });
+}
+async1().then((data) => {
+  console.log("6");
+  console.log(data);
+});
+new Promise(function (resolve) {
+  console.log("7");
+  //   resolve()
+}).then(function () {
+  console.log("8");
+});
+```
+
+---
+
 # Resources
 
 https://dev.to/thebabscraig/the-javascript-execution-context-call-stack-event-loop-1if1
 https://pjchender.dev/javascript/note-event-loop-microtask/
+https://juejin.cn/post/7004638318843412493#heading-10
+https://juejin.cn/post/7016298598883131423

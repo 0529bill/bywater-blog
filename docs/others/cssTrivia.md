@@ -32,6 +32,14 @@ https://ithelp.ithome.com.tw/articles/10205322
 
 ### css layout
 
+#### position fixed
+
+- positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled
+
+#### position absolute
+
+- positioned relative to the nearest positioned ancestor
+
 #### 什麼是 box-sizing:border-box?
 
 設定 box-sizing:border-box 不用再去計算實際的 width/height，因為 width/height 會設定為 border-box，代表 padding 會往 border-box 裡面長，margin 則會往外長，width/height 不會因此而改變。
