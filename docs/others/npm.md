@@ -4,13 +4,28 @@ sidebar_position: 5
 
 # [others] npm, yarn & pnpm
 
-## 使用 pnpm
+### npm, yarn vs pnpm
+
+- npm, yarn => flat node_modules structure
+  缺點：
+
+  - flat dependencies algorithm 耗費下載時間(速度慢、花費過多 disk 空間)
+
+- pnpm => 把 package 儲存在 disk 中的 store，在專案中透過 link 來連結到 store 中的 package
+
+TL;DR;
+
+pnpm 比 npm, yarn 還快，並且花費更少的 disk 容量。
+
+## pnpm
+
+### 使用 pnpm
 
 1. homebrew 下載
 2. 刪除專案中的 node_modules
 3. pnpm install
 
-#### pnpm 下載報錯 "hint: If you want peer dependencies to be automatically installed, set the "auto-install-peers" setting to "true"."
+### pnpm 下載報錯 "hint: If you want peer dependencies to be automatically installed, set the "auto-install-peers" setting to "true"."
 
 解決方法：
 
@@ -27,7 +42,9 @@ pnpm config set auto-install-peers true
 
 ```
 
-#### Install libraries with NPM or import from CDN?
+## npm
+
+### Install libraries with NPM or import from CDN?
 
 TL;DL
 
@@ -39,6 +56,6 @@ npm advantage:
 Resources:  
 https://stackoverflow.com/questions/69791670/install-libraries-with-npm-or-import-from-cdn
 
-#### --legacy-peer-deps
+### --legacy-peer-deps
 
 https://blog.poychang.net/npm-install-with-legacy-peer-deps/
