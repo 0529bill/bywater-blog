@@ -30,9 +30,29 @@ JavaScript 共有八种数据类型，分别是 Undefined、Null、Boolean、Num
 
 (function, array(ordered collections), objects(keyed collections), Map(like object, but allows key to be any type), Set(collection of unique values))
 
-- [Map & Set](https://javascript.info/map-set)
 - [Object.keys, values, entries are common agreement to use for data structure, ex,Map,Set,Array,Object](https://javascript.info/keys-values-entries)
 - [Object's filter,map... method](https://javascript.info/symbol)
+- [Map & Set](https://javascript.info/map-set)
+- [weakMap](https://www.fooish.com/javascript/ES6/Map-and-WeakMap.html)
+
+##### Set
+
+- Set to Array
+
+```js
+
+
+1. const array = Array.from(mySet);
+2. const array = [...mySet];
+
+```
+
+https://stackoverflow.com/questions/20069828/how-to-convert-set-to-array
+
+##### weakMap vs Map 的差別
+
+1. WeakMap 只接受 object 當作 key
+2. references to key objects are held "weakly", which means that they do not prevent garbage collection in case there would be no other reference to the object. 代表如果沒有其他地方有引用 weakMap 中的 key 的話，key 和 WeakMap 就會被 GC。
 
 &nbsp;
 
@@ -47,8 +67,8 @@ JavaScript 共有八种数据类型，分别是 Undefined、Null、Boolean、Num
 Stack(Static memory allocation)
 
 - A stack is a data structure that JavaScript uses to store static data. Static data is data where <mark>the engine knows the size at compile time</mark>. In JavaScript, this includes primitive values (strings, numbers, booleans, undefined, and null) and references, which point to objects and functions.
-  - primitive values
-  - references, which point to objects and functions
+- primitive values
+- references, which point to objects and functions
 
 The stack contains a reference to the object in the heap: The memory of the heap is not ordered in any particular way, which is why we need to keep a reference to it in the stack.
 
@@ -109,7 +129,7 @@ arrow function cons:
 3. Can’t be called with new
 4. They also don’t have super.
 
-不該使用的時機：  
+不該使用的時機：
 需要使用 this 的時候，因為會指向上一層（很多時候是 window）
 
 ```js
@@ -366,6 +386,23 @@ alert(user.ref.name); // undefined, 因為ref不是一個function
 https://medium.com/codeburst/the-simple-rules-to-this-in-javascript-35d97f31bde3
 https://javascript.info/object-methods#this-in-methods
 &nbsp;
+
+---
+
+## Number js method caveat
+
+- when finding NaN value, use findIndex
+- don't use indexOf, because it's strict equal(===)
+
+### findIndex() / indexOf()
+
+- strict comparison(===)
+
+### include()
+
+- loose comparison(==)
+
+https://stackoverflow.com/questions/5294413/find-index-of-nan-in-a-javascript-array
 
 ---
 
