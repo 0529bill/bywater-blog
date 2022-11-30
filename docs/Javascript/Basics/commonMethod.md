@@ -105,6 +105,7 @@ function flatten(arr) {
 ```
 
 https://stackoverflow.com/questions/10865025/merge-flatten-an-array-of-arrays
+https://stackoverflow.com/questions/52752666/time-complexity-for-recrusive-deep-flatten
 
 ### 寫一個 memoize function
 

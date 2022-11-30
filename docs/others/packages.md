@@ -4,7 +4,11 @@ sidebar_position: 9
 
 # [others] packages
 
-## vite
+### dev dependencies vs dependencies
+
+A dependency is a library that a project needs to function effectively. DevDependencies are the packages a developer needs during development.
+
+### vite
 
 解決問題： 傳統的打包工具（webpack) can often take an unreasonably long wait (sometimes up to minutes!) to spin up a dev server, and even with Hot Module Replacement (HMR), file edits can take a couple of seconds to be reflected in the browser.
 
@@ -14,7 +18,7 @@ Source code：這裡指的是專案中的程式碼，因為會有大量變動並
 
 讓程式碼在 development 階段可以快速的 HMR 和 load。
 
-### Production
+#### Production
 
 在 production 階段，vite 還是使用 bundle 的方法（rollup)，原因是因為 ES module 會因為 nested imports 而造成多餘的 network request 等問題。
 

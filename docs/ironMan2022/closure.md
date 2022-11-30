@@ -161,7 +161,13 @@ log(); // What is logged?
 ```
 
 5. 接續上一題，怎麼 log 出正確的數字？
-6. 閉包的缺點？
+6. 閉包的優缺點？
+
+優點
+
+- 私有化變數（outer variable 不能 access inner variable）
+
+缺點
 
 - 佔用內存，增加內存使用量。
 - 使用不當會很容易造成內存洩露。

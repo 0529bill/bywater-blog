@@ -39,10 +39,20 @@ https://ithelp.ithome.com.tw/articles/10205322
 #### position fixed
 
 - positioned relative to the viewport, which means it always stays in the same place even if the page is scrolled
+- 直接參考 viewport 的空間
 
 #### position absolute
 
-- positioned relative to the nearest positioned ancestor
+- positioned relative to the nearest positioned ancestor.
+- 會從資料流中抽離，自己獨立一個層，並參考父層空間作為定位的空間
+- 元素的 position 設定 absolute 後，它就會往外層的元素找是否有 position:relative | absolute | fixed | inherit(若繼承的是前面 3 個之一)的元素，若是都沒有，就會以該網頁頁面(<body>)的左上角為定位點。
+
+https://ithelp.ithome.com.tw/articles/10253500  
+https://ithelp.ithome.com.tw/articles/10212202
+
+#### position relative
+
+- relative 所參考的空間是物件本身位於資料流內的原始位置
 
 #### 什麼是 box-sizing:border-box?
 
@@ -50,7 +60,14 @@ https://ithelp.ithome.com.tw/articles/10205322
 
 將 box-sizing 設定成 border-box 後， width / height 的作用範圍就是指到 border 這個 box 的範圍了，我們就稱為 border-box，從前面所寫的可以了解一個物件的範圍，是由四個層層包裹的矩形所構成，此時 width 所作用的 box 就是 border 這個範圍了，如下圖所示(圖片取自 Chrome DevTools)
 
-#### css position?
+#### css display
+
+##### display: inline-block vs block?
+
+1. display: inline-block allows to set a width and height on the element.
+2. with display: inline-block, width, height and padding are respected,
+
+https://www.digitalocean.com/community/tutorials/css-display-inline-vs-inline-block
 
 #### css flex?
 
@@ -162,9 +179,14 @@ cons
 
 https://juejin.cn/post/7030349710023983117
 
+### hamburger
+
+https://codepen.io/designcouch/pen/ExvwPY
+
 ---
 
 Resources:
 
+https://zh-tw.learnlayout.com/frameworks.html
 https://ithelp.ithome.com.tw/articles/10252827
 https://zh-tw.learnlayout.com/box-sizing.html

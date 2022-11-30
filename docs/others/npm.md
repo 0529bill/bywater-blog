@@ -6,7 +6,12 @@ sidebar_position: 5
 
 ### npm, yarn vs pnpm
 
-- npm, yarn => flat node_modules structure
+- npm 2.0 => nested node_modules structure
+  缺點：
+
+  - 檔案太大，nested too deep
+
+- npm 3.0, yarn => flat node_modules structure
   缺點：
 
   - flat dependencies algorithm 耗費下載時間(速度慢、花費過多 disk 空間)
