@@ -14,11 +14,15 @@ sidebar_position: 9
 
 **Pass by value**: 儲存在 stack
 
-- 基本型別（primitives): Undefined、Null、Boolean、Number、String、Object、Symbol、BigInt。
+- stack 中儲存靜態資料，靜態資料代表 js engine 在 compile time 就知道檔案大小（fixed amount of memory)
+
+* 基本型別（primitives): Undefined、Null、Boolean、Number、String、Object、Symbol、BigInt。
 
 **Pass by references**: 儲存資料所在的位址（reference）在 stack, reference 指向 Heap
 
 - 物件型別（Object): object, array, function
+
+![memory](./Img/memory.png)
 
 ```js
 //by reference
@@ -71,12 +75,25 @@ console.log(a); // 5 => 沒被改變
 
 ### Deep copy & Shallow copy
 
+定義：
+
+Shallow copy:  
+淺拷貝是創建一個新對象，這個對象有著原始對象屬性值的一份精確拷貝。如果屬性是基本類型，拷貝的就是基本類型的值，如果屬性是引用類型，拷貝的就是內存地址 ，所以如果其中一個對象改變了這個地址，就會影響到另一個對象。
+
+Deep copy:  
+深拷貝是將一個對象從內存中完整的拷貝一份出來,從堆內存中開闢一個新的區域存放新對象,且修改新對象不會影響原對象。
+
+閱讀文章:  
+https://juejin.cn/post/6844904197595332622
+
 &nbsp;
 
 **Shallow copy:**
 
-- spread operator
-- Object.assign
+1. spread operator
+2. Object.assign
+3. lodash's \_.clone
+4. Array.prototype.slice()
 
 ```js
 let user = {
@@ -129,6 +146,10 @@ console.log(newObject)
 
 **Deep copy**
 
+1. JSON.parse(JSON.stringify())
+2. lodash \_.cloneDeep
+3.
+
 &nbsp;
 
 - JSON stringify + JSON parse
@@ -176,3 +197,9 @@ const clone = structuredClone(original);
 手寫深拷貝  
 https://juejin.cn/post/6844903929705136141#heading-6
 https://www.programfarmer.com/articles/javaScript/javascript-shallow-copy-deep-copy
+
+---
+
+Resources:
+
+推薦閱讀資源： https://felixgerschau.com/javascript-memory-management/
