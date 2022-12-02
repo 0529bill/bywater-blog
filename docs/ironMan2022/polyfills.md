@@ -76,6 +76,17 @@ let x = 11;
 var x = 11;
 ```
 
+### Polyfill 和 Transpiler(ex, babel) 的差別
+
+Polyfill 是一段程式碼用來 把舊的 JS 來實踐需要被支援的 JS。  
+Transpiler 用其使用的語言，來把 codebase 編譯成舊版支援的程式碼。
+
+For example, it would be impossible to write a polyfill for converting ES5's let or const into var, or converting arrow functions into traditional functions. Operations like these need a transpiler to walk through the code and convert it.
+
+資源: https://stackoverflow.com/questions/73354844/why-does-babel-need-a-polyfill-and-not-transpile-some-methods-by-default
+
+---
+
 另外就是要確認程式碼倒底在瀏覽器中能不能被資源的工具，常見的有以下幾個：
 
 1. https://kangax.github.io/compat-table/es6/  
