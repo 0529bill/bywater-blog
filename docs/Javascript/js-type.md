@@ -56,4 +56,5 @@ if (Object.keys(object).length > 0) {
 }
 ```
 
+https://medium.com/itsems-frontend/javascript-typeof-and-instanceof-2c68da994f6a
 https://stackoverflow.com/questions/8511281/check-if-a-value-is-an-object-in-javascript

@@ -173,6 +173,12 @@ app.css
 
 &nbsp;
 
+### 7. DOCTYPE?
+
+回答：doctype 用來宣告文件 render 的方式，如果沒有在文件中加上 doctype 的話，瀏覽器就會用向下兼容的模式來執行該文件。
+
+推薦閱讀文章: https://ithelp.ithome.com.tw/articles/10236447
+
 這一篇的 HTML 和 CSS 就討論到這裡~~今天這篇只是小試牛刀，下一篇開始就會上主菜，開始討論 JS 摟，那我們就明天見吧！
 
 &nbsp;
