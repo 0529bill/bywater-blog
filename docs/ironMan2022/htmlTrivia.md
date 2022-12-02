@@ -77,7 +77,37 @@ session 用在儲存暫時的資訊，來應用在不同的 tab 之間，像是�
 
 非簡單的跨來源請求會在發送前先透過瀏覽器發送一個 preflight request（預檢請求)來向 server 確認拿取資料是正當的。
 
-關於如果不是同源的情況要怎麼解決呢? [這篇文章](https://blog.huli.tw/2021/02/19/cors-guide-2/)有很詳細的解說！
+關於如果不是同源的情況要怎麼解決呢?
+
+TL;DR
+
+1. 請後端設置 CORS header
+
+```js
+Access-Control-Allow-Origin: *
+
+or
+
+let origin = http://localhost:8081
+Access-Control-Allow-Origin: origin
+
+```
+
+有 cookie 的情況要以下設定
+
+```js
+Access-Control-Allow-Origin：xxx origin
+Access-Control-Allow-Credentials: true
+
+//指定哪些header可以資源
+ Access-Control-Expose-Headers
+
+//指定哪些http method可以被接受
+Access-Control-Allow-Methods
+
+```
+
+[這篇文章](https://blog.huli.tw/2021/02/19/cors-guide-2/)有很詳細的解說！
 
 推薦閱讀文章：
 https://shubo.io/what-is-cors/
