@@ -44,7 +44,7 @@ https://ithelp.ithome.com.tw/articles/10205322
 #### position absolute
 
 - positioned relative to the nearest positioned ancestor.
-- 會從資料流中抽離，自己獨立一個層，並參考父層空間作為定位的空間
+- 會從資料流中抽離，自己獨立一個層，並參考父層空間作為定位的空間，也代表後面的 UI 有可能會覆蓋到被設定 absolute 而脫離的資料流中的 UI
 - 元素的 position 設定 absolute 後，它就會往外層的元素找是否有 position:relative | absolute | fixed | inherit(若繼承的是前面 3 個之一)的元素，若是都沒有，就會以該網頁頁面(<body>)的左上角為定位點。
 
 https://ithelp.ithome.com.tw/articles/10253500  
@@ -52,7 +52,7 @@ https://ithelp.ithome.com.tw/articles/10212202
 
 #### position relative
 
-- relative 所參考的空間是物件本身位於資料流內的原始位置
+- relative 所參考的空間是物件本身位於資料流內的原始位置，但是可以設定距離母層的 right, left 等位置
 
 #### 什麼是 box-sizing:border-box?
 

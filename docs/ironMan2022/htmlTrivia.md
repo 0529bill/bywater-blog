@@ -66,7 +66,21 @@ session 用在儲存暫時的資訊，來應用在不同的 tab 之間，像是�
 2. 相同的網域 (domain)
 3. 相同的通訊埠 (port)
 
+非同源的情況分成兩種：
+
+1. 簡單請求
+
+- 只能是 HTTP GET, POST or HEAD 方法
+- 自訂的 request header 只能是 Accept、Accept-Language、Content-Language 或 Content-Type（值只能是 application/x-www-form-urlencoded、multipart/form-data 或 text/plain）
+
+2. 非簡單請求
+
+非簡單的跨來源請求會在發送前先透過瀏覽器發送一個 preflight request（預檢請求)來向 server 確認拿取資料是正當的。
+
 關於如果不是同源的情況要怎麼解決呢? [這篇文章](https://blog.huli.tw/2021/02/19/cors-guide-2/)有很詳細的解說！
+
+推薦閱讀文章：
+https://shubo.io/what-is-cors/
 
 總結一下，今天講了四個面試很常見的 HTTP 跟網頁相關面試題。除了上述幾篇推薦的文章之外，我還推薦[這篇文章](https://juejin.cn/post/6994012635909849124)裡面有更多相關常見的網頁考題～～
 

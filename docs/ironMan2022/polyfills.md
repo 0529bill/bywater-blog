@@ -8,7 +8,7 @@ sidebar_position: 9
 
 ## 什麼是 Polyfill ？
 
-定義：polyfill 能夠產生舊瀏覽器所支援的程式版本，讓舊瀏覽器可以使用新的功能。
+定義：polyfill 是一段能夠產生舊瀏覽器所支援的程式版本的程式碼，然後把該新增的程式碼丟進 codebase 裡，來讓舊瀏覽器可以使用新的功能。
 
 舉個例子，如果今天你的瀏覽器不支援`Number.isNan`的語法，那透過下面的 polyfill 我們可以讓該瀏覽器也能夠執行`isNan`的語法!
 
@@ -64,9 +64,17 @@ if (!Array.prototype.filter)
 
 ## 什麼是 Transpiler ？
 
-定義：Transpiler 可以解析程式碼，然後重新寫成舊瀏覽器可以理解的程式碼。
+定義：Transpiler 可以解析程式碼，然後把程式碼 transpile 成舊瀏覽器可以理解的程式碼。
 
 常見的 Transpiler 為 babel。
+
+```js
+// the new syntax `let` was added in ECMAScript 2015 aka ES6
+let x = 11;
+
+// `let` transpiles to the old syntax `var` if your transpiler target was ES5
+var x = 11;
+```
 
 另外就是要確認程式碼倒底在瀏覽器中能不能被資源的工具，常見的有以下幾個：
 
@@ -79,6 +87,11 @@ if (!Array.prototype.filter)
 
 1. 什麼是 Polyfill? 為什麼需要 Polyfill？
 2. 什麼是 Transpiler？Transpiler 舉例？
+
+## 補充：
+
+推薦閱讀文章  
+https://juejin.cn/post/6844904063402770439
 
 ### Resources
 

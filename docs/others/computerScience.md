@@ -107,6 +107,12 @@ github:
 
 https://github.com/http-party/node-http-proxy#options
 
+build your own proxy server:
+
+https://jakemccambley.medium.com/fixing-cors-errors-when-working-with-3rd-party-apis-a69dc5474804
+
+---
+
 Resources:  
 https://rapidapi.com/guides/cors-proxy-apis
 https://www.quora.com/What-is-front-end-proxy
