@@ -18,13 +18,32 @@ Virtual DOM 實際上就是用物件來描述 DOM 的結構並儲存在 memory �
 
 ### 什麼是 React fiber?
 
-TLDR: React fiber 是內部的引擎機制，達到幾件事
+TLDR: React fiber(a unit of work) 是內部的引擎機制，達到幾件事
 
-1. 可以將頁面渲染的任務切分成 chunks
+1. 可以將頁面渲染的任務切分成 chunks(time slicing)
 2. 不同的任務可以有優先等級
 3. 任務可以暫停，之後再繼續執行（這也是將任務分優先級的目的，當做到一半出現更高優先級的任務的時候，可以先暫停目前工作的執行，等處理完高優先任務後再回來繼續執行）
+4. fiber 是 asynchronous
 
 來解決頁面卡頓等破壞使用者體驗的事件。
+
+舊的 reconciler: stack
+
+1. stack 是 synchronous
+2. 只有在 stack 是 empty 時才能再次使用
+
+fiber always has a 1-1 relationship with 'something'（ex, fragment, functionalComponent, contextConsumer...）
+
+render phase:
+
+1. asynchronous
+2. tasks can be prioritized
+
+commit phase:
+
+1. synchronous and can't be interrupted
+
+---
 
 https://www.freecodecamp.org/news/lets-fall-in-love-with-react-fiber-90f2e1f68ded/
 https://medium.com/starbugs/react-%E9%96%8B%E7%99%BC%E8%80%85%E4%B8%80%E5%AE%9A%E8%A6%81%E7%9F%A5%E9%81%93%E7%9A%84%E5%BA%95%E5%B1%A4%E6%9E%B6%E6%A7%8B-react-fiber-c3ccd3b047a1
