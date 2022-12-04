@@ -229,6 +229,19 @@ var person1 = {
 person.fullName.call(person1, "Seattle", "USA"); //Bill Gates,Seattle,USA
 ```
 
+call 實作
+
+```js
+Function.prototype.myCall = function (target, ...args) {
+  target = target || window;
+  const symbolKey = Symbol();
+  target[symbolKey] = this;
+  const res = target[symbolKey](...args); // args本身是rest參數，搭配的變量是一個數組，數組解構後就可以一個個傳入函數中
+  delete target[symbolKey];
+  return res;
+};
+```
+
 &nbsp;
 
 **fun.apply(thisArg, [argsArray])**  
@@ -247,6 +260,19 @@ var person1 = {
   lastName: "Gates",
 };
 person.fullName.apply(person1, ["Oslo", "Norway"]); //'Bill Gates,Oslo,Norway'
+```
+
+apply 實作
+
+```js
+Function.prototype.myCall = function (target, args) {
+  target = target || window;
+  const symbolKey = Symbol();
+  target[symbolKey] = this;
+  const res = target[symbolKey](...args); // args本身是rest參數，搭配的變量是一個數組，數組解構後就可以一個個傳入函數中
+  delete target[symbolKey];
+  return res;
+};
 ```
 
 &nbsp;
@@ -411,6 +437,9 @@ https://stackoverflow.com/questions/5294413/find-index-of-nan-in-a-javascript-ar
 ---
 
 # Resources
+
+call, apply, bind 建議文章  
+https://juejin.cn/post/7128233572380442660
 
 [resources](https://felixgerschau.com/javascript-memory-management/)  
 [resources-ch](https://juejin.cn/post/6940945178899251230)  
