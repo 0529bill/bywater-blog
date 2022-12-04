@@ -45,7 +45,7 @@ https://ithelp.ithome.com.tw/articles/10205322
 
 - positioned relative to the nearest positioned ancestor.
 - 會從資料流中抽離，自己獨立一個層，並參考父層空間作為定位的空間，也代表後面的 UI 有可能會覆蓋到被設定 absolute 而脫離的資料流中的 UI
-- 元素的 position 設定 absolute 後，它就會往外層的元素找是否有 position:relative | absolute | fixed | inherit(若繼承的是前面 3 個之一)的元素，若是都沒有，就會以該網頁頁面(<body>)的左上角為定位點。
+- 元素的 position 設定 absolute 後，它就會往外層的元素找是否有 position:relative | absolute | fixed | inherit(若繼承的是前面 3 個之一)的元素，若是都沒有，就會以該網頁頁面(`<body>`)的左上角為定位點。
 
 https://ithelp.ithome.com.tw/articles/10253500  
 https://ithelp.ithome.com.tw/articles/10212202
@@ -85,6 +85,7 @@ pros:
 
 1. 避免汙染全域 CSS：生成唯一的 class 名，避免汙染全域 CSS。
 2. autoprefixer: 自動產生瀏覽器兼容性前綴。
+3. 用 props 做 dynamic styling
 
 cons:
 
@@ -170,7 +171,7 @@ CSS-Module
 
 pros
 
-1. 樣式代碼與 JS 代碼分離，代碼會相對簡潔樣式是和 JS 文件打包在一起，所以會拖慢 JS 文件加載時間
+1. 樣式代碼與 JS 代碼分離，代碼會相對簡潔樣式
 2. 只是在 CSS 基礎上加入了局部作用域跟模塊以來，代碼相對規範
 
 cons
@@ -179,9 +180,18 @@ cons
 
 https://juejin.cn/post/7030349710023983117
 
-### hamburger
+### CSS 用法
 
-https://codepen.io/designcouch/pen/ExvwPY
+#### ~, +, > selector 用法
+
+#### + （select element immediate after)
+
+#### ~ (select element behind it)
+
+https://gocreating.lation.app/blog/interview/appier
+
+https://stackoverflow.com/questions/6910049/on-a-css-hover-event-can-i-change-another-divs-styling
+https://stackoverflow.com/questions/10782054/what-does-the-tilde-squiggle-twiddle-css-selector-mean
 
 ---
 

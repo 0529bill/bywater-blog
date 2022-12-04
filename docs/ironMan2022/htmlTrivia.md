@@ -60,6 +60,14 @@ session 用在儲存暫時的資訊，來應用在不同的 tab 之間，像是�
 
 ### 4. 什麼是 同源政策 CORS？
 
+- 要解決 fetch 等方法造成的 CORS 問題，除了遵循 CORS 規定之外，還可以用 proxy 或是 JSONP 的方法來躲避 CORS!
+
+JSONP 簡介：
+
+透過 html 中 script 沒有 CORS 的特點，利用 script 來傳送 JSONP，缺點就是 JSONP 的資料傳輸方式是不安全的！
+
+資源：https://medium.com/@brianwu1201/jsonp-with-simple-example-4711e2a07443
+
 當我們在 JavaScript 中透過 fetch 或 XMLHttpRequest 存取資源時，如果是同源的情況下，存取不會受到限制，那什麼是同源呢?同源，包含以下三個條件
 
 1. 相同的通訊協定 (protocol)，即 http/https
@@ -73,15 +81,9 @@ session 用在儲存暫時的資訊，來應用在不同的 tab 之間，像是�
 - 只能是 HTTP GET, POST or HEAD 方法
 - 自訂的 request header 只能是 Accept、Accept-Language、Content-Language 或 Content-Type（值只能是 application/x-www-form-urlencoded、multipart/form-data 或 text/plain）
 
-2. 非簡單請求
+解決 CORS 方法：
 
-非簡單的跨來源請求會在發送前先透過瀏覽器發送一個 preflight request（預檢請求)來向 server 確認拿取資料是正當的。
-
-關於如果不是同源的情況要怎麼解決呢?
-
-TL;DR
-
-1. 請後端設置 CORS header
+- 後端設置 CORS header
 
 ```js
 Access-Control-Allow-Origin: *
@@ -92,6 +94,37 @@ let origin = http://localhost:8081
 Access-Control-Allow-Origin: origin
 
 ```
+
+2. 非簡單請求
+
+非簡單的跨來源請求會在發送前先透過瀏覽器發送一個 preflight request（預檢請求)來向 server 確認拿取資料是正當的。
+
+關於如果不是同源的情況要怎麼解決呢?
+
+解決方法：
+
+瀏覽器會先傳一個 preflight request 給 server 確認拿取資料是正當的，
+
+- 後端設定 Access-Control-Allow-Methods, Access-Control-Allow-Headers
+
+```js
+Access-Control-Allow-Methods: 允許的 HTTP 方法。
+Access-Control-Allow-Headers: 允許的非「簡單」header。
+```
+
+確定請求的 request 和 header 都是正確之後，瀏覽器就會發送實際的請求了，這時候後端還要回覆 Access-Control-Allow-Origin
+
+```js
+Access-Control-Allow-Origin: *
+
+or
+
+origin = http://localhost:8081
+Access-Control-Allow-Origin: origin
+
+```
+
+以上就是簡單和非簡單請求的步驟！
 
 有 cookie 的情況要以下設定
 

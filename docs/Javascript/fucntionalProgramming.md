@@ -82,4 +82,18 @@ arr.map(function (value) {
 });
 ```
 
+#### currying
+
+定義：Currying is a transformation of functions that translates a function from callable as f(a, b, c) into callable as f(a)(b)(c).
+
+pros
+
+1. 可以使用成 partials
+
+https://javascript.info/currying-partials
+
+---
+
+Resources:
+
 https://juejin.cn/post/6844903857135304718
