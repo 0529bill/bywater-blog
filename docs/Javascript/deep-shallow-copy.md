@@ -148,7 +148,7 @@ console.log(newObject)
 
 1. JSON.parse(JSON.stringify())
 2. lodash \_.cloneDeep
-3.
+3. structuredClone(Node 17):
 
 &nbsp;
 

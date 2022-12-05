@@ -21,6 +21,12 @@ Virtual DOM 是 React 所建立的一個虛擬的 DOM tree，透過物件的格�
 4.  再來 React 會去做一個叫做'diffing’的動作，也就是去找出確切 Virtual DOM 哪裡被更新了
 5.  在知道哪裡被更新後，React 只會去 DOM 更新需要被更新的地方。
 
+virtual DOM 缺點：  
+首次渲染大量 DOM 時，由於多了一層虛擬 DOM 的計算，會比 innerHTML 插入慢。
+
+virtual DOM 架構實現：  
+https://tsejx.github.io/react-guidebook/infrastructure/old/virtual-dom/
+
 你看到這裡，你可能會開始好奇了，什麼是 diffing 演算法呢？
 
 ### 什麼是 diffing 演算法？
