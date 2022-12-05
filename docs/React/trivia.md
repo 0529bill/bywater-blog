@@ -241,6 +241,19 @@ https://stackoverflow.com/questions/49384212/how-can-we-use-the-same-state-acros
 
 https://github.com/brickspert/blog/issues/26
 
+### Synthetic event 合成事件
+
+#### attach synthetic event at root
+
+why?  
+https://reactjs.org/blog/2020/08/10/react-v17-rc.html
+
+TL;DR  
+避免遇到 project 中有其他原生的 document 操作時，在 document 上的操作會互相衝突，原生的 document event handler 會引響到 React 本身設定在 document 的合成事件，所以 react17 把合成事件改在 root 上
+
+example  
+https://www.bigbinary.com/blog/react-17-delegates-events-to-root-instead-of-document
+
 ---
 
 Resources:
