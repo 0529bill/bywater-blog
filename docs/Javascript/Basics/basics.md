@@ -37,14 +37,46 @@ JavaScript 共有八种数据类型，分别是 Undefined、Null、Boolean、Num
 
 ##### Set
 
-- Set to Array
+```JS
+const mySet = new Set();
 
-```js
+mySet.add(1);
 
 
+mySet.has(5)
+mySet.size()
+mySet.delete(5)
+mySet.clear()
+
+
+//Array to Set
+var arr = [55, 44, 65];
+var set = new Set(arr);
+
+//set to Array
 1. const array = Array.from(mySet);
+
 2. const array = [...mySet];
 
+
+```
+
+##### Map
+
+```js
+map.set(key, value);
+
+map.has(key); //boolean
+map.size();
+map.get(key); //value
+map.delete(key);
+map.clear();
+
+//convert Object to Map
+const map1 = new Map(Object.entries(obj));
+
+//convert Map to Object
+const objAgain = Object.fromEntries(map1);
 ```
 
 https://stackoverflow.com/questions/20069828/how-to-convert-set-to-array
