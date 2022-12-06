@@ -468,6 +468,14 @@ https://stackoverflow.com/questions/5294413/find-index-of-nan-in-a-javascript-ar
 
 ---
 
+## break vs continue vs return
+
+return => jump out of a function  
+break => jump out of a loop
+continue => jump over one iteration in the loop
+
+---
+
 # Resources
 
 call, apply, bind 建議文章  
