@@ -12,6 +12,11 @@ sidebar_position: 9
 
 ：過去有 commonjs 給 nodejs server 端使用，browser 端則有 AMD，但是在 ES6 module 出現之後，其他 module 慢慢消失。
 
+## common js vs es module
+
+https://juejin.cn/post/6938581764432461854
+https://tempura-good-good.coderbridge.io/2022/03/04/commonjs-&-es-module/
+
 ## ES6 module 用途?
 
 &nbsp;

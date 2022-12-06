@@ -64,7 +64,11 @@ session 用在儲存暫時的資訊，來應用在不同的 tab 之間，像是�
 
 JSONP 簡介：
 
-透過 html 中 script 沒有 CORS 的特點，利用 script 來傳送 JSONP，缺點就是 JSONP 的資料傳輸方式是不安全的！
+透過 html 中 script 沒有 CORS 的特點，利用 script 來傳送 JSONP，但是缺點有以下幾個：
+
+1.  JSONP 的資料傳輸方式是不安全的
+2.  只支持 get 請求
+3.  沒有錯誤處理
 
 資源：https://medium.com/@brianwu1201/jsonp-with-simple-example-4711e2a07443
 

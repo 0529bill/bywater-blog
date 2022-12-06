@@ -105,6 +105,35 @@ SSR 的缺點主要有以下幾點：
 1. 什麼是 CSR?
 2. 什麼是 SSR?
 
+## CheatSheet
+
+### SSR
+
+pros:
+
+fast FCP,TTI(time to interactive)
+
+cons:  
+slow TTFB(time to first bite, measures the duration from the user or client making an HTTP request to the first byte of the page being received by the client's browser. )
+
+### Static rendering
+
+1. producing a separate HTML file for each URL ahead of time.
+2. pre-rendered HTML content
+
+famous static rendering tool: Gatsby
+
+pros:  
+fast FCP, TTFB
+
+cons:
+
+1. individual HTML files must be generated for every possible URL
+2. not a ideal approach to large number of HTML files
+3. An SSG site needs to be built and re-deployed every time the content changes. The content displayed may be stale if the site has not been built + deployed after any content change. This makes SSG unsuitable for highly dynamic content.
+
+---
+
 Resources:
 
 https://www.patterns.dev/posts/client-side-rendering/
