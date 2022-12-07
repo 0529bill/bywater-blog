@@ -12,8 +12,34 @@ sidebar_position: 9
 
 ：過去有 commonjs 給 nodejs server 端使用，browser 端則有 AMD，但是在 ES6 module 出現之後，其他 module 慢慢消失。
 
+## 為什麼要 modules?
+
+JavaScript 可以做的事情越來越多，所以透過模組化的概念來讓各個 Js file 獨立。
+
 ## common js vs es module
 
+動態引入：  
+common.js => 可以動態引入
+es module => 靜態引入，會把引入提升到 file 開頭處。
+
+同步/非同步引入
+common.js => 同步引入（對大型網站可能造成 blocking）
+es module => 非同步引入
+
+易讀性：
+es module 勝
+
+```js
+
+// common.js動態引入
+if(user.length > 0){
+   const userDetails = require(‘./userDetails.js’);
+  // Do something ..
+}
+
+```
+
+https://blog.logrocket.com/commonjs-vs-es-modules-node-js/
 https://juejin.cn/post/6938581764432461854
 https://tempura-good-good.coderbridge.io/2022/03/04/commonjs-&-es-module/
 
@@ -105,5 +131,10 @@ If you are using Node.js version 9.6 - 12, save the file with ES6 modules with .
 
 node --experimental-modules my-app.mjs
 
+---
+
+## Resources
+
+https://israynotarray.com/javascript/20210424/616364031/
 https://segmentfault.com/a/1190000010426778
 https://stackoverflow.com/questions/45854169/how-can-i-use-an-es6-import-in-node-js
