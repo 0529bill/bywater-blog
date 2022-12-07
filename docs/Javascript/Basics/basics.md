@@ -393,6 +393,7 @@ https://stackoverflow.com/questions/1687296/what-is-dom-event-delegation
 
 ## this
 
+:this 是一個 keyword 指向一個 object，在不同情況下，根據 this 被執行的環境，會有不同的 this。
 &nbsp;
 :this 指向（reference）object.而它的值不一定，會根據它被執行的地方(call site)所決定的，以下有四個 this 的規則：
 

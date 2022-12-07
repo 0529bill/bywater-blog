@@ -190,6 +190,8 @@ Inheritance 定義： One object gets access to the properties and methods of an
 
 推薦學習資源：
 
+https://shubo.io/javascript-prototype/
+
 [JavaScript 深入之从原型到原型链](https://github.com/mqyqingfeng/Blog/issues/2)
 https://shubo.io/javascript-prototype/
 
