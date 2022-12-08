@@ -26,6 +26,14 @@ sidebar_position: 6
 
 &nbsp;
 
+- ### 利用 typeof 特性
+
+```js
+typeof yourVariable === "object" &&
+  !Array.isArray(yourVariable) &&
+  yourVariable !== null;
+```
+
 - ### `Object.prototype.toString.call()`
   原理：Js 各個 types 都有 `to string` method，用 object's to string 會回傳其 type 的特型來辨別型別。
 

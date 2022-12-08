@@ -111,6 +111,40 @@ build your own proxy server:
 
 https://jakemccambley.medium.com/fixing-cors-errors-when-working-with-3rd-party-apis-a69dc5474804
 
+### Inside look at modern web browser
+
+Resources:  
+https://developer.chrome.com/blog/inside-browser-part1/
+
+#### GPU and CPU
+
+CPU(Central Processing Unit): A CPU core can be considered your computer’s brain, it handles many different tasks one by one as they come in.
+
+GPU(Graphics Processing Unit): it handles graphic.
+
+#### Process and thread
+
+![ProcessThread](Img/processThread.png)
+
+Program: Program 指的是 IDE、editor 等所寫的程式碼(code)，也就是說還尚未 load 入記憶體的 code。
+
+Process:Process 意旨已經執行並且 load 到記憶體中的 Program ，程序中的每一行程式碼隨時都有可能被 CPU 執行，在實際生活中，點開應用程式就是將 Program 活化成 Process，Process 就是實體的工廠，照著 Program 這張設計藍圖所完成的工廠。
+
+Thread: Process 中的工人，負責執行 process 中的程序。
+
+資料來源: https://totoroliu.medium.com/program-process-thread-%E5%B7%AE%E7%95%B0-4a360c7345e5
+
+#### Browser Architecture
+
+**每個 browser 中的 Architecture 都不一樣**
+
+### 前端 HTTP Cache
+
+閱讀文章:
+
+1. https://blog.techbridge.cc/2017/06/17/cache-introduction/
+2. https://ithelp.ithome.com.tw/m/articles/10219276
+
 ---
 
 Resources:  
