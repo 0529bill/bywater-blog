@@ -111,6 +111,12 @@ build your own proxy server:
 
 https://jakemccambley.medium.com/fixing-cors-errors-when-working-with-3rd-party-apis-a69dc5474804
 
+### Http Cache 快取
+
+閱讀文章：https://web.dev/http-cache/
+
+https://pjchender.dev/webdev/note-http-cache/
+
 ### Inside look at modern web browser
 
 Resources:  
@@ -137,6 +143,7 @@ Thread: Process 中的工人，負責執行 process 中的程序。
 #### Browser Architecture
 
 **每個 browser 中的 Architecture 都不一樣**
+![browserArch](Img/browserArch.png)
 
 ### 前端 HTTP Cache
 

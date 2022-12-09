@@ -47,3 +47,11 @@ https://gcdeng.com/blog/a-guidebook-to-optimize-web-vitals
 **在 react 中可以用 react-helmet(https://www.npmjs.com/package/react-helmet)**
 
 https://edwardbeazer.com/social-meta-tags/
+
+## 按需輸入
+
+#### vite 按需輸入 with antd
+
+https://github.com/meowtec/vite-plugin-import/issues/2#issuecomment-782555233
+https://juejin.cn/post/6926850164015497229
+https://3x.ant.design/docs/react/getting-started-cn
