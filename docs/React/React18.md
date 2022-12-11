@@ -2,7 +2,14 @@
 sidebar_position: 5
 ---
 
-# [React] React Optimization
+# [React] React 18
+
+---
+
+推薦閱讀文章:  
+https://react.iamkasong.com/#%E5%AF%BC%E5%AD%A6%E8%A7%86%E9%A2%91
+
+---
 
 React 想解決的兩個問題：
 
@@ -13,13 +20,13 @@ React 想解決的兩個問題：
 
 ![criticalRenderingPath](./Img/CRP.png)
 
-瀏覽器在執行時，會依照 critical rendering path 的順序解析，主流浏览器刷新频率为 60Hz，即每（1000ms / 60Hz）16.6ms 浏览器刷新一次，所以當 JS(DOM 中)執行過長時，就會擋到後面的 paint, composition。  
+瀏覽器在執行時，會依照 critical rendering path 的順序解析，主流瀏覽器刷新頻率為 60Hz，即每（1000ms / 60Hz）16.6ms 瀏覽器刷新一次，所以當 JS(DOM 中)執行過長時，就會擋到後面的 paint, composition，造成畫面出現卡頓。  
 [範例](https://harttle.land/2017/08/15/browser-render-frame.html)
 
 React 解決方法：
 
-在浏览器每一帧的时间中，预留一些时间给 JS 线程，React 利用这部分时间更新组件（在源码中，预留的初始时间是 5ms）。
-当预留的时间不够用时，React 将线程控制权交还给浏览器使其有时间渲染 UI，React 则等待下一帧时间到来继续被中断的工作。換句話說，time slicing 就是将同步的更新变为可中断的异步更新。所以在執行 JS 任務時，預先預留出時間，當工作執行過長時，就先暫停當前的工作，等下一次的刷新渲染時，再繼續執行。
+在瀏覽器每一幀的時間中，預留一些時間給 JS 線程，React 利用這部分時間更新組件（在源碼中，預留的初始時間是 5ms）。
+當預留的時間不夠用時，React 將線程控制權交還給瀏覽器使其有時間渲染 UI，React 則等待下一幀時間到來繼續被中斷的工作。換句話說，time slicing 就是將同步的更新變為可中斷的異步更新。所以在執行 JS 任務時，預先預留出時間，當工作執行過長時，就先暫停當前的工作，等下一次的刷新渲染時，再繼續執行。
 
 ---
 

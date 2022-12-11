@@ -34,6 +34,27 @@ context api+useReducer:適用於小型專案，學習曲線低且易於使用。
 :讓 action 可以返回一個 function，而裡面可以做非同步的操作。  
 缺點:每個非同步操作都需要搭配 action，可能會造成難以管理。
 
+#### Source Code
+
+```js
+function createThunkMiddleware(extraArgument) {
+  return ({ dispatch, getState }) =>
+    (next) =>
+    (action) => {
+      //在這裡判斷action是不是function
+      if (typeof action === "function") {
+        // 是的話就給予其dispatch, getState等方法
+        return action(dispatch, getState, extraArgument);
+      }
+
+      // 如果傳進來的 action 不是 function，則當成一般的 action 處理
+      return next(action);
+    };
+}
+```
+
+#### 實際應用
+
 ```js
 //thunk action => return a function
 export function thunkAction() {
@@ -57,6 +78,30 @@ export function action() {
 #### Redux Saga：
 
 :功能更為強大。
+
+#### performance problem
+
+- both useSelector and dispatch function will trigger rerender
+
+```js
+// in react-redux, you can use batch to prevent triggering multiple rerender!
+// **If you're using React 18, you do not need to use the batch API. React 18 automatically batches all state updates, no matter where they're queued.**
+import { batch } from "react-redux";
+
+function myThunk() {
+  return (dispatch, getState) => {
+    // should only result in one combined re-render, not two
+    batch(() => {
+      dispatch(increment());
+      dispatch(increment());
+    });
+  };
+}
+```
+
+---
+
+Resources:
 
 https://juejin.cn/post/6844903918103691271
 
