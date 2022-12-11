@@ -36,7 +36,8 @@ module.exports = {
           customCss: require.resolve("./src/css/custom.css"),
         },
         googleAnalytics: {
-          trackingID: "	G-2TQ7GGQ5TW",
+          trackingID: "G-2TQ7GGQ5TW",
+          anonymizeIP: true,
           // anonymizeIP: true,
         },
       }),
