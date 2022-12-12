@@ -16,7 +16,15 @@ React 想解決的兩個問題：
 1. CPU 瓶頸
 2. IO 瓶頸
 
-**要達到以下所做的事，必須做到讓同步的更新變為可中斷的異步更新。**
+**要達到以下所做的事，必須做到讓同步的更新變為可中斷的異步更新。在 React 16 中更改了 Scheduler, reconciler, Renderer 的架構來達到上面的事。**
+
+Scheduler（調度器）—— 調度任務的優先級，高優任務優先進入 Reconciler
+Reconciler（協調器）—— 負責找出變化的組件，如果 Scheduler（調度器)有標記過高優先順序的任務，Reconciler（協調器）就會暫停當前任務，並且優先執行任務順序高的任務。
+Renderer（渲染器）—— 負責將變化的組件渲染到頁面上
+
+![Scheduler](./Img/reconciler.png)
+
+---
 
 ### CPU 瓶頸
 
