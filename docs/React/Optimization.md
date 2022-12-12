@@ -37,3 +37,11 @@ Before using memo, maybe try to lift/ put down the state(that makes other irrele
 :to prevent a component from re-rendering unless its props have changed.
 
 https://www.w3schools.com/react/react_usecallback.asp
+
+## dynamic import
+
+資源：https://www.youtube.com/watch?v=JU6sl_yyZqs
+
+### component based dynamic import
+
+### function based dynamic import
