@@ -26,7 +26,14 @@ GET: 讀取資料請求
 
 HTTP 本身是沒有加密的，因此是比較不安全的，所以就出現了 HTTPS。HTTPS 全名 超文本傳輸安全協定，而後面 S 就是 Secure 的意思。HTTPS 透過 HTTP 進行通訊，但通訊過程使用 SSL/TLS 進行加密，在 HTTP 之上定義了相對安全的資料傳輸方法。
 
+https 文章：  
+https://tw.alphacamp.co/blog/http-https-difference
+https://www.gushiciku.cn/pl/gmB9/zh-tw
 https://pengpon.github.io/studygroup/2020/05/26/http-and-https.html
+
+### OSI 和 TCP/IP 對照圖
+
+http://kevin.hwai.edu.tw/~kevin/material/EAssistant/TCP.htm
 
 ### 3. Cookie、session 的差別？
 
