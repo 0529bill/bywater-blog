@@ -122,6 +122,17 @@ function fib(n) {
 }
 ```
 
+### check if string is English/Chinese
+
+```js
+//English
+var englishTest = /^[A-Za-z0-9]*$/;
+english.test("dsfsdfs");
+
+// Chinese
+var chineseTest = /^[\u4e00-\u9fa5]*$/;
+```
+
 Resources:
 
 https://discuss.codecademy.com/t/var-and-let-in-a-loop-working-differently/550468
