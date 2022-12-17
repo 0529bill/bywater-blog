@@ -41,11 +41,15 @@ https://www.hellotech.com/blog/whats-the-difference-between-32-bit-and-64-bit
 
 推薦閱讀文章：https://pjchender.dev/webdev/guide-unicode/#%E5%8F%AA%E4%BD%BF%E7%94%A8%E5%88%B0-unicode-%E5%9F%BA%E6%9C%AC%E5%B9%B3%E9%9D%A2%E6%99%82u%E7%A2%BC%E9%BB%9E
 
+解決問題：Unicode 跟 ASCII 的出現是為了解決電腦看不懂人類文字的問題。
+
 The American Standard Code for Information Interchange (ASCII) was an early standardized encoding system for text. Encoding is the process of converting characters in human languages into binary sequences that computers can process.
 
 cons: it only includes English and some common symbols(like /, !, and ?).
 
 #### UTF-8 vs UTF-16
+
+解決問題：ASCII 是以英文字母來建造，無法使用亞洲文字(中文/日文等等)，所以出現了 Unicode 來讓全世界的語言都能夠轉換成電腦讀得懂的語言。
 
 UTF-8 encoding is preferable to UTF-16 on the majority of websites, because it uses less memory. Recall that UTF-8 encodes each ASCII character in just one byte. UTF-16 must encode these same characters in either two or four bytes. This means that an English text file encoded with UTF-16 would be at least double the size of the same file encoded with UTF-8.
 

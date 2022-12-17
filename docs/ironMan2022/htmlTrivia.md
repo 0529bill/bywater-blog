@@ -31,6 +31,9 @@ https://tw.alphacamp.co/blog/http-https-difference
 https://www.gushiciku.cn/pl/gmB9/zh-tw
 https://pengpon.github.io/studygroup/2020/05/26/http-and-https.html
 
+http 書：
+https://awesome-programming-books.github.io/http/%E5%9B%BE%E8%A7%A3HTTP.pdf
+
 ### OSI 和 TCP/IP 對照圖
 
 http://kevin.hwai.edu.tw/~kevin/material/EAssistant/TCP.htm
@@ -64,6 +67,9 @@ session 用在儲存暫時的資訊，來應用在不同的 tab 之間，像是�
 | 大小限制為 4 KB                               | 大小無限制                                |
 | 比較不安全                                    | 比較安全                                  |
 | 儲存格式為 name-value pair                    | 儲存格式為加密格式                        |
+
+閱讀文章：  
+https://medium.com/tsungs-blog/day14-session%E8%88%87cookie%E5%B7%AE%E5%88%A5-eb7b4035a382
 
 ### 4. 什麼是 同源政策 CORS？
 
