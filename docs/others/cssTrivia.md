@@ -34,6 +34,15 @@ https://www.oxxostudio.tw/articles/202008/css-box-model.html
 margin(元素外擴展) vs padding(元素內擴展)
 https://ithelp.ithome.com.tw/articles/10205322
 
+### BFC（Block Formatting Conte）
+
+解決問題：
+
+元素間的 margin collapsing(外邊距重疊)問題
+
+閱讀資料：  
+https://yachen168.github.io/article/Block-formatting-context.html
+
 ### css layout
 
 #### position fixed
@@ -69,7 +78,21 @@ https://ithelp.ithome.com.tw/articles/10212202
 
 https://www.digitalocean.com/community/tutorials/css-display-inline-vs-inline-block
 
-#### css flex?
+### css flex?
+
+#### flex:1 ?
+
+TL;DR
+
+flex:1 等於
+
+```js
+flex-grow : 1;
+flex-shrink : 1;
+flex-basis : 0;
+```
+
+https://www.51cto.com/article/683878.html
 
 #### css grid?
 
