@@ -28,17 +28,30 @@ https://www.w3schools.com/css/css_specificity.asp
 
 ### box model
 
+:box model(盒模型)為 css 中的佈局模型。
+
 box model explain
 https://www.oxxostudio.tw/articles/202008/css-box-model.html
 
 margin(元素外擴展) vs padding(元素內擴展)
 https://ithelp.ithome.com.tw/articles/10205322
 
-### BFC（Block Formatting Conte）
+什麼是 box-sizing:content box?為什麼需要設 box-sizing:border-box?
+
+### BFC（Block Formatting Contexts）
+
+:W3C 規範中的一個概念，簡單來說具有 BFC 特性的元素可以看做是隔離了的獨立容器，容器裡面的元素不會在佈局上影響到外面的元素。
 
 解決問題：
 
 元素間的 margin collapsing(外邊距重疊)問題
+
+解決方法：
+
+`display: flex`
+
+https://codesandbox.io/s/crazy-paper-8imk9f?file=/src/App.js  
+https://stackoverflow.com/questions/19718634/how-to-disable-margin-collapsing
 
 閱讀資料：  
 https://yachen168.github.io/article/Block-formatting-context.html
@@ -70,6 +83,21 @@ https://ithelp.ithome.com.tw/articles/10212202
 將 box-sizing 設定成 border-box 後， width / height 的作用範圍就是指到 border 這個 box 的範圍了，我們就稱為 border-box，從前面所寫的可以了解一個物件的範圍，是由四個層層包裹的矩形所構成，此時 width 所作用的 box 就是 border 這個範圍了，如下圖所示(圖片取自 Chrome DevTools)
 
 #### css display
+
+`inline`
+
+- 排列成 inline 樣式
+- width, height 皆無效
+- default inline: `span`,`a`, `img`
+
+`inline-block`
+
+- 排列成 inline 樣式，但是可以操控 width, height
+
+`block`
+
+- 排列成 block 樣式
+- 常見 block 樣式：`div`,`h1`, `p`, `li`, `section`
 
 ##### display: inline-block vs block?
 
@@ -203,7 +231,17 @@ cons
 
 https://juejin.cn/post/7030349710023983117
 
-### CSS 用法
+### 偽元素 vs 偽類
+
+偽元素：a css pseudo-element is used to style specified parts of an element.
+ex, ::first, ::before
+
+偽類：a css pseudo-class is used to define a special state of an element.
+ex, :hover, :active, :visited
+
+https://medium.com/@bywater529/css-%E5%81%BD%E5%85%83%E7%B4%A0%E8%88%87%E5%81%BD%E9%A1%9E-3224b58a8202
+
+### CSS selector 用法
 
 #### ~, +, > selector 用法
 

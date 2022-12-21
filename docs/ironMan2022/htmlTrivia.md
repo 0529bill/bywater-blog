@@ -32,6 +32,7 @@ https://showme.codes/2017-02-20/understand-https/
 https://tw.alphacamp.co/blog/http-https-difference
 https://www.gushiciku.cn/pl/gmB9/zh-tw
 https://pengpon.github.io/studygroup/2020/05/26/http-and-https.html
+https://cloud.tencent.com/developer/article/1704749
 
 http 書：
 https://awesome-programming-books.github.io/http/%E5%9B%BE%E8%A7%A3HTTP.pdf
