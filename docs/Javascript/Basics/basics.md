@@ -88,6 +88,11 @@ https://stackoverflow.com/questions/20069828/how-to-convert-set-to-array
 
 &nbsp;
 
+##### object vs Map 的差別
+
+1. object 中的 key 只能是 string 或是 symbol，Map 中的 key 則可以是任何值
+2.
+
 ---
 
 &nbsp;

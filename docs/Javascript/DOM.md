@@ -26,7 +26,10 @@ TL;DR:
 &nbsp;
 
 這是 Webkit 處理 HTML,Css 的流程。  
-webkit 是一個 open source 的 rendering engine,被應用在 chrome, safari 等等。
+webkit(owned by apple) 是一個 open source 的 rendering engine,被應用在 chrome, safari 等等。
+
+**所有在 ios device 的瀏覽器都是用 webkit engine，因為 apple 不讓其他 engine 在 ios 中被使用。**
+https://www.quora.com/Whats-the-browser-engine-of-Chrome-in-an-iOS-device
 
 當 server 在接收到 browser 所收到的請求後，會傳送 HTML/Css 給 browser，並且會發生以下幾件事：
 
