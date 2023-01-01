@@ -24,6 +24,13 @@ console.log(countOccurrences(["a", "b", "c", "b", "a"]));
 ```
 
 ```js
+arr.reduce((prev, curr) => {
+  prev[curr] = (prev[curr] || 0) + 1;
+  return prev;
+}, {});
+```
+
+```js
 //For loop
 
 const count = {};
