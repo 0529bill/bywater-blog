@@ -35,6 +35,24 @@ JavaScript 共有八种数据类型，分别是 Undefined、Null、Boolean、Num
 - [Map & Set](https://javascript.info/map-set)
 - [weakMap](https://www.fooish.com/javascript/ES6/Map-and-WeakMap.html)
 
+**Object 中的自動排序機制**
+
+範例：
+
+```js
+let object = {};
+
+object[3] = "3";
+object[1] = "1";
+
+// {1: '1', 3: '3'}
+```
+
+總結：  
+如果 key 是數字的情況，數字先的會被排在前面。string 則是沒有這樣的問題。
+
+https://juejin.cn/post/7105216353564360711
+
 ##### Set
 
 ```JS
@@ -103,7 +121,6 @@ https://stackoverflow.com/questions/20069828/how-to-convert-set-to-array
 ##### object vs Map 的差別
 
 1. object 中的 key 只能是 string 或是 symbol，Map 中的 key 則可以是任何值
-2.
 
 ---
 
