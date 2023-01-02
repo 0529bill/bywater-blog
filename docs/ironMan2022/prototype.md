@@ -178,6 +178,8 @@ obj.a();
 Foo.a();
 ```
 
+https://github.com/Advanced-Frontend/Daily-Interview-Question/issues/155
+
 &nbsp;
 
 總結一下，今天討論了 prototype 、 prototype chain 、[[Prototype]]和一些常見的內建語法～希望這篇文章有讓你對 prototype 有更深的了解，那我們就明天見拉！

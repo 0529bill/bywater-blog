@@ -90,10 +90,16 @@ https://juejin.cn/post/6844904197595332622
 
 **Shallow copy:**
 
+array
+
+1. spread operator
+2. Array.prototype.slice()
+
+object
+
 1. spread operator
 2. Object.assign
 3. lodash's \_.clone
-4. Array.prototype.slice()
 
 ```js
 let user = {

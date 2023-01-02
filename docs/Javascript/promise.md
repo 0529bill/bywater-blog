@@ -41,6 +41,9 @@ promise.then(alert); // 1
 
 Promise.resolve will create a promise which is already resolved, whereas new Promise(resolve) creates a promise which is neither resolved nor rejected.
 
+Promise.resolve(value) => 接受一個值在**resolve**裡面。
+new Promise() => 建立一個 Promise 然後可以在裡面執行 action，最後在 resolve result。
+
 https://stackoverflow.com/questions/34014414/are-promise-resolve-and-new-promiseresolve-interchangeable
 
 ### then, catch, finally 語法
