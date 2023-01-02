@@ -64,6 +64,12 @@ var set = new Set(arr);
 ##### Map
 
 ```js
+// 建立 Map 時直接代入內容
+let myMap = new Map([
+  [1, "a"],
+  [2, "b"],
+]);
+
 map.set(key, value);
 
 map.has(key); //boolean
@@ -77,6 +83,12 @@ const map1 = new Map(Object.entries(obj));
 
 //convert Map to Object
 const objAgain = Object.fromEntries(map1);
+
+//convert map keys to an array
+const mapKeys = Array.from(map.keys());
+
+//convert map keys to an object
+const mapKeys = Array.from(map.values());
 ```
 
 https://stackoverflow.com/questions/20069828/how-to-convert-set-to-array
