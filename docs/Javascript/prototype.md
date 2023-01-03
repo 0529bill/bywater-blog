@@ -75,3 +75,7 @@ can also use
 ```js
 Object.create(Person.prototype);
 ```
+
+Resources:  
+https://maxleebk.com/2020/07/25/prototype/
+https://juejin.cn/post/6934498361475072014
