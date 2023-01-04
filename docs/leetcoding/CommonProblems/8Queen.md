@@ -56,3 +56,55 @@ eightQueen(0);
 console.log(counter);
 //92
 ```
+
+### Leetcode: N-queens
+
+```js
+var solveNQueens = function (n) {
+  const boards = [];
+
+  const isSafe = (board, row, col) => {
+    //vertical up
+    for (let i = row - 1; i >= 0; i--) {
+      if (board[i][col] === "Q") return false;
+    }
+    //diagonal left up
+    for (let i = row - 1, j = col - 1; i >= 0 && j >= 0; i--, j--) {
+      if (board[i][j] === "Q") return false;
+    }
+
+    //diagonal right up
+    for (let i = row - 1, j = col + 1; i >= 0 && j < board.length; i--, j++) {
+      if (board[i][j] === "Q") return false;
+    }
+    return true;
+  };
+
+  const nQueen = (board, row) => {
+    console.log("board", board);
+    //base 運行到最後一行時
+    if (row === board.length) {
+      boards.push(board.map((row) => row.join("")));
+
+      return;
+    }
+
+    for (let j = 0; j < board.length; j++) {
+      if (isSafe(board, row, j)) {
+        board[row][j] = "Q";
+        nQueen(board, row + 1); //function call
+        board[row][j] = "."; //backtracking step;
+      }
+    }
+  };
+  nQueen(
+    Array(n)
+      .fill(0)
+      .map((_) => Array(n).fill(".")),
+    0
+  );
+  return boards;
+};
+```
+
+Resources: https://leetcode.com/problems/n-queens/solutions/2937448/js-backtracking/?q=js&orderBy=most_relevant
