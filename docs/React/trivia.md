@@ -254,6 +254,22 @@ TL;DR
 example  
 https://www.bigbinary.com/blog/react-17-delegates-events-to-root-instead-of-document
 
+### Higher order function vs Higher order component
+
+HOF: _A function that takes a function as an argument, or returns a function as a result_
+
+```js
+ex, Array.prototype.map();
+```
+
+HOC: _A function that takes a component as an argument, or returns a component as a result_
+
+```js
+const EnhancedComponent = higherOrderComponent(WrappedComponent);
+```
+
+React doc HOC 介紹：https://zh-hant.reactjs.org/docs/higher-order-components.html
+
 ---
 
 Resources:
