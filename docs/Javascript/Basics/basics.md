@@ -234,26 +234,6 @@ function Person(firstName, lastName) {
 console.log(Person("戰場", "小包"));
 ```
 
-follow up:
-
-### new function 和 function 的差別
-
-大部分情況沒有差別，唯一的差別是 new function 會建構一個新的 function object，並且 this 會指向該 function; 相反的，普通的 function 中的 this
-會指向 global
-
-References:
-
-https://stackoverflow.com/questions/36416438/whats-the-difference-between-new-function-and-function
-
-https://juejin.cn/post/7057674127926100005
-
----
-
-https://hsien-w-wei.medium.com/js-arrow-function-vs-function-ec601dead231
-https://stackoverflow.com/questions/37587834/why-can-i-not-use-new-with-an-arrow-function-in-javascript-es6
-
----
-
 &nbsp;
 
 ## call, apply and bind
