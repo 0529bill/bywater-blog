@@ -23,8 +23,8 @@ common.js => 可以動態引入
 es module => 靜態引入，會把引入提升到 file 開頭處。
 
 同步/非同步引入
-common.js => 同步引入（對大型網站可能造成 blocking）
-es module => 非同步引入
+common.js => 同步引入（對大型網站可能造成 blocking）synchronous
+es module => 非同步引入 asynchronous, lazy loading
 
 易讀性：
 es module 勝
@@ -52,7 +52,7 @@ module 讓我們可以使用 `export` 和 `import`語法，來把 JS 切分成�
 1. Deferred by default，代表 script 會等到 HTML 跑完後才執行。
 2. script 加上 `async`的話，inline scripts 會變成非同步，代表他會在該 inline scripts 準備好後直接執行。
 3. 重複引入會呼略第一個之後的引入，來避免重複引入的狀況。
-4. module 會自動開啟 `stirct mode`。
+4. module 會自動開啟 `strict mode`。
 5. 每個 module 會有自己的 scope。
 
 &nbsp;
@@ -60,9 +60,7 @@ module 讓我們可以使用 `export` 和 `import`語法，來把 JS 切分成�
 ## module 使用方法?
 
 ```js
-<script type="module" src=XXX>
-
-</script>
+<script type="module" src="XXX"></script>
 ```
 
 &nbsp;

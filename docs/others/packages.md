@@ -10,6 +10,8 @@ A dependency is a library that a project needs to function effectively. DevDepen
 
 ### vite
 
+#### vite basics
+
 解決問題： 傳統的打包工具（webpack) can often take an unreasonably long wait (sometimes up to minutes!) to spin up a dev server, and even with Hot Module Replacement (HMR), file edits can take a couple of seconds to be reflected in the browser.
 
 解決方法： 把 file 分成 Dependencies 和 Source code  
@@ -31,9 +33,11 @@ vite 缺點：
 https://vitejs.dev/guide/why.html
 https://github.com/aszx87410/blog/issues/61
 
-#### Production
-
 在 production 階段，vite 還是使用 bundle 的方法（rollup)，原因是因為 ES module 會因為 nested imports 而造成多餘的 network request 等問題。
 
 Resources:  
 https://vitejs.dev/guide/why.html
+
+#### vite react-ts 中的 tsconfig.node.json 文件
+
+介紹： https://juejin.cn/post/7126043888573218823
