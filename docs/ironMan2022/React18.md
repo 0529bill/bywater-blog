@@ -99,7 +99,7 @@ function App() {
 }
 ```
 
-在 react 18 之後，我們不必擔心上面的事情會發生了！因為現在在這些場合都會有 batching！！
+在 react 18 之後，我們不必擔心上面的事情會發生了！因為現在在這些場合都會有 batching！！React 18 確保在所有場合都會有 batching，包含 event handler, asynchronous function, setTimeout, setInterval 等等。
 
 但新的問題來了，假如你需不需要 batching 的時候呢？react 也有提供一個 api 可以使用，`flushSync`可以讓被包住的程式碼不在 batching 的範圍內，像是下面得舉例：
 

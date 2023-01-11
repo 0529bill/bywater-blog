@@ -17,7 +17,7 @@ https://juejin.cn/post/7008337341634854942
 
 ### lazy loading
 
-React 提供的動態載入，只有在使用到該程式碼的 bundle 才會被載入，如果還沒載入完成的話會先顯示<suspense>中的 fallback
+React 提供的動態載入，只有在使用到該程式碼的 bundle 才會被載入，如果還沒載入完成的話會先顯示 `suspense` 中的 fallback
 
 ```js
 import React, { Suspense } from "react";
