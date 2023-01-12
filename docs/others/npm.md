@@ -9,18 +9,23 @@ sidebar_position: 5
 - npm 2.0 => nested node_modules structure
   缺點：
 
-  - 檔案太大，nested too deep
+  - 檔案太大，nested too deep，消耗太多 dist 空間
 
-- npm 3.0, yarn => flat node_modules structure
+- npm 3.0 => flat node_modules structure（減少互相依賴）
   缺點：
 
   - flat dependencies algorithm 耗費下載時間(速度慢、花費過多 disk 空間)
+  - 幽靈依賴（因為使用扁平的結構，變成未定義的依賴被拉到第一層，變成也可以使用。）
 
-- pnpm => 把 package 儲存在 disk 中的 store，在專案中透過 link 來連結到 store 中的 package
+- yarn => 新增 lock file 來記載互相依賴的版本
+
+- pnpm => 把 package 儲存在 disk 中的 store，在專案中透過 sym link 來連結到 store 中的 package
 
 TL;DR;
 
-pnpm 比 npm, yarn 還快，並且花費更少的 disk 容量。
+pnpm 比 npm, yarn 還快，並且花費更少的 disk 容量，並且同時解決了幽靈依賴等問題。
+
+閱讀文章：https://www.readfog.com/a/1673072431709917184
 
 ## pnpm
 

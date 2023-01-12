@@ -121,8 +121,6 @@ slow TTFB(time to first bite, measures the duration from the user or client maki
 1. producing a separate HTML file for each URL ahead of time.
 2. pre-rendered HTML content
 
-famous static rendering tool: Gatsby
-
 pros:  
 fast FCP, TTFB
 
