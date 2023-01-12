@@ -62,6 +62,18 @@ https://juejin.cn/post/7117142442926686215#heading-10
 | WebP | 主流瀏覽器支援 |       小 |                         支援透明度，畫面品質高 |
 | AVIF | 少數瀏覽器支援 |       小 |                         支援透明度，畫面品質高 |
 
+**如果在使用 webp 時遇到瀏覽器不資源的情況，可以使用`picture`搭配`img`來在不同的瀏覽器中顯示其所資源的圖片格式**
+
+```js
+<picture>
+  <source srcset="/images/cereal-box.webp" type="image/webp" />
+  <source srcset="/images/cereal-box.jp2" type="image/jp2" />
+  <img src="/images/cereal-box.jxr" type="image/vnd.ms-photo" />
+</picture>
+```
+
+這樣在遇到不資源 webp 的瀏覽器時，就會接續往下找下一個檔案(ex, jp2 格式)能否資源該瀏覽器。
+
 接下來我們會介紹用 CDN 的方式來優化 image
 
 ## image CDN
