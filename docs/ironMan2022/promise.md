@@ -118,6 +118,18 @@ new Promise((resolve, reject) => {
 
 &nbsp;
 
+### Promise 一個等一個
+
+```js
+async function readFiles(files) {
+  for (const file of files) {
+    await readFile(file);
+  }
+}
+```
+
+**注意：forEach 不能拿來在 Promise 中使用，會有 race condition 的問題**
+
 那關於 Promise 的介紹就到這裡拉～但是除了上面提到的東西外，Promise 在面試中還有另外一種很常見的考法，就是實做 Promise.race, Promise.all 的語法，這部分我們就會留到明天再跟大家分享了，我們明天見！
 
 ---
