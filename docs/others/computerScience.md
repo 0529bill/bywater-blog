@@ -153,6 +153,10 @@ Thread: Process 中的工人，負責執行 process 中的程序。
 
 ### 前端 HTTP Cache
 
+#### SDK and API
+
+https://hackmd.io/@metal35x/SJpPMBGSI
+
 閱讀文章:
 
 1. https://blog.techbridge.cc/2017/06/17/cache-introduction/
