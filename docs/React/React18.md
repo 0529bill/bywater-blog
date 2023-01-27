@@ -55,6 +55,7 @@ React 利用 `useTransition`來把任務設定成非緊急，讓任務可以被 
 
 Resources:
 
+https://juejin.cn/post/7010539227284766751
 https://react.iamkasong.com/preparation/idea.html#cpu%E7%9A%84%E7%93%B6%E9%A2%88
 https://medium.com/jspoint/how-the-browser-renders-a-web-page-dom-cssom-and-rendering-df10531c9969
 
