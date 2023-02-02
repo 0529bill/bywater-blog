@@ -55,7 +55,6 @@ var set = new Set(arr);
 
 //set to Array
 1. const array = Array.from(mySet);
-
 2. const array = [...mySet];
 
 
