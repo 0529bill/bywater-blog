@@ -6,6 +6,8 @@ sidebar_position: 3
 
 ![enterUrl](./Img/enterUrl.jpeg)
 
+推薦閱讀：https://developer.mozilla.org/zh-CN/docs/Web/Performance/How_browsers_work
+
 ---
 
 https://dev.to/wassimchegham/ever-wondered-what-happens-when-you-type-in-a-url-in-an-address-bar-in-a-browser-3dob  
