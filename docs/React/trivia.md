@@ -270,6 +270,25 @@ const EnhancedComponent = higherOrderComponent(WrappedComponent);
 
 React doc HOC 介紹：https://zh-hant.reactjs.org/docs/higher-order-components.html
 
+### React pure component
+
+```js
+import { PureComponent } from "react";
+
+class Greeting extends PureComponent {
+  render() {
+    return <h1>Hello, {this.props.name}!</h1>;
+  }
+}
+```
+
+PureComponent is a subclass of Component and supports all the Component APIs. Extending PureComponent is equivalent to defining a custom shouldComponentUpdate method that shallowly compares props and state.
+
+React doc 建議新程式碼使用 function component 來取代過去的 class component。  
+在 functional component 中可以使用 React.memo() 來達到跟 Pure Component 一樣的效果。
+
+Resources: https://beta.reactjs.org/reference/react/PureComponent
+
 ---
 
 Resources:
