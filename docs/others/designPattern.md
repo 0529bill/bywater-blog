@@ -22,3 +22,19 @@ React 嚴格上來說，並非是一個完整的 Framework，只能稱得上是�
 
 用 MVC, MVVM 的角度來看 React ：  
 https://blog.yyisyou.tw/1dddc6d7/
+
+## React's design pattern
+
+React, being a JavaScript library for building user interfaces, employs several design patterns that help developers in creating efficient and maintainable code. Some of the most commonly used design patterns in React are:
+
+Container/Presentational pattern: This pattern involves separating the logic of a component (Container) from its presentation (Presentational). The container component handles data manipulation and state management, while the presentational component focuses on how things look.
+
+Higher-Order Components (HOCs): HOCs are functions that take a component as an argument and return a new component with additional props. HOCs can be used to abstract complex logic and reuse it across multiple components.
+
+Render Props: Render Props is a pattern where a component exposes a function prop that allows a child component to render some content in a specific way. The Render Props pattern provides a way to share code between components without using inheritance or HOCs.
+
+State Management Libraries: React doesn't provide a built-in way to manage global state, but there are several libraries that help with this such as Redux, MobX, and Unstated Next. These libraries provide a centralized store for storing and sharing data across multiple components.
+
+React Hooks: React Hooks is a recent addition to the React library and provides a way to handle state and side effects in functional components. React Hooks allow developers to reuse stateful logic across multiple components without having to write class components.
+
+These are some of the most commonly used design patterns in React, and they can greatly simplify the development process and make it easier to write maintainable code.
