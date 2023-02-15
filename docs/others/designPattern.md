@@ -16,6 +16,10 @@ sidebar_position: 2
 
 ex, ES2015 Modules
 
+### 關注點分離 (Separation of concerns，SoC）
+
+[前端技術發展史，關注點分離的辯證：模板語言到 React 與 Vue](https://nissentech.org/frontend-soc-evolution/)
+
 ### MVC, MVVM 架構
 
 React 嚴格上來說，並非是一個完整的 Framework，只能稱得上是一個處理 view 的 Library。所以以宏觀的角度來看，React 負責 MVC 架構中的 view 的，model 跟 controller 則會由後端來處裡。

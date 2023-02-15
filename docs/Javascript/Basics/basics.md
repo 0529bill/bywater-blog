@@ -493,15 +493,34 @@ continue => jump over one iteration in the loop
 
 ---
 
+## 0.1 + 0.2 === 0.3 嘛？為什麼？
+
+兩數相加時，會先轉換成二進制，0.1 和 0.2 轉換成二進制的時候尾數會發生無限循環，然後進行對階運算，JS 引擎對二進制進行截斷，所以造成精度丟失。
+
+#### 解決方法
+
+1. Math.js 資料庫
+2. parseFloat() + toFixed()方法
+
+```js
++parseFloat((0.1 + 0.2).toFixed(10)) === 0.3; // true
+```
+
+https://www.jianshu.com/p/574df3eb8c09
+
 # Resources
 
-call, apply, bind 建議文章  
+call, apply, bind 建議文章
 https://juejin.cn/post/7128233572380442660
 
-[resources](https://felixgerschau.com/javascript-memory-management/)  
-[resources-ch](https://juejin.cn/post/6940945178899251230)  
-https://www.w3schools.com/jsref/met_document_addeventlistener.asp  
-https://stackoverflow.com/questions/5963669/whats-the-difference-between-event-stoppropagation-and-event-preventdefault  
-https://medium.com/itsems-frontend/javascript-strict-mode-d0a3aa74458b  
+[resources](https://felixgerschau.com/javascript-memory-management/)
+[resources-ch](https://juejin.cn/post/6940945178899251230)
+https://www.w3schools.com/jsref/met_document_addeventlistener.asp
+https://stackoverflow.com/questions/5963669/whats-the-difference-between-event-stoppropagation-and-event-preventdefault
+https://medium.com/itsems-frontend/javascript-strict-mode-d0a3aa74458b
 https://medium.com/@sunnyhuang.sc/%E6%8A%80%E8%A1%93%E7%AD%86%E8%A8%98-javascript-%E4%BD%95%E8%AC%82%E5%BC%B7%E5%88%B6%E8%BD%89%E5%9E%8B-coercion-%E4%BB%A5%E5%8F%8A%E5%A6%82%E4%BD%95%E4%BD%9C%E5%88%B0%E8%BD%89%E6%8F%9B%E5%9E%8B%E5%88%A5-d7e39e30083
 https://stackoverflow.com/questions/37587834/why-can-i-not-use-new-with-an-arrow-function-in-javascript-es6
+
+```
+
+```
