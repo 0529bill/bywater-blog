@@ -41,3 +41,11 @@ https://vitejs.dev/guide/why.html
 #### vite react-ts 中的 tsconfig.node.json 文件
 
 介紹： https://juejin.cn/post/7126043888573218823
+
+### vitest
+
+vitest compares to other testing frameworks:  
+https://vitest.dev/guide/comparisons.html
+
+vitest vs jest benchmark:  
+https://dev.to/mbarzeev/from-jest-to-vitest-migration-and-benchmark-23pl
