@@ -53,7 +53,10 @@ sidebar_position: 2
 
 ## 前端架構
 
-- design pattern
+- design pattern (ex, Container/Component pattern, Provider/Consumer pattern)
 - CSR vs SSR vs SSG
+- 前端登入(cookie+session, JWT, OAuth)
 
 ## Computer science
+
+- http vs https

@@ -59,6 +59,16 @@ https://blog.hubspot.com/website/what-is-utf-8
 
 ## Wed-related knowledge
 
+### HTTP vs HTTPS
+
+HTTP（超文本傳輸協定）是一種協定，用於在 Web 瀏覽器和 Web 服務器之間傳輸資料。它是一種明文協定，這意味著通過 HTTP 傳輸的數據未經加密，可以被任何具有網路流量訪問權限的人截取和閱讀。
+
+HTTPS（超文本傳輸安全協定）是 HTTP 的一個更安全的版本，使用加密技術保護 Web 瀏覽器和 Web 服務器之間傳輸的資料。HTTPS 使用傳輸層安全性（TLS）和安全套接字層（SSL）協定的組合對數據進行加密，這使得攻擊者更難截取和閱讀傳輸的資料。
+
+### Web socket
+
+https://www.readfog.com/a/1649297763805007872
+
 ### REST 架構
 
 Representational State Transfer，簡稱 REST，它是一種網路架構風格，近幾年來 REST 的概念已經被實作在大型網路系統中，而在 Web Service 中使用 REST 概念被實作出來的 API 就簡稱為 RESTful API 。
