@@ -44,6 +44,9 @@ https://vitejs.dev/guide/why.html
 
 ### vitest
 
+Jest 迁移到 Vitest 指南:  
+https://juejin.cn/post/7093872789337145380
+
 vitest compares to other testing frameworks:  
 https://vitest.dev/guide/comparisons.html
 

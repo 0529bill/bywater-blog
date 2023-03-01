@@ -25,6 +25,7 @@ sidebar_position: 2
 ## HTML
 
 - async script, defer script
+- prefetch vs preload vs preconnect
 
 ## 前端框架
 
@@ -43,7 +44,7 @@ sidebar_position: 2
 
 - Browser rendering(CSSOM, DOM, Render Tree, Layout, Paint)
 - Browser compatibility(PostCss, Autoprefixer, browserList)
-- CORS(簡單 vs 非簡單, preflight request, proxy, Jsonp)
+- CORS(簡單 vs 非簡單, preflight request, proxy, Jsonp(只支援 get))
 - cookie vs session
 
 ## 前端工具
