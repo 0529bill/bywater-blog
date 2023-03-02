@@ -172,6 +172,10 @@ https://hackmd.io/@metal35x/SJpPMBGSI
 1. https://blog.techbridge.cc/2017/06/17/cache-introduction/
 2. https://ithelp.ithome.com.tw/m/articles/10219276
 
+#### VPN
+
+https://nordvpn.com/zh-tw/what-is-a-vpn/
+
 ---
 
 Resources:  
