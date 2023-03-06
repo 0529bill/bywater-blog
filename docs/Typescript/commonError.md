@@ -2,7 +2,7 @@
 sidebar_position: 1
 ---
 
-# [Next.js] 常見報錯
+# [Typescript] 常見報錯
 
 ## Cannot find module 'X' or its corresponding type declarations
 

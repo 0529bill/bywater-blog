@@ -35,12 +35,16 @@ function sayGreeting(name) {
 //因為當greeting改變時，output也會跟著改變
 ```
 
+什麼是 side effects?
+副作用（side effects）指的是函數執行過程中對外在環境造成的影響都稱為副作用
+
 常見的 side effect:
 
 1. 更改（mutate）input
 2. 更新 DOM
 3. console.log
 4. call api
+5. 更改全局變數
 
 &nbsp;
 

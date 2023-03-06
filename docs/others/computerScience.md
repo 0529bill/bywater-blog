@@ -176,8 +176,6 @@ https://hackmd.io/@metal35x/SJpPMBGSI
 
 https://nordvpn.com/zh-tw/what-is-a-vpn/
 
----
+#### 內網 vs 外網
 
-Resources:  
-https://rapidapi.com/guides/cors-proxy-apis
-https://www.quora.com/What-is-front-end-proxy
+https://stevessmarthomeguide.com/internal-external-ip-addresses/
