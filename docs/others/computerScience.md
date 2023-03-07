@@ -156,6 +156,16 @@ Thread: Process 中的工人，負責執行 process 中的程序。
 
 資料來源: https://totoroliu.medium.com/program-process-thread-%E5%B7%AE%E7%95%B0-4a360c7345e5
 
+#### shell vs zsh vs cmd
+
+Shell, cmd, and zsh are all command-line interfaces (CLIs) used for interacting with an operating system.
+
+Shell: The term "shell" generally refers to a program that provides a command-line interface for interacting with an operating system. Some of the most popular shells are Bash, zsh, sh, and csh. Shells provide features such as command-line completion, command history, and shell scripting. Bash is the default shell on most Linux distributions and macOS.
+
+cmd: cmd is the command-line interpreter for the Windows operating system. It provides a command prompt where users can enter commands to perform various tasks such as managing files, running programs, and configuring system settings.
+
+zsh: zsh is an advanced shell designed for interactive use. It provides many features not found in other shells, such as advanced command-line completion, spelling correction, and globbing. zsh is also highly customizable and supports plugins and themes.
+
 #### Browser Architecture
 
 **每個 browser 中的 Architecture 都不一樣**
