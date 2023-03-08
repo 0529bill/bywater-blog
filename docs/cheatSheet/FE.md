@@ -46,17 +46,15 @@ sidebar_position: 2
 - Browser compatibility(PostCss, Autoprefixer, browserList)
 - CORS(簡單 vs 非簡單, preflight request, proxy, Jsonp(只支援 get))
 - cookie vs session
+- design pattern (ex, Container/Component pattern, Provider/Consumer pattern)
+- CSR vs SSR vs SSG
+- 前端登入(cookie+session, JWT, OAuth)
+- http cache
 
 ## 前端工具
 
 - webpack vs vite
 - npm vs yarn vs pnpm
-
-## 前端架構
-
-- design pattern (ex, Container/Component pattern, Provider/Consumer pattern)
-- CSR vs SSR vs SSG
-- 前端登入(cookie+session, JWT, OAuth)
 
 ## Computer science
 
