@@ -69,3 +69,9 @@ https://stackoverflow.com/questions/69791670/install-libraries-with-npm-or-impor
 ### --legacy-peer-deps
 
 https://blog.poychang.net/npm-install-with-legacy-peer-deps/
+
+### "postversion"
+
+scripts 裡面的 postversion 會在 npm version 時自動執行。
+常用來處理 git tag 的更新或是發布到 remote 等等。
+https://docs.npmjs.com/cli/v9/commands/npm-version
