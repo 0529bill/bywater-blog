@@ -189,3 +189,44 @@ https://nordvpn.com/zh-tw/what-is-a-vpn/
 #### 內網 vs 外網
 
 https://stevessmarthomeguide.com/internal-external-ip-addresses/
+
+#### 加密
+
+##### 編碼（Encoding）
+
+:換個方式表達，所以只要知道轉換工式，就可以還原回來
+
+```js
+// 1
+encodeURL();
+decodeURL();
+
+// 2
+Base64;
+```
+
+##### 加密（Encrypt）
+
+##### 對稱加密
+
+:用同一個 key 加密跟解密
+
+缺點：
+
+1. key 要傳送給對方
+2. key 遺失或是被竊取，就會造成資料外洩
+
+AES (Advanced Encryption Standard)
+ex, OpenSSL
+
+##### 非對稱加密
+
+:產生公鑰跟私鑰，公鑰用來加密，私鑰用來解密，公鑰可以公開，私鑰要保密
+
+ex, RSA
+
+##### Hash 雜湊
+
+：透過一系列的運算得到值，這是一個單向運算，無法透過雜湊值反推出原本的值。
+
+https://medium.com/starbugs/what-are-encoding-encrypt-and-hashing-4b03d40e7b0c

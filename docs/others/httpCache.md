@@ -8,6 +8,7 @@ sidebar_position: 19
 
 閱讀資源：
 
+- https://web.dev/http-cache/
 - https://pjchender.dev/webdev/note-http-cache/
 - https://www.explainthis.io/zh-hant/interview-guides/browser/http-caching
 

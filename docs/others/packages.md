@@ -52,3 +52,6 @@ https://vitest.dev/guide/comparisons.html
 
 vitest vs jest benchmark:  
 https://dev.to/mbarzeev/from-jest-to-vitest-migration-and-benchmark-23pl
+
+vitest 建議閱讀文章：
+https://pjchender.dev/npm/note-vite-vitest/
