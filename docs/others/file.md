@@ -22,3 +22,7 @@ https://stackoverflow.com/questions/30864573/what-is-a-blob-url-and-why-it-is-us
 https://blog.csdn.net/pfourfire/article/details/127396820
 
 https://ithelp.ithome.com.tw/articles/10271735
+
+### binary file 二進位檔案
+
+https://tecky.io/en/blog/%E5%85%A9%E7%A8%AE%E6%AA%94%E6%A1%88%E5%A4%A7%E4%B8%8D%E5%90%8C/

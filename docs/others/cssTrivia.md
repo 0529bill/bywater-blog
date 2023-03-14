@@ -26,8 +26,9 @@ resources:
 
 https://www.w3schools.com/css/css_specificity.asp
 
-### box model
+### box model (盒模型)
 
+由外到內分別為 margin > border > padding > content  
 :box model(盒模型)為 css 中的佈局模型。
 
 box model explain
@@ -37,6 +38,12 @@ margin(元素外擴展) vs padding(元素內擴展)
 https://ithelp.ithome.com.tw/articles/10205322
 
 什麼是 box-sizing:content box?為什麼需要設 box-sizing:border-box?
+
+#### 什麼是 box-sizing:border-box?
+
+設定 box-sizing:border-box 不用再去計算實際的 width/height，因為 width/height 會設定為 border-box，代表 padding 會往 border-box 裡面長，margin 則會往外長，width/height 不會因此而改變。
+
+將 box-sizing 設定成 border-box 後， width / height 的作用範圍就是指到 border 這個 box 的範圍了，我們就稱為 border-box，從前面所寫的可以了解一個物件的範圍，是由四個層層包裹的矩形所構成，此時 width 所作用的 box 就是 border 這個範圍了，如下圖所示(圖片取自 Chrome DevTools)
 
 ### BFC（Block Formatting Contexts）
 
@@ -75,12 +82,6 @@ https://ithelp.ithome.com.tw/articles/10212202
 #### position relative
 
 - relative 所參考的空間是物件本身位於資料流內的原始位置，但是可以設定距離母層的 right, left 等位置
-
-#### 什麼是 box-sizing:border-box?
-
-設定 box-sizing:border-box 不用再去計算實際的 width/height，因為 width/height 會設定為 border-box，代表 padding 會往 border-box 裡面長，margin 則會往外長，width/height 不會因此而改變。
-
-將 box-sizing 設定成 border-box 後， width / height 的作用範圍就是指到 border 這個 box 的範圍了，我們就稱為 border-box，從前面所寫的可以了解一個物件的範圍，是由四個層層包裹的矩形所構成，此時 width 所作用的 box 就是 border 這個範圍了，如下圖所示(圖片取自 Chrome DevTools)
 
 #### css display
 
@@ -125,6 +126,12 @@ https://www.51cto.com/article/683878.html
 #### css grid?
 
 [Grid 介紹](https://www.casper.tw/css/2017/03/22/css-grid-layout/)
+
+#### CSS grid vs CSS flexbox?
+
+CSS Grid 是一個二維佈局系統，允許你在一個網格中定義兩個維度的大小(ex, 行和列)，以創建複雜的佈局。它提供了對佈局的位置和大小的控制，包括創建重疊元素和控制項目沿著兩個軸的對齊方式。CSS Grid 非常適合創建需要精確和可適應的複雜佈局，例如雜誌式佈局或數據表格。
+
+而 Flexbox 則是一個一維佈局系統，代表一次只能控制一個維度(ex, 行)，用於沿著單個軸（水平或垂直）排列項目。它設計用於更靈活和簡單的佈局，不需要複雜的定位。Flexbox 尤其適用於創建需要根據不同的屏幕尺寸調整的響應式佈局，例如導航菜單、卡片佈局和可彈性調整的內容容器。
 
 ## CSS 套件
 
@@ -241,15 +248,13 @@ ex, :hover, :active, :visited
 
 https://medium.com/@bywater529/css-%E5%81%BD%E5%85%83%E7%B4%A0%E8%88%87%E5%81%BD%E9%A1%9E-3224b58a8202
 
-### CSS selector 用法
+#### css combinators 用法
 
-#### ~, +, > selector 用法
+https://www.w3schools.com/css/css_combinators.asp
 
 #### + （select element immediate after)
 
 #### ~ (select element behind it)
-
-https://gocreating.lation.app/blog/interview/appier
 
 https://stackoverflow.com/questions/6910049/on-a-css-hover-event-can-i-change-another-divs-styling
 https://stackoverflow.com/questions/10782054/what-does-the-tilde-squiggle-twiddle-css-selector-mean
