@@ -55,7 +55,18 @@ https://ithelp.ithome.com.tw/articles/10205322
 
 解決方法：
 
-`display: flex`
+#### 觸發 BFC 的條件
+
+根元素或其它包含它的元素
+浮動元素 (元素的 float 不是 none)
+絕對定位元素 (元素具有 position 為 absolute 或 fixed)
+內聯塊 (元素具有 display: inline-block)
+表格單元格 (元素具有 display: table-cell，HTML 表格單元格默認屬性)
+表格標題 (元素具有 display: table-caption, HTML 表格標題默認屬性)
+具有 overflow 且值不是 visible 的塊元素
+彈性盒（flex 或 inline-flex）
+display: flow-root
+column-span: all
 
 https://codesandbox.io/s/crazy-paper-8imk9f?file=/src/App.js  
 https://stackoverflow.com/questions/19718634/how-to-disable-margin-collapsing
@@ -108,6 +119,8 @@ https://ithelp.ithome.com.tw/articles/10212202
 https://www.digitalocean.com/community/tutorials/css-display-inline-vs-inline-block
 
 ### css flex?
+
+[flex 教程 - 阮一峰的网络日志](https://www.ruanyifeng.com/blog/2015/07/flex-grammar.html)
 
 #### flex:1 ?
 
@@ -238,6 +251,10 @@ cons
 
 https://juejin.cn/post/7030349710023983117
 
+### visibility:hidden vs display:none
+
+總之，display: none 和 visibility: hidden 之間的主要區別在於前者完全從文檔流中刪除元素，而後者隱藏元素但仍使其保留在文檔流中，佔據空間並影響佈局。
+
 ### 偽元素 vs 偽類
 
 偽元素：a css pseudo-element is used to style specified parts of an element.
@@ -248,7 +265,7 @@ ex, :hover, :active, :visited
 
 https://medium.com/@bywater529/css-%E5%81%BD%E5%85%83%E7%B4%A0%E8%88%87%E5%81%BD%E9%A1%9E-3224b58a8202
 
-#### css combinators 用法
+### css combinators 用法
 
 https://www.w3schools.com/css/css_combinators.asp
 

@@ -19,3 +19,7 @@ const styledButton = styled.button`
   }
 `;
 ```
+
+### manifest file
+
+The manifest file is used to list down resources that can be cached. Browsers use this information to make the web page load faster than the first time. There are 3 sections in the manifest file
