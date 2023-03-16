@@ -48,6 +48,12 @@ https://www.quora.com/Whats-the-browser-engine-of-Chrome-in-an-iOS-device
 3. Compositing (組合)階段
    在 compositing（組合）階段時，rendering engine 才會會透過 GPU 被繪製到螢幕中。
 
+### 怎麼減少 reflow & repaint?
+
+- CSS 樣式儘量批量修改
+- 避免使用 table 佈局(因為 table 節點改變都會造成重新 reflow)
+- 為元素提前設置好高寬，不因多次渲染改變位置
+
 &nbsp;
 
 ![DOM_TREE](./Img/DOM_TREE.png)

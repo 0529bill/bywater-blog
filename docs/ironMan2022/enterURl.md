@@ -18,10 +18,11 @@ sidebar_position: 26
 3. 建立 TCP/IP（Transmission Control Protocol/Internet Protocol）三次握手
 
 - 推薦[閱讀文章](https://ithelp.ithome.com.tw/articles/10205476)
+- 推薦[閱讀文章](https://juejin.cn/post/6844903784229896199)
 
-4. 請求到達伺服器端
-5. 回傳 HTML/CSS/JS 等資源給瀏覽器
-6. 瀏覽器解析並且渲染畫面
+1. 請求到達伺服器端
+2. 回傳 HTML/CSS/JS 等資源給瀏覽器
+3. 瀏覽器解析並且渲染畫面
 
 - 推薦閱讀[瀏覽器解析文章](https://0529bill.github.io/bywater-blog/Javascript/DOM)
 
