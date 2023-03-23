@@ -19,6 +19,7 @@ sidebar_position: 26
 
 - 推薦[閱讀文章](https://ithelp.ithome.com.tw/articles/10205476)
 - 推薦[閱讀文章](https://juejin.cn/post/6844903784229896199)
+- [DNS 介紹](https://juejin.cn/post/6990344840181940261)
 
 1. 請求到達伺服器端
 2. 回傳 HTML/CSS/JS 等資源給瀏覽器
