@@ -180,6 +180,8 @@ const PromiseRace = (iterable) => {
 
 ---
 
+[要就来 45 道 Promise 面试题一次爽到底](https://juejin.cn/post/6844904077537574919)
+
 &nbsp;
 
 https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Global_Objects/Promise

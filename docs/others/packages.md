@@ -44,6 +44,8 @@ https://vitejs.dev/guide/why.html
 
 ### vitest
 
+#### 推薦閱讀文章
+
 Jest 迁移到 Vitest 指南:  
 https://juejin.cn/post/7093872789337145380
 
@@ -53,5 +55,12 @@ https://vitest.dev/guide/comparisons.html
 vitest vs jest benchmark:  
 https://dev.to/mbarzeev/from-jest-to-vitest-migration-and-benchmark-23pl
 
-vitest 建議閱讀文章：
 https://pjchender.dev/npm/note-vite-vitest/
+
+#### vitest 中的 c8 覆蓋率含義
+
+- 行數覆蓋率（line coverage）：以行數為單位來計算。
+- 函式覆蓋率（function coverage）：以內部的函式為單位來計算。
+- 分枝覆蓋率（branch coverage）：以每個判斷式為單位來計算。
+- 語句覆蓋率（statement coverage）：以每個語句（statement）為單位計算。
+  https://ithelp.ithome.com.tw/articles/10309187?sc=iThelpR

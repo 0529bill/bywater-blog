@@ -8,6 +8,7 @@ sidebar_position: 19
 
 閱讀資源：
 
+- https://www.cythilya.tw/2018/07/27/http-caching/
 - https://web.dev/http-cache/
 - https://blog.techbridge.cc/2017/06/17/cache-introduction/
 - https://juejin.cn/post/6844903838768431118
@@ -21,3 +22,13 @@ sidebar_position: 19
 - 不涉及用戶個性化信息的資源，如公司標誌或頁面頁腳等，可以緩存並提供給所有用戶。
 - 不包含敏感信息的資源，如公共博客文章，可以緩存而不會影響安全性。
 - 安全可緩存的資源：安全可緩存的資源指的是不會意外更改的資源。例如，基於當前時間生成的資源不適合緩存，因為每次請求時都會不同。
+
+#### 儲存位置 memory cache vs disk cache
+
+Memory Cache:  
+速度快  
+關閉 tab 後就會清除、容量小
+
+Disk Cache:
+速度比較慢  
+容量大
