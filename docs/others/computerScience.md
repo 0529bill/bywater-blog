@@ -59,11 +59,42 @@ https://blog.hubspot.com/website/what-is-utf-8
 
 ## Wed-related knowledge
 
+### TCP (Transmission Control Protocol) 傳輸控制協定
+
+https://www.fortinet.com/resources/cyberglossary/tcp-ip
+
+TCP/IP 跟 OSI model 圖示：  
+https://fiberbit.com.tw/tcpip-model-vs-osi-model/
+
+TCP:
+Transmission Control Protocol (TCP) is a communications standard that enables application programs and computing devices to exchange messages over a network. It is designed to send packets across the internet and ensure the successful delivery of data and messages over networks.
+
+IP:
+The Internet Protocol (IP) is the method for sending data from one device to another across the internet.
+
+TCP and IP are separate protocols that work together to ensure data is delivered to its intended destination within a network. IP obtains and defines the address—the IP address—of the application or device the data must be sent to. TCP is then responsible for transporting and routing data through the network architecture and ensuring it gets delivered to the destination application or device that IP has defined
+
 ### HTTP vs HTTPS
 
 HTTP（超文本傳輸協定）是一種協定，用於在 Web 瀏覽器和 Web 服務器之間傳輸資料。它是一種明文協定，這意味著通過 HTTP 傳輸的數據未經加密，可以被任何具有網路流量訪問權限的人截取和閱讀。
 
 HTTPS（超文本傳輸安全協定）是 HTTP 的一個更安全的版本，使用加密技術保護 Web 瀏覽器和 Web 服務器之間傳輸的資料。HTTPS 使用傳輸層安全性（TLS）和安全套接字層（SSL）協定的組合對數據進行加密，這使得攻擊者更難截取和閱讀傳輸的資料。
+
+### HTTP1 vs HTTP2
+
+https://cheapsslsecurity.com/p/http2-vs-http1/
+
+HTTP/1.1 的主要問題之一是它只允許在單個連接(TCP connection)上同時發送一個請求。這意味著如果一個網站有許多需要加載的資源，例如圖片、腳本和樣式表，瀏覽器必須打開多個連接到服務器，這會導致頁面加載時間變慢。
+
+HTTP/2 被引入來解決 HTTP/1.1 的這些限制。它提供了幾個性能上的改進，包括：
+
+- 多路複用：HTTP/2 允許在單個連接上發送和接收多個請求，消除了加載網頁所需的多個連接的需求，從而加快了頁面加載速度。
+
+- 服務器推送：HTTP/2 允許服務器在不等待請求的情況下向客戶端推送資源，提高網站性能，減少延遲。
+
+- 二進制協議：HTTP/2 使用二進制協議而不是基於文本的協議，減少需要傳輸的數據量，提高性能。
+
+- 頭部壓縮：HTTP/2 壓縮頭部數據，減少需要傳輸的數據量，提高性能。
 
 ### Web socket
 

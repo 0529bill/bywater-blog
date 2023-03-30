@@ -83,10 +83,15 @@ JSONP 簡介：
 透過 html 中 script 沒有 CORS 的特點，利用 script 來傳送 JSONP，但是缺點有以下幾個：
 
 1.  JSONP 的資料傳輸方式是不安全的
+    - XSS attack
+      - 如果未設置 `Content-Type: application/json` 且未對 callback 進行字串過濾，則有機會在 callback 後面加上惡意程式碼 ex `<script>alert('a')</script>`
 2.  只支持 get 請求
 3.  沒有錯誤處理
 
-資源：https://medium.com/@brianwu1201/jsonp-with-simple-example-4711e2a07443
+資源：
+
+- https://medium.com/@brianwu1201/jsonp-with-simple-example-4711e2a07443
+- https://www.modb.pro/db/163731
 
 當我們在 JavaScript 中透過 fetch 或 XMLHttpRequest 存取資源時，如果是同源的情況下，存取不會受到限制，那什麼是同源呢?同源，包含以下三個條件
 
