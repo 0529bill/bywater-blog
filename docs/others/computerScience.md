@@ -84,6 +84,9 @@ HTTPS（超文本傳輸安全協定）是 HTTP 的一個更安全的版本，使
 
 https://cheapsslsecurity.com/p/http2-vs-http1/
 
+HTTP2 閱讀文章:
+https://hieven.medium.com/http-2-%E5%BE%9E%E9%9B%B6%E5%88%B0%E4%B8%80-be221087cd35
+
 HTTP/1.1 的主要問題之一是它只允許在單個連接(TCP connection)上同時發送一個請求。這意味著如果一個網站有許多需要加載的資源，例如圖片、腳本和樣式表，瀏覽器必須打開多個連接到服務器，這會導致頁面加載時間變慢。
 
 HTTP/2 被引入來解決 HTTP/1.1 的這些限制。它提供了幾個性能上的改進，包括：

@@ -51,6 +51,7 @@ sidebar_position: 2
 - CSR vs SSR vs SSG
 - 前端登入(cookie+session, JWT, OAuth)
 - http cache
+- common.js vs ES6
 
 ## 前端工具
 
@@ -60,3 +61,5 @@ sidebar_position: 2
 ## Computer science
 
 - http vs https
+- HTTP1.1 vs HTTP2
+- TCP/IP
