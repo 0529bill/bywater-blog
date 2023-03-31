@@ -131,10 +131,19 @@ flex:1 等於
 ```js
 flex-grow : 1;
 flex-shrink : 1;
-flex-basis : 0;
+flex-basis : '0%';
 ```
 
-https://www.51cto.com/article/683878.html
+#### flex 的預設值？
+
+```js
+flex-grow : 1;
+flex-shrink : 1;
+flex-basis : auto;
+
+```
+
+推薦閱讀文章：https://www.51cto.com/article/683878.html
 
 #### css grid?
 
