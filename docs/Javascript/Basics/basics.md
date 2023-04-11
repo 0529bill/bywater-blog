@@ -20,13 +20,13 @@ JavaScript 共有八种数据类型，分别是 Undefined、Null、Boolean、Num
 
 &nbsp;
 
-#### Primitives
+## Primitives
 
 (string, number, bigint, boolean, symbol, null and undefined)
 
 - [Symbol](https://javascript.info/symbol)
 
-#### Object
+### Object
 
 (function, array(ordered collections), objects(keyed collections), Map(like object, but allows key to be any type), Set(collection of unique values))
 
@@ -35,7 +35,65 @@ JavaScript 共有八种数据类型，分别是 Undefined、Null、Boolean、Num
 - [Map & Set](https://javascript.info/map-set)
 - [weakMap](https://www.fooish.com/javascript/ES6/Map-and-WeakMap.html)
 
-##### Set
+### for of vs for in
+
+[for of vs for in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
+
+- The for...in loop logs only enumerable properties(indexes) of the iterable object
+
+  - 常被用在 object 中來得到 object 的 key
+  - for-in 缺點 =>
+
+```js
+//key值為Symbol時會自動忽略
+const obj = { a: 1 };
+const sym = Symbol("b");
+obj[sym] = 2;
+
+for (const prop in obj) {
+  console.log(prop); // "a"
+}
+```
+
+```js
+//只會loop through enumerable,透過defineProperty可以設定object得flag/attributes
+const obj = { a: 1, b: 2 };
+Object.defineProperty(obj, "c", { value: 3, enumerable: false });
+
+for (const prop in obj) {
+  console.log(prop); // "a", "b"
+}
+```
+
+- The for...of loop iterates and logs values that iterable, as an array (which is iterable), defines to be iterated over.
+  - 常被用在 array, Map, Set, user-defined iterable(generator)...
+
+```js
+Object.prototype.objCustom = function () {};
+Array.prototype.arrCustom = function () {};
+
+const iterable = [3, 5, 7];
+iterable.foo = "hello";
+
+for (const i in iterable) {
+  console.log(i);
+}
+// "0", "1", "2", "foo", "arrCustom", "objCustom"
+
+for (const i in iterable) {
+  if (Object.hasOwn(iterable, i)) {
+    console.log(i);
+  }
+}
+// "0" "1" "2" "foo"
+
+for (const i of iterable) {
+  console.log(i);
+}
+// 3 5 7
+```
+
+### Set
 
 ```JS
 const mySet = new Set();
@@ -60,7 +118,7 @@ var set = new Set(arr);
 
 ```
 
-##### Map
+### Map
 
 ```js
 // 建立 Map 時直接代入內容
@@ -92,14 +150,14 @@ const mapKeys = Array.from(map.values());
 
 https://stackoverflow.com/questions/20069828/how-to-convert-set-to-array
 
-##### weakMap vs Map 的差別
+### weakMap vs Map 的差別
 
 1. WeakMap 只接受 object 當作 key
 2. references to key objects are held "weakly", which means that they do not prevent garbage collection in case there would be no other reference to the object. 代表如果沒有其他地方有引用 weakMap 中的 key 的話，key 和 WeakMap 就會被 GC。
 
 &nbsp;
 
-##### object vs Map 的差別
+### object vs Map 的差別
 
 1. object 中的 key 只能是 string 或是 symbol，Map 中的 key 則可以是任何值
 2. 原始物件的元素沒有順序性，Map 物件則有順序，所以在 Leetcode 時 Map 會比較好用
@@ -125,6 +183,43 @@ https://juejin.cn/post/7105216353564360711
 https://www.explainthis.io/zh-hant/interview-guides/javascript/map-vs-object
 
 ---
+
+### Property flags and descriptors
+
+[define]https://javascript.info/property-descriptors
+
+透過 `Object.defineProperty`的語法來更改 object 該 key-value pair 的設定。
+
+```js
+let user = {
+  name: "John",
+};
+
+Object.defineProperty(user, "name", {
+  writable: false,
+});
+
+user.name = "Pete"; // Error: Cannot assign to read only property 'name'
+```
+
+透過`Object.getOwnPropertyDescriptor`可以來查看目前該 property 的設定。
+
+```js
+let user = {
+  name: "John",
+};
+
+let descriptor = Object.getOwnPropertyDescriptor(user, "name");
+
+console.log(descriptor);
+
+// {
+//     "value": "John",
+//     "writable": true,
+//     "enumerable": true,
+//     "configurable": true
+// }
+```
 
 &nbsp;
 
