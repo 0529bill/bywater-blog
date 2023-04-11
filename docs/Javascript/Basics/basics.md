@@ -35,7 +35,7 @@ JavaScript 共有八种数据类型，分别是 Undefined、Null、Boolean、Num
 - [Map & Set](https://javascript.info/map-set)
 - [weakMap](https://www.fooish.com/javascript/ES6/Map-and-WeakMap.html)
 
-### for of vs for in
+### for...of vs for...in
 
 [for of vs for in](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of)
 

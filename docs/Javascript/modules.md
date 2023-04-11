@@ -107,6 +107,48 @@ https://javascript.info/script-async-defer
 
 ---
 
+## DOMContentLoaded, load, beforeunload and unload ?
+
+監聽方法：
+
+```js
+document.addEventListener("DOMContentLoaded", ready);
+```
+
+執行順序：
+
+DOMContentLoaded => onLoad => beforeunload => unload
+
+- DOMContentLoaded —— 瀏覽器已完全加載 HTML，並構建了 DOM 樹，但像 <img> 和樣式表之類的外部資源可能尚未加載完成。
+- load —— 瀏覽器不僅加載完成了 HTML，還加載完成了所有外部資源：圖片，樣式等。
+- beforeunload —— 當用戶試圖離開頁面時，ex, 在使用者要關閉視窗時，瀏覽器詢問是否真的要離開
+- unload —— 當用戶離開頁面時，一般用在回傳收集的數據。
+
+```js
+//unload 用法案例
+let analyticsData = {
+  /* 帶有收集的數據的對象 */
+};
+
+window.addEventListener("unload", function () {
+  navigator.sendBeacon("/analytics", JSON.stringify(analyticsData));
+});
+```
+
+## document.readyState
+
+document.readyState 是文檔的當前狀態，可以在 readystatechange 事件中跟蹤狀態更改：
+
+- loading —— 文檔正在被加載。
+- interactive —— 文件已經完成讀取和解析，但是其他的子資源，如「圖片樣式層次表」，仍然在讀取。這個狀態表示 DOMContentLoaded 事件已經被觸發。
+- complete —— 文件及子資源都完成讀取。這個狀態表示 window.onload 事件即將被觸發。
+
+https://zh.javascript.info/onload-ondomcontentloaded
+https://www.explainthis.io/zh-hant/interview-guides/frontend/fe-DOMContentLoaded-load-beforeunload-unload-difference
+https://developer.mozilla.org/zh-TW/docs/Web/API/Window/DOMContentLoaded_event
+
+---
+
 ## Module Exports vs. Export Default?
 
 require: Node.js 和 ES6 都支援的引入

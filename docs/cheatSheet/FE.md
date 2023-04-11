@@ -25,6 +25,8 @@ sidebar_position: 2
 
 ## HTML
 
+- semantic element? pros/cons
+- DOMContentLoaded, load, beforeunload, unload ?
 - async script, defer script
 - prefetch vs preload vs preconnect
 
