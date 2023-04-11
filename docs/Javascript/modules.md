@@ -143,6 +143,8 @@ document.readyState 是文檔的當前狀態，可以在 readystatechange 事件
 - interactive —— 文件已經完成讀取和解析，但是其他的子資源，如「圖片樣式層次表」，仍然在讀取。這個狀態表示 DOMContentLoaded 事件已經被觸發。
 - complete —— 文件及子資源都完成讀取。這個狀態表示 window.onload 事件即將被觸發。
 
+[<script> 標籤應該放在 HTML 的什麼位置？<link> 呢？](https://www.explainthis.io/zh-hant/interview-guides/frontend/script-link-in-html)
+
 https://zh.javascript.info/onload-ondomcontentloaded
 https://www.explainthis.io/zh-hant/interview-guides/frontend/fe-DOMContentLoaded-load-beforeunload-unload-difference
 https://developer.mozilla.org/zh-TW/docs/Web/API/Window/DOMContentLoaded_event

@@ -27,7 +27,7 @@ sidebar_position: 2
 
 - semantic element? pros/cons
 - DOMContentLoaded, load, beforeunload, unload ?
-- async script, defer script
+- async script, defer script? Where to put `<link>` and `<script>` in the HTML file ?
 - prefetch vs preload vs preconnect
 
 ## 前端框架
