@@ -24,6 +24,7 @@ sidebar_position: 2
 - Position(static, relative, absolute, fixed, sticky)
 - rem vs em vs px
 - Display(block, inline, inline-block, flex, grid)
+- display:none vs visibility: hidden
 
 ## HTML
 
@@ -47,7 +48,7 @@ sidebar_position: 2
 
 ## WEB
 
-- Browser rendering(CSSOM, DOM, Render Tree, Layout, Paint)
+- Browser rendering(CSSOM, DOM, Render Tree, Layout, Paint), how to avoid reflow and repaint
 - Browser compatibility(PostCss, Autoprefixer, browserList)
 - CORS(簡單 vs 非簡單, preflight request, proxy, Jsonp(只支援 get))
 - cookie vs session
@@ -55,10 +56,10 @@ sidebar_position: 2
 - CSR vs SSR vs SSG
 - 前端登入(cookie+session, JWT, OAuth)
 - http cache
-- common.js vs ES6
 
 ## 前端工具
 
+- 模組化(IIFE、Common.js、ESM) pros and cons
 - webpack vs vite
 - npm vs yarn vs pnpm
 

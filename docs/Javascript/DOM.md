@@ -50,6 +50,8 @@ https://www.quora.com/Whats-the-browser-engine-of-Chrome-in-an-iOS-device
 
 ### 怎麼減少 reflow & repaint?
 
+- 用 transform 的 translate 來代替剛改 position 的 top/left 更改位置
+- 如果知道會用到 transform 的話，預先用`will-change:transform`語法來預先告知瀏覽器做準備
 - CSS 樣式儘量批量修改
 - 避免使用 table 佈局(因為 table 節點改變都會造成重新 reflow)
 - 為元素提前設置好高寬，不因多次渲染改變位置
