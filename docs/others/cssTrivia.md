@@ -20,6 +20,7 @@ There are four categories which define the specificity level of a selector:
 3. IDs - Example: #navbar
 4. Classes, pseudo-classes, attribute selectors - Example: .test, :hover, [href]
 5. Elements and pseudo-elements - Example: h1, :before
+6. universal selectors (*)
 ```
 
 resources:

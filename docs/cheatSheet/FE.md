@@ -19,6 +19,7 @@ sidebar_position: 2
 
 ## CSS
 
+- Specificity scoring（css 優先級）
 - Box model(content, padding, border, margin)
 - Position(static, relative, absolute, fixed, sticky)
 - Display(block, inline, inline-block, flex, grid)
