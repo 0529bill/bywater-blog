@@ -273,7 +273,11 @@ https://juejin.cn/post/7030349710023983117
 ex, ::first, ::before
 
 偽類：a css pseudo-class is used to define a special state of an element.
-ex, :hover, :active, :visited
+常見的包含以下幾種：
+
+:hover
+:active => 它代表的是用戶按下按鍵和鬆開按鍵之間的時間。
+:visited => 表示用戶已訪問過的鏈接
 
 https://medium.com/@bywater529/css-%E5%81%BD%E5%85%83%E7%B4%A0%E8%88%87%E5%81%BD%E9%A1%9E-3224b58a8202
 

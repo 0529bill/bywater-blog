@@ -23,4 +23,6 @@ git submodule 像是一個 git repo 的 link，透過這個 link，我們可以�
 
 缺點：增加 git 操作的複雜度，也增加的團隊的學習曲線。
 
-[文章](https://git-scm.com/book/en/v2/Git-Tools-Submodules)
+[文章](https://git-scm.com/book/en/v2/Git-Tools-Submodules)  
+https://www.atlassian.com/git/tutorials/git-submodule  
+https://blog.kennycoder.io/2020/06/14/Git-submodule-%E4%BD%BF%E7%94%A8%E6%95%99%E5%AD%B8/
