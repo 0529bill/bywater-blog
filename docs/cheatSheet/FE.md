@@ -62,6 +62,7 @@ sidebar_position: 2
 - 模組化(IIFE、Common.js、ESM) pros and cons
 - webpack vs vite
 - npm vs yarn vs pnpm
+- jpg vs png vs webp vs SVG
 
 ## Computer science
 
