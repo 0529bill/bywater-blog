@@ -50,7 +50,7 @@ sidebar_position: 2
 
 - Browser rendering(CSSOM, DOM, Render Tree, Layout, Paint), how to avoid reflow and repaint
 - Browser compatibility(PostCss, Autoprefixer, browserList)
-- CORS(簡單 vs 非簡單, preflight request, proxy, Jsonp(只支援 get))
+- CORS(簡單 vs 非簡單, preflight request, do we really need preflight request?, proxy, Jsonp(只支援 get))
 - cookie vs session
 - design pattern (ex, Container/Component pattern, Provider/Consumer pattern)
 - CSR vs SSR vs SSG
@@ -67,5 +67,7 @@ sidebar_position: 2
 ## Computer science
 
 - http vs https
-- HTTP1.1 vs HTTP2
+- HTTP1 vs HTTP1.1(keep-alive, 100(continue), methods(PUT、PATCH、DELETE..etc))
+- HTTP1.1 vs HTTP2(Request multiplexing, head-of-line blocking, header 壓縮, server push)
 - TCP/IP
+- TCP vs UDP
