@@ -80,24 +80,56 @@ HTTP（超文本傳輸協定）是一種協定，用於在 Web 瀏覽器和 Web 
 
 HTTPS（超文本傳輸安全協定）是 HTTP 的一個更安全的版本，使用加密技術保護 Web 瀏覽器和 Web 服務器之間傳輸的資料。HTTPS 使用傳輸層安全性（TLS）和安全套接字層（SSL）協定的組合對數據進行加密，這使得攻擊者更難截取和閱讀傳輸的資料。
 
-### HTTP1 vs HTTP2
+### HTTP1 vs HTTP1.1 vs HTTP2
 
 https://cheapsslsecurity.com/p/http2-vs-http1/
 
 HTTP2 閱讀文章:
 https://hieven.medium.com/http-2-%E5%BE%9E%E9%9B%B6%E5%88%B0%E4%B8%80-be221087cd35
 
+**HTTP1 vs HTTP1.1**
+
+**HTTP1.1 新增了**
+
+- HTTP 100 (Continue)
+  前端先傳送含有`Expect (en-US): 100-continue`且只有 header 的 request 給伺服器，伺服器確認沒有問題後，會回傳狀態碼`100 (Continue)`，前端收到之後，在傳送一個帶有 body 的 request。
+  用途：用在傳送大量資料時，先透過`Expect (en-US): 100-continue`來確保伺服器可以接受訊息，才傳送真正的 request，來避免頻寬上的額外浪費。
+
+- 持久連接 (keep-alive)
+  HTTP1.1 預設 connection 為 keep-alive，代表會使用長連接，並且連結會會保持一段時間，然後重複用於發送一系列請求，節省了新建 TCP 連接握手的時間。
+
+- 新增 caching header 來解決 HTTP1 中的`If-Modified-Since`和`Expires`的問題
+  HTTP/1.1 則引入更多的緩存策略來優化緩存，例如：Etag、If-Unmodified-Since、If-Match、If-None-Match。
+
+- 新增新的請求方法
+  `PUT`、`PATCH`、`DELETE`、`CONNECT`、`TRACE` 和 `OPTIONS`等等。
+
+- 流水線(pipelining)
+  讓客戶端在同一個 TCP 連接內並行發出多個 HTTP 請求，客戶端也不需要等待上一次請求結果返回，就可以發出下一次請求，但伺服器端必須依照接收到的客戶端請求的先後順序一次返回，以保證客戶端能夠區分出每次請求的回應內容
+  衍生的問題，所以大部分的瀏覽器都把這個功能關閉：
+  - 頭部阻塞（head-of-line blocking）問題，假設你使用 http pipeline 發了二個請求，那這時如果第一個請求要操作很久，那就會阻塞住這整個 http pipeline 的工作
+  - 只有部分 method，包含 GET 或 HEAD 才能使用。
+
+https://developer.mozilla.org/zh-CN/docs/Web/HTTP/Connection_management_in_HTTP_1.x
+
+**HTTP1.1 vs HTTP2**
+
 HTTP/1.1 的主要問題之一是它只允許在單個連接(TCP connection)上同時發送一個請求。這意味著如果一個網站有許多需要加載的資源，例如圖片、腳本和樣式表，瀏覽器必須打開多個連接到服務器，這會導致頁面加載時間變慢。
 
 HTTP/2 被引入來解決 HTTP/1.1 的這些限制。它提供了幾個性能上的改進，包括：
 
-- 多路複用：HTTP/2 允許在單個連接上發送和接收多個請求，消除了加載網頁所需的多個連接的需求，從而加快了頁面加載速度。
+- 多路複用(Request multiplexing)：HTTP/2 允許在單個連接上發送和接收多個請求，消除了加載網頁所需的多個連接的需求，從而加快了頁面加載速度。
 
-- 服務器推送：HTTP/2 允許服務器在不等待請求的情況下向客戶端推送資源，提高網站性能，減少延遲。
+- 服務器主動推送：HTTP/2 允許服務器在不等待請求的情況下向客戶端推送資源，提高網站性能，減少延遲。
+  ex. 透過 Server Push，可以在瀏覽器請求 index.html 時，也由伺服器主動發送 style.css ，這樣只需要一輪 HTTP 的請求，就可以拿到所需的所有資源。
 
 - 二進制協議：HTTP/2 使用二進制協議而不是基於文本的協議，減少需要傳輸的數據量，提高性能。
 
-- 頭部壓縮：HTTP/2 壓縮頭部數據，減少需要傳輸的數據量，提高性能。
+- header 壓縮：HTTP/2 壓縮頭部數據，減少需要傳輸的數據量，提高性能。
+
+資源：
+https://ithelp.ithome.com.tw/articles/10225751
+https://www.explainthis.io/zh-hant/interview-guides/browser/http1.0-http1.1-http2.0-difference
 
 ### Web socket
 

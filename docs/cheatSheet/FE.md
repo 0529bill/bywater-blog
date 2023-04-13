@@ -67,7 +67,7 @@ sidebar_position: 2
 ## Computer science
 
 - http vs https
-- HTTP1 vs HTTP1.1(keep-alive, 100(continue), methods(PUT、PATCH、DELETE..etc))
+- HTTP1 vs HTTP1.1(http status 100(continue), methods(OPTIONS、PUT、PATCH、DELETE..etc)、Cache-control header)
 - HTTP1.1 vs HTTP2(Request multiplexing, head-of-line blocking, header 壓縮, server push)
 - TCP/IP
 - TCP vs UDP
