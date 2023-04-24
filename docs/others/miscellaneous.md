@@ -26,6 +26,7 @@ To set an alias in the Mac Terminal using Zsh, you can follow these steps:
 
 ```zsh
 alias ll='ls -alh'
+
 ```
 
 3. Save the changes by pressing Control + X, then Y, and then Enter.

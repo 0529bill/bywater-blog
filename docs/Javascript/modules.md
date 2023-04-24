@@ -119,7 +119,7 @@ document.addEventListener("DOMContentLoaded", ready);
 
 DOMContentLoaded => onLoad => beforeunload => unload
 
-- DOMContentLoaded —— 瀏覽器已完全加載 HTML，並構建了 DOM 樹，但像 <img> 和樣式表之類的外部資源可能尚未加載完成。
+- DOMContentLoaded —— 瀏覽器已完全加載 HTML，並構建了 DOM 樹，但像 `<img>` 和樣式表之類的外部資源可能尚未加載完成。
 - load —— 瀏覽器不僅加載完成了 HTML，還加載完成了所有外部資源：圖片，樣式等。
 - beforeunload —— 當用戶試圖離開頁面時，ex, 在使用者要關閉視窗時，瀏覽器詢問是否真的要離開
 - unload —— 當用戶離開頁面時，一般用在回傳收集的數據。
@@ -143,7 +143,7 @@ document.readyState 是文檔的當前狀態，可以在 readystatechange 事件
 - interactive —— 文件已經完成讀取和解析，但是其他的子資源，如「圖片樣式層次表」，仍然在讀取。這個狀態表示 DOMContentLoaded 事件已經被觸發。
 - complete —— 文件及子資源都完成讀取。這個狀態表示 window.onload 事件即將被觸發。
 
-[<script> 標籤應該放在 HTML 的什麼位置？<link> 呢？](https://www.explainthis.io/zh-hant/interview-guides/frontend/script-link-in-html)
+[`<script>` 標籤應該放在 HTML 的什麼位置？`<link>` 呢](https://www.explainthis.io/zh-hant/interview-guides/frontend/script-link-in-html)
 
 https://zh.javascript.info/onload-ondomcontentloaded
 https://www.explainthis.io/zh-hant/interview-guides/frontend/fe-DOMContentLoaded-load-beforeunload-unload-difference
