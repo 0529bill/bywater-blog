@@ -72,7 +72,7 @@ module.exports = {
             position: "right",
           },
           {
-            href: "https://0529bill.github.io/portfolio/#/portfolio/Resume",
+            href: "https://docs.google.com/document/d/e/2PACX-1vScM-honepN0MDFjnOEg7YxSkE4wCM1fM8h0Em_-TQs2wewDZJXYeRieXvWBdarSi6P2JDzRr4-0NA3/pub",
             label: "Resume",
             position: "right",
           },
