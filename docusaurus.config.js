@@ -120,4 +120,13 @@ module.exports = {
         darkTheme: darkCodeTheme,
       },
     },
+  algolia: {
+    // The application ID provided by Algolia
+    appId: "255MJDST9J",
+
+    // Public API key: it is safe to commit it
+    apiKey: "042194bcde760bd5121265193fbf9bad",
+
+    indexName: "bywater-blog",
+  },
 };
