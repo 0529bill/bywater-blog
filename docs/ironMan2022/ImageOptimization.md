@@ -34,12 +34,19 @@ preload 是`<link>`裡面的一個 type，它可以告訴瀏覽器該資源需�
 
 ### 額外補充： preload vs prefetch vs preconnect
 
+這三種功能都是用在 link 的 rel(relationship) tag 裡做使用，來辨別出該 link 的重要性跟優先順序。
+
 https://shubo.io/preload-prefetch-preconnect/#caching-%E8%A1%8C%E7%82%BA
 
-async：立即下载（异步，不会阻碍文档解析），异步执行（执行的时候会阻碍文档解析）
-defer：立即下载（异步，不会阻碍文档解析），延迟执行，在整个页面都解析完毕后执行
-preload：提前下载，需要的时候立即执行，无需再下载
-prefetch：提前下载，在未来的某个页面可能会执行，节省下载时间
+preload：用於重要的資料，用來告訴瀏覽器儘快下載這些資源，並且要搭配`as`來使用。
+
+```js
+<link rel="preload" as="script" href="critical.js">
+<link rel="preload" as="style" href="critical.css">
+```
+
+prefetch：預先猜測哪些 link 會需要下載，所以提前下載該 link 資料，在未來使用到該資料時就會被馬上載入，節省下載時間(prefetch 的優先度低，所以用在比較優先度低的資料)  
+preconnect: 預先建立好連線(ex, DNS 請求域名 => TCP handshake => server)，減少等待連線得時間
 
 Resources:
 https://juejin.cn/post/7117142442926686215#heading-10
