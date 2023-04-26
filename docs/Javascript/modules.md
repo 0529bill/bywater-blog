@@ -145,6 +145,10 @@ document.readyState 是文檔的當前狀態，可以在 readystatechange 事件
 
 [`<script>` 標籤應該放在 HTML 的什麼位置？`<link>` 呢](https://www.explainthis.io/zh-hant/interview-guides/frontend/script-link-in-html)
 
+[Link 為什麼要放在 head 中呢？](https://zhuanlan.zhihu.com/p/268726432)
+
+Link 要放在 head 中時，會阻塞 html 的渲染，因此會等到 css 下載完成解析完成才會進行 html 渲染，所以最終頁面是完整有 style 的。相反的，link 放在 body 中時，不會阻塞 html 渲染，因此 link 之前的 html 會先進行渲染，導致多次渲染跟畫面上沒有出現 styling 的問題，
+
 https://zh.javascript.info/onload-ondomcontentloaded
 https://www.explainthis.io/zh-hant/interview-guides/frontend/fe-DOMContentLoaded-load-beforeunload-unload-difference
 https://developer.mozilla.org/zh-TW/docs/Web/API/Window/DOMContentLoaded_event

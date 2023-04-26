@@ -292,6 +292,11 @@ https://www.w3schools.com/css/css_combinators.asp
 https://stackoverflow.com/questions/6910049/on-a-css-hover-event-can-i-change-another-divs-styling
 https://stackoverflow.com/questions/10782054/what-does-the-tilde-squiggle-twiddle-css-selector-mean
 
+### css attributes
+
+attribute selector 可以透過對象擁有的 attribute 來選定他，來做 css 樣式的使用。  
+https://www.w3schools.com/css/css_attribute_selectors.asp
+
 ---
 
 Resources:
