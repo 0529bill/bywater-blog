@@ -61,17 +61,13 @@ const PromiseRace = (values) => {
 ### debounce
 
 ```js
-//debounce實作
-function debounce(func, delay) {
-  let timeout = null;
-  return function (...args) {
-    let context = this;
-    //綁定在傳進來的func上
-    clearTimeout(timeout);
-    //清除掉前一個timeout
+function debounce(fn, delay = 500) {
+  let timer;
 
-    timeout = setTimeout(function () {
-      func.apply(context, args);
+  return (...args) => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      fn(...args);
     }, delay);
   };
 }
@@ -80,26 +76,33 @@ function debounce(func, delay) {
 ### throttle
 
 ```js
-//throttle實作
-//用function寫
-function throttle(func, delay) {
-  let inThrottle;
-  let timeout = null;
-  return function (...args) {
-    let context = this;
-    if (!inThrottle) {
-      func.apply(context, args);
-      inThrottle = true;
-      clearTimeout(timeout);
-      timeout = setTimeout(function () {
-        inThrottle = false;
-      }, delay);
-    }
+function throttle(fn, delay = 500) {
+  let timer = null;
+
+  return (...args) => {
+    if (timer) return;
+    timer = setTimeout(() => {
+      fn(...args);
+      timer = null;
+    }, delay);
   };
 }
 ```
 
 ### Array method
+
+**Array.prototype.reduce**
+
+```js
+Array.prototype.myReduce = function (callback, initialValue) {
+  let init = initialValue || this[0];
+  let index = initialValue ? 0 : 1;
+  for (let i = index; i < this.length; i++) {
+    init = callback(init, this[i]);
+  }
+  return init;
+};
+```
 
 **Array.prototype.map**
 
@@ -142,11 +145,10 @@ Array.prototype.myEach = function myEach(callback) {
 **Array.prototype.every**
 
 ```js
-Array.prototype.myEvery = function myEvery(predicate, thisArg) {
+Array.prototype.myEvery = function myEvery(callback, thisArg) {
   for (var i = 0; i < this.length; i++) {
-    if (!predicate(this[i], i, this)) return false;
+    if (!callback(this[i], i, this)) return false;
   }
-
   return true;
 };
 ```
@@ -154,25 +156,11 @@ Array.prototype.myEvery = function myEvery(predicate, thisArg) {
 **Array.prototype.some**
 
 ```js
-Array.prototype.mySome = function mySome(predicate, thisArg) {
+Array.prototype.mySome = function mySome(callback, thisArg) {
   for (var i = 0; i < this.length; ++i) {
-    if (!predicate(this[i], i, this)) return true;
+    if (!callback(this[i], i, this)) return true;
   }
-
   return false;
-};
-```
-
-**Array.prototype.reduce**
-
-```js
-Array.prototype.myReduce = function (callback, initialValue) {
-  let init = initialValue || this[0];
-  let index = initialValue ? 0 : 1;
-  for (let i = index; i < this.length; i++) {
-    init = callback(init, this[i]);
-  }
-  return init;
 };
 ```
 
