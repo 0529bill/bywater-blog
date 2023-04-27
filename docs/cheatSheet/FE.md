@@ -64,6 +64,17 @@ sidebar_position: 2
 - npm vs yarn vs pnpm
 - jpg vs png vs webp vs SVG
 
+## 前端手寫
+
+- Promise.all
+- Promise.race
+- debounce
+- throttle
+- Array method(Reduce, map, filter, forEach,every, some, sort )
+- shallow copy
+- deep copy
+- cache function
+
 ## Computer science
 
 - http vs https
