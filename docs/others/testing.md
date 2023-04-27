@@ -57,3 +57,10 @@ describe("My First Test", () => {
 ---
 
 Resources: https://meticulous.ai/blog/testing-pyramid-for-frontend/
+
+## 測試術語
+
+### 黑箱測試、白箱測試
+
+白箱測試：測試正常的使用流程
+黑箱測試：用非正常的使用方式來測試 ex, 測試大流量時網頁是否會 crashed
