@@ -187,15 +187,16 @@ object
 
 ```js
 function memoizeMap(fn) {
-  const map = new Map();
-  return function (arg) {
-    if (map.has(arg)) {
-      return map.get(arg);
+  let map = new Map();
+  return function (...args) {
+    let key = JSON.stringify(args);
+    if (map.has(key)) {
+      return map.get(key);
+    } else {
+      let value = fn(...args);
+      map.set(key, value);
+      return value;
     }
-    const cachedArg = arg;
-    const cachedResult = fn(arg);
-    map.set(cachedArg, cachedResult);
-    return cachedResult;
   };
 }
 
