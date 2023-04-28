@@ -158,7 +158,7 @@ Array.prototype.myEvery = function myEvery(callback, thisArg) {
 ```js
 Array.prototype.mySome = function mySome(callback, thisArg) {
   for (var i = 0; i < this.length; ++i) {
-    if (!callback(this[i], i, this)) return true;
+    if (callback(this[i], i, this)) return true;
   }
   return false;
 };
