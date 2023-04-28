@@ -212,6 +212,41 @@ memoizeMapFn(2); // 取緩存結果
 memoizeMapFn(1); // 取緩存結果
 ```
 
+### lodash's get
+
+```js
+//lodash中的get使用方法
+const obj = {
+  a: {
+    b: {
+      c: [1, 2, 3],
+    },
+  },
+};
+
+get(obj, "a.b.c"); // [1,2,3]
+get(obj, "a.b.c.0"); // 1
+get(obj, "a.b.c[1]"); // 2
+get(obj, ["a", "b", "c", "2"]); // 3
+get(obj, "a.b.c[3]"); // undefined
+get(obj, "a.c", "bfe"); // 'bfe'
+```
+
+```js
+/**
+ * @param {object} source
+ * @param {string | string[]} path
+ * @param {any} [defaultValue]
+ * @return {any}
+ */
+function get(source, path, defaultValue = undefined) {
+  const arrPath = typeof path === "string" ? path.match(/[^\[\]\.]+/g) : path;
+  if (!(arrPath && arrPath.length)) return;
+  const result = arrPath.reduce((obj, key) => obj && obj[key], source);
+  return result || defaultValue;
+}
+```
+
 ### instanceof
 
 ```js
