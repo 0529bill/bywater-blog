@@ -15,6 +15,7 @@ sidebar_position: 2
 - shallow copy, deep copy
 - arrow function vs normal function
 - prototype
+- == vs === vs Object.is()
 - Map vs WeakMap
 
 ## CSS

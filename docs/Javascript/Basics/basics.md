@@ -588,6 +588,18 @@ continue => jump over one iteration in the loop
 
 ---
 
+## == vs === vs Object.js()
+
+== 會先轉變型別再去做比較
+=== 會比較型別跟其值
+
+===的缺點是在比較 `-0`、`+0`、`NaN`時會出現問題，這時候可以用 Object.is 來解決
+
+```js
+console.log(Object.is(+0, -0)); // false
+console.log(Object.is(NaN, NaN)); // true
+```
+
 ## 0.1 + 0.2 === 0.3 嘛？為什麼？
 
 [閱讀文章](https://juejin.cn/post/6844903680362151950)
