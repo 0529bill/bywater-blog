@@ -150,9 +150,9 @@ const mapKeys = Array.from(map.values());
 
 https://stackoverflow.com/questions/20069828/how-to-convert-set-to-array
 
-### weakMap vs Map 的差別
+### weakMap vs Map & weakSet vs Set 的差別
 
-1. WeakMap 只接受 object 當作 key
+1. WeakMap 只接受 object 當作 key ; WeakSet 只接受 object 為裡面的值
 2. references to key objects are held "weakly", which means that they do not prevent garbage collection in case there would be no other reference to the object. 代表如果沒有其他地方有引用 weakMap 中的 key 的話，key 和 WeakMap 就會被 GC。
 
 &nbsp;
@@ -162,6 +162,7 @@ https://stackoverflow.com/questions/20069828/how-to-convert-set-to-array
 1. object 中的 key 只能是 string 或是 symbol，Map 中的 key 則可以是任何值
 2. 原始物件的元素沒有順序性，Map 物件則有順序，所以在 Leetcode 時 Map 會比較好用
 3. Map 提供其他的 method，object 則沒有。ex, Map.size(), Map.clear()
+4. Map 可以直接迭代，利用`for..of`或是`forEach`等方法， object 則只能用`for...in`來取得 key 值或是利用`Object.entries`跟`Object.keys`來迭代
 
 **Object 中的自動排序機制**
 

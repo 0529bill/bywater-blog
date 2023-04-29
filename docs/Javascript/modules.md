@@ -57,6 +57,35 @@ module 讓我們可以使用 `export` 和 `import`語法，來把 JS 切分成�
 
 &nbsp;
 
+## 嚴格模式 `strict mode`
+
+- 禁止使用未經聲明的變數
+
+```js
+"use strict";
+
+x = 10;
+// Uncaught ReferenceError: x is not defined
+```
+
+- 禁止重複定義變數
+
+```js
+"use strict";
+function sum(a, a) {
+  return a + a;
+}
+```
+
+- 禁止刪除不可刪除的屬性
+
+```js
+"use strict";
+
+var y = 20;
+delete y;
+```
+
 ## module 使用方法?
 
 ```js
