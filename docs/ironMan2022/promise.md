@@ -128,7 +128,46 @@ async function readFiles(files) {
 }
 ```
 
-**注意：forEach 不能拿來在 Promise 中使用，會有 race condition 的問題**
+**注意：Promise 不能拿來在 ForEach 中使用，會有 race condition 的問題，原因是 ForEach 不會等待 await 完成，因此結果會是錯誤的順序或者是完全遺失**
+
+範例：
+
+```js
+async function asyncFunction() {
+  const myArray = [1, 2, 3];
+
+  const promises = [];
+
+  myArray.forEach(async (num) => {
+    const result = await fetch(
+      `https://jsonplaceholder.typicode.com/todos/${num}`
+    );
+    console.log(result.json());
+  });
+}
+
+asyncFunction();
+// [2,3,4] // wrong answer
+```
+
+```js
+//正確處理Promise的方法應該要像這樣
+async function asyncFunction() {
+  const myArray = [1, 2, 3];
+
+  const promises = myArray.map(async (num) => {
+    const result = await fetch(
+      `https://jsonplaceholder.typicode.com/todos/${num}`
+    );
+    return result.json();
+  });
+
+  const results = await Promise.all(promises);
+  console.log(results);
+}
+
+asyncFunction();
+```
 
 那關於 Promise 的介紹就到這裡拉～但是除了上面提到的東西外，Promise 在面試中還有另外一種很常見的考法，就是實做 Promise.race, Promise.all 的語法，這部分我們就會留到明天再跟大家分享了，我們明天見！
 
