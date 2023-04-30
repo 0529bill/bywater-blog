@@ -14,5 +14,4 @@ type: ctrl + shift + p
 choose: > TypeScript: Restart TS server
 
 
-
 ```

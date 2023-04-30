@@ -74,7 +74,8 @@ sidebar_position: 2
 - Array method(Reduce, map, filter, forEach,every, some, sort )
 - shallow copy
 - deep copy
-- cache function
+- memoize function
+- Lodash's get()
 
 ## Computer science
 

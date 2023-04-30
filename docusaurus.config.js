@@ -126,7 +126,7 @@ module.exports = {
         // Public API key: it is safe to commit it
         apiKey: "042194bcde760bd5121265193fbf9bad",
 
-        indexName: "bywater-blog",
+        indexName: "bywater",
       },
     },
 };
