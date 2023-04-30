@@ -16,4 +16,4 @@ Linkedin [Link](https://www.linkedin.com/in/lin-tse-175b4a158/)
 
 Email: 0529bill@gmail.com
 
-My Resume [Link](https://0529bill.github.io/portfolio/#/portfolio/Resume)
+My Resume [Link](https://docs.google.com/document/d/e/2PACX-1vScM-honepN0MDFjnOEg7YxSkE4wCM1fM8h0Em_-TQs2wewDZJXYeRieXvWBdarSi6P2JDzRr4-0NA3/pub)
