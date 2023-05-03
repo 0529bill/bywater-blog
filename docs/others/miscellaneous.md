@@ -36,3 +36,11 @@ alias ll='ls -alh'
 ### 透過 putty 和 SSH 遠端操控 windows or mac
 
 https://www.switchingtomac.com/tutorials/how-to-remote-connect-to-mac-from-windows-with-ssh/
+
+### How to Access Website Hosted on Your Home Computer from Anywhere
+
+https://dev.to/mo3taz1705/how-to-access-website-hosted-on-your-home-computer-from-anywhere-52no
+
+### ngrok:讓內網伺服器與外界溝通的一個服務
+
+https://5xruby.tw/posts/easy-ngrok-by-nginx-ssh-tunnel
