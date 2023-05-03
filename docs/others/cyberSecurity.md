@@ -26,3 +26,19 @@ Content-Security-Policy: default-src 'self'; img-src *; media-src example.org ex
 
 // A web site administrator wants to allow users of a web application to include images from any origin in their own content, but to restrict audio or video media to trusted providers, and all scripts only to a specific server that hosts trusted code.
 ```
+
+### CSRF(Cross Site Request Forgery) 跨站請求偽造
+
+CSRF 攻擊是透過使用者在登入 A 網站之後網頁會存入 cookie，這時候如果再去惡意網頁，惡意網站可以透過帶入的 cookie 發起惡意請求到 A 網站，以使用者的身份來做惡意操作。
+
+如何避免 CSRF 攻擊:
+
+1. 對重要的行爲設定多重驗證方式 ex, Two-factor authentication (2FA)
+2. 設定 SameSite cookies  
+   sameSite 可以設定瀏覽器在哪些 domain 裡面會帶上 cookies，常見的 value 有`strict`、`Lax`  
+   `strict`代表只有同 domain 的 request 瀏覽器才會送出 cookie  
+   `Lax`是 default value，代表只有從外部 link 跳進來時才會帶上 cookie
+
+### SQL Injection
+
+SQL Injection 就是透過修改 SQL 語句，進而有辦法達到存取資料庫資料的功能
