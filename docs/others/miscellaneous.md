@@ -32,3 +32,7 @@ alias ll='ls -alh'
 3. Save the changes by pressing Control + X, then Y, and then Enter.
 4. Reload the Zsh configuration file by typing `source ~/.zshrc` or by opening a new terminal window.
 5. Now you can use the alias ll instead of typing ls -alh every time you want to see file details in long format. You can create as many aliases as you like by following the same steps and replacing ll and ls -alh with your desired alias and command, respectively.
+
+### 透過 putty 和 SSH 遠端操控 windows or mac
+
+https://www.switchingtomac.com/tutorials/how-to-remote-connect-to-mac-from-windows-with-ssh/

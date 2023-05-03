@@ -76,23 +76,6 @@ https://medium.com/tsungs-blog/day14-session%E8%88%87cookie%E5%B7%AE%E5%88%A5-eb
 
 ### 4. 什麼是 同源政策 CORS？
 
-- 要解決 fetch 等方法造成的 CORS 問題，除了遵循 CORS 規定之外，還可以用 proxy 或是 JSONP 的方法來躲避 CORS!
-
-JSONP 簡介：
-
-透過 html 中 script 沒有 CORS 的特點，利用 script 來傳送 JSONP，但是缺點有以下幾個：
-
-1.  JSONP 的資料傳輸方式是不安全的
-    - XSS attack
-      - 如果未設置 `Content-Type: application/json` 且未對 callback 進行字串過濾，則有機會在 callback 後面加上惡意程式碼 ex `<script>alert('a')</script>`
-2.  只支持 get 請求
-3.  沒有錯誤處理
-
-資源：
-
-- https://medium.com/@brianwu1201/jsonp-with-simple-example-4711e2a07443
-- https://www.modb.pro/db/163731
-
 當我們在 JavaScript 中透過 fetch 或 XMLHttpRequest 存取資源時，如果是同源的情況下，存取不會受到限制，那什麼是同源呢?同源，包含以下三個條件
 
 1. 相同的通訊協定 (protocol)，即 http/https
@@ -128,7 +111,7 @@ Access-Control-Allow-Origin: origin
 
 解決方法：
 
-瀏覽器會先傳一個 preflight request 給 server 確認拿取資料是正當的，
+瀏覽器會先傳一個 preflight request(會用`options`) 給 server 確認拿取資料是正當的，
 
 - 後端設定 Access-Control-Allow-Methods, Access-Control-Allow-Headers
 
@@ -149,8 +132,6 @@ Access-Control-Allow-Origin: origin
 
 ```
 
-以上就是簡單和非簡單請求的步驟！
-
 有 cookie 的情況要以下設定
 
 ```js
@@ -164,6 +145,27 @@ Access-Control-Allow-Credentials: true
 Access-Control-Allow-Methods
 
 ```
+
+同時 preflight request 也可以設定`Access-Control-Max-Age`來設定 preflight request 多久後才會過期，來避免每一次發起請求都要再發起一次新的請求。
+
+以上就是簡單和非簡單請求的步驟！
+
+- 要解決 fetch 等方法造成的 CORS 問題，除了遵循 CORS 規定之外，還可以用 proxy 或是 JSONP 的方法來躲避 CORS!
+
+JSONP 簡介：
+
+透過 html 中 script 沒有 CORS 的特點，利用 script 來傳送 JSONP，但是缺點有以下幾個：
+
+1.  JSONP 的資料傳輸方式是不安全的
+    - XSS attack
+      - 如果未設置 `Content-Type: application/json` 且未對 callback 進行字串過濾，則有機會在 callback 後面加上惡意程式碼 ex `<script>alert('a')</script>`
+2.  只支持 get 請求
+3.  沒有錯誤處理
+
+資源：
+
+- https://medium.com/@brianwu1201/jsonp-with-simple-example-4711e2a07443
+- https://www.modb.pro/db/163731
 
 [這篇文章](https://blog.huli.tw/2021/02/19/cors-guide-2/)有很詳細的解說！
 
