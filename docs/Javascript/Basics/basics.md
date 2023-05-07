@@ -280,6 +280,29 @@ TLDR; Don't use the undefined primitive. It's a value that the JS compiler will 
 
 ---
 
+## constructor function vs function
+
+1. 語法：常規函數使用 function 關鍵字定義，後面是函數名稱和參數列表（如果有的話）。構造函數也是類似的方式定義，但通常使用大寫字母命名以表示應該使用 new 關鍵字調用它。
+
+2. 返回值：常規函數可以返回任何值，包括 undefined。另一方面，當使用 new 關鍵字調用構造函數時，它隱式地返回一個基於其原型的新對象。
+
+3. 用法：常規函數可以直接調用或賦值給變量，而構造函數通常使用 new 關鍵字調用以創建對象的新實例。
+
+4. 屬性和方法：常規函數可以具有自己的屬性和方法，但這些不會被創建函數的對象共享。另一方面，構造函數可以在其原型上定義屬性和方法，這些屬性和方法將被所有使用該函數創建的對象繼承。
+
+```js
+function Person(name, age) {
+  this.name = name;
+  this.age = age;
+}
+
+let john = new Person("John", 30); // 創建一個新的 Person 對象
+console.log(john.name); // 輸出 "John"
+console.log(john.age); // 輸出 30
+```
+
+**在普通 function 中的 this 會指向 windows**
+
 ## arrow function vs function
 
 arrow function pros:
