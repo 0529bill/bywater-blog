@@ -102,7 +102,7 @@ mySet.add(1);
 
 
 mySet.has(5)
-mySet.size()
+mySet.size
 mySet.delete(5)
 mySet.clear()
 
