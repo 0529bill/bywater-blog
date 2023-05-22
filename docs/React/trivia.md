@@ -289,6 +289,10 @@ React doc 建議新程式碼使用 function component 來取代過去的 class c
 
 Resources: https://beta.reactjs.org/reference/react/PureComponent
 
+### React vs other framework
+
+https://www.builder.io/blog/reactivity-across-frameworks
+
 ---
 
 Resources:
